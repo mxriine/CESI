@@ -1,5 +1,5 @@
 # CESI_
-Projet réalisé par Wassim Dennane, Elisa Rosas et Marine Mazou
+Projet réalisé par Wassim Bennane, Elisa Rosas et Marine Mazou
 
 ```
 Project 3W _-_ Groupe 1
