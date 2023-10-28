@@ -1,176 +1,93 @@
-/*
-     _______        __  ____            _           _   
-    |___ /\ \      / / |  _ \ _ __ ___ (_) ___  ___| |_ 
-      |_ \ \ \ /\ / /  | |_) | '__/ _ \| |/ _ \/ __| __|
-     ___) | \ V  V /   |  __/| | | (_) | |  __/ (__| |_ 
-    |____/   \_/\_/    |_|   |_|  \___// |\___|\___|\__|
-                                     |__/                */
-
-
 //Bibliothèques
-#include "src/project_libs/Config/Config.h"
-#include "src/project_libs/Led/Led.h"
-#include <SoftwareSerial.h>
+#include <Wire.h>                       
+#include <Adafruit_BME280.h>                       
+#include <RTClib.h> 
 
-//Constantes
-#define BUTTON_RED 2 //Pin du bouton rouge
-#define BUTTON_GREEN 3 //Pin du bouton vert
+// Constantes 
 
-#define LEDS 5 //Pin des LEDs
+RTC_DS1307 rtc; 
+Adafruit_BME280 bme;
 
-Led leds(7, 8, LEDS); //Création de l'objet leds
-
-//Définition des modes
-#define MODE_OFF 0
-#define MODE_NORMAL 1
-#define MODE_ECO 2
-#define MODE_MAINTENANCE 3
-#define MODE_CONFIG 4
-
-byte previousMode = MODE_NORMAL;
-byte mode = MODE_OFF;
-
-//Constantes pour la configuration
-String batchNumber = "C3W20_7038";
-
-Config config(__VERSION__, batchNumber);
-
-//Constantes pour les LEDs
-unsigned long buttonPressedMs = millis();
-bool buttonPressed = false;
-bool checkStartPressedButton = true;
-
-unsigned long lastModeChangeTime = 0;
-
-//Fonctions
 void setup(){
 
-  //Debut
+  //DEBUT
   Serial.begin(9600);
   while(!Serial);
-  Serial.println(F(" WORLDWIDE WEATHER WATCHER "));
-  Serial.println(F("==========================="));
+  Serial.println(" WORLDWIDE WEATHER WATCHER ");
+  Serial.println("===========================");
+  Serial.println();
+  
 
-  pinMode(BUTTON_RED, INPUT_PULLUP);
-  pinMode(BUTTON_GREEN, INPUT_PULLUP);
 
-  attachInterrupt(digitalPinToInterrupt(BUTTON_GREEN), clickButtonGreenEvent, FALLING);
-  attachInterrupt(digitalPinToInterrupt(BUTTON_RED), clickButtonRedEvent, FALLING);
-}
+  //Init RTC
+  if (!rtc.begin()) {
+    Serial.println("Impossible de trouver le module RTC. Assurez-vous qu'il est correctement connecté.");
+    while (1);
+  //Init LIGHTSENSOR
 
-void loop(){
-  checkPressedButton();
+  //Init GPS
 
-  if (mode == MODE_OFF) {
-    leds.color(F("OFF"));
-  }
-  else if (mode == MODE_NORMAL) {
-    leds.color(F("GREEN"));
-  }
-  else if (mode == MODE_ECO) {
-    leds.color(F("BLUE"));
-  }
-
-  if (mode == MODE_MAINTENANCE) {
-    leds.color(F("ORANGE"));
-  }
-
-  if (mode == MODE_CONFIG) {
-    unsigned long lastActivity = config.getLastActivity();
-    leds.color(F("YELLOW"));
-    if ((millis() - lastActivity) / 1000 > (2* 60)) {
-      changeMode(MODE_NORMAL);
-    }
   }
 }
 
-void clickButtonGreenEvent(){
-  buttonPressed = true;
-  buttonPressedMs = millis();
+void loop() {
+  lectureBME();
+  delay(5000);
 }
 
-void clickButtonRedEvent(){
-  buttonPressed = true;
-  buttonPressedMs = millis();
-}
+void lectureBME(){
 
-void pressedButtonGreen() {
-  if (mode == MODE_NORMAL)
-    changeMode(MODE_ECO);
-}
+  #define adresseI2CBME280     0x76
+  #define pressionNivMerHpa      1024.90 
 
-void pressedButtonRed() {
-  if (mode == MODE_ECO)
-    changeMode(MODE_NORMAL);
-
-  else if (mode == MODE_NORMAL)
-    changeMode(MODE_MAINTENANCE);
-
-  else if (mode == MODE_MAINTENANCE)
-    changeMode(MODE_NORMAL);
-
-}
-
-void changeMode(int _mode) {
-  mode = _mode;
-
-  String name = F("");
-  switch (_mode) {
-    case MODE_OFF:
-      name = F("OFF");
-      break;
-    case MODE_NORMAL:
-      name = F("STANDARD");
-      break;
-    case MODE_ECO:
-      name = F("ECOLOGIQUE");
-      break;
-    case MODE_MAINTENANCE:
-      name = F("MAINTENANCE");
-      break;
-    case MODE_CONFIG:
-      name = F("CONFIGURATION");
-      break;
+    //Init BME280
+  Serial.print(F("Initialisation du BME280, à l'adresse [0x")); //Initialisation BME280
+  Serial.print(adresseI2CBME280, HEX);
+  Serial.println(F("]"));
+  if(!bme.begin(adresseI2CBME280)) {
+    Serial.println(F("--> ÉCHEC…"));
+    while(1);                              // Arrêt du programme si échec
+  } else {
+    Serial.println(F("--> RÉUSSIE !"));
   }
-  Serial.print(F("Lancement du mode : "));
-  Serial.println(name);
 
-  lastModeChangeTime = millis();
-}
+   DateTime now = rtc.now();
 
-void checkPressedButton() {
+  // TEMPERATURE
+  
+  float temperature = bme.readTemperature();
+  Serial.print(F("Température = "));
+  Serial.print(temperature);
+  Serial.print(F(" °C |"));
 
-    //Si le bouton est pressé simplement
-    if (buttonPressed) {
-      if (millis() - buttonPressedMs <= 1000) {
-        if (digitalRead(BUTTON_GREEN) == LOW) {
-          if (mode == MODE_OFF)
-            changeMode(MODE_NORMAL);
-        }
-        else if (digitalRead(BUTTON_RED) == LOW) {
-          if (mode == MODE_NORMAL)
-            changeMode(MODE_CONFIG);
-        }
-        buttonPressed = false;
-      }
-    }
-    checkStartPressedButton = false;
+  //TAUX D'HUMIDITÉ
+  float humidite = bme.readHumidity();
+  Serial.print(F(" Humidité = "));
+  Serial.print(humidite);
+  Serial.print(F(" % |"));
+  
+  //PRESSION ATMOSPHÉRIQUE
+  float pression = (bme.readPressure() / 100.0F);
+  Serial.print(F(" Pression atmosphérique = "));
+  Serial.print(pression);
+  Serial.print(F(" hPa |"));
 
-    //Si le bouton est pressé depuis plus de 5 secondes
-    if (millis() - buttonPressedMs >= 5000) {
-      if (digitalRead(BUTTON_GREEN) == LOW) {
-        pressedButtonGreen();
-      }
-      else if (digitalRead(BUTTON_RED) == LOW) {
-        pressedButtonRed();
-      }
-      buttonPressed = false;
-    }
+  //Estimation d'ALTITUDE
+  Serial.print(F(" Altitude estimée = "));
+  Serial.print(bme.readAltitude(pressionNivMerHpa));
+  Serial.print(F(" m"));
 
-  //Si les deux boutons sont pressés
-  if (digitalRead(BUTTON_GREEN) == LOW && digitalRead(BUTTON_RED) == LOW) {
-      changeMode(MODE_OFF);
+  Serial.print(" | ");
+  Serial.print(now.hour(), DEC);
+  Serial.print(":");
+  if (now.minute() < 10) Serial.print("0");
+  Serial.print(now.minute(), DEC);
+  Serial.print(" ; ");
+  Serial.print(now.day(), DEC);
+  Serial.print("/");
+  Serial.print(now.month(), DEC);
+  Serial.print("/");
+  Serial.print(now.year(), DEC);
 
-    buttonPressed = false;
-  }
+  Serial.println(); // Saut de ligne
 }
