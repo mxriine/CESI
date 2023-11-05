@@ -1,10 +1,11 @@
 # CESI_
-<<<<<<< Updated upstream:Projet - Systèmes emarqués/README.md
+
 Projet réalisé par Wassim Bennane, Elisa Rosas et Marine Mazou
 
 ```
 Project 3W _-_ Groupe 1
 ├── README.md
+│
 ├── Livrable 1
 │   ├── Rapport_Livrable1.docx
 │   ├── Rapport_Livrable1.pdf
@@ -17,19 +18,15 @@ Project 3W _-_ Groupe 1
 │ 
 ├── Livrable 3
 │   ├── main
-│   │   ├── main.ino
-│   │   └── src
-│   │       ├── imported_libs
-│   │       │   ├── ChainableLED
-│   │       │   ├── EEPROM
-│   │       │   └── RTClib
-│   │       └── project_libs
-│   │           ├── Config
-│   │           └── Led
-│   └── compilateur
-│       ├── 
-└── 
+│   │   ├── launch
+│   │   └── NewCode
+│   │       ├── main 
+│   │       └── imported_libs
+│   │           ├── ChainableLED
+│   │           ├── EEPROM
+│   │           └── RTClib
+│   │      
+
 ```
 =======
 CESI _ Projet
->>>>>>> Stashed changes:Projet 3W _-_ Groupe 1/README.md
