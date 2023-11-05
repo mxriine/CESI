@@ -1,4 +1,5 @@
 # CESI_
+<<<<<<< Updated upstream:Projet - Systèmes emarqués/README.md
 Projet réalisé par Wassim Bennane, Elisa Rosas et Marine Mazou
 
 ```
@@ -29,3 +30,6 @@ Project 3W _-_ Groupe 1
 │       ├── 
 └── 
 ```
+=======
+CESI _ Projet
+>>>>>>> Stashed changes:Projet 3W _-_ Groupe 1/README.md
