@@ -163,7 +163,7 @@ void addSensorValue(float* values, float value) {
 }
 
 void SensorValues() {
-  float sensorTempValue(NAN), sensorHumValue(NAN), sensorPresValue(NAN);
+  float sensorTempValue(NAN), sensorHumValue(NAN), sensorPresValue(NAN), gpsValue(NAN);
   int sensorLightValue = analogRead(LIGHT_PIN);
 
   BME280::TempUnit tempUnit(BME280::TempUnit_Celsius);
@@ -191,6 +191,11 @@ void SensorValues() {
 
     case 'L':
       value = sensorLightValue;
+      addSensorValue(sensors[i].value, value);
+      break;
+
+    case 'G':
+      value = gpsValue;
       addSensorValue(sensors[i].value, value);
       break;
     }
@@ -229,13 +234,12 @@ void WriteValue(bool sd, Stream* client) {
   data += now.second();
   data += F("\n");
 
-  for (int i = 0; i < sizeof(sensors) / sizeof(Sensor); i++) {
+  for (int i = 0; i < sizeof(sensors); i++) {
     data += (sensors[i].name);
     data += (F(": "));
     data += (sensors[i].value[MAX_VALUE - 1]);
     data += (F("\n"));
   }
-  data += (F("\n"));
 
   unsigned long age;
   GPS.f_get_position(&latitude, &longitude, &age);
@@ -257,7 +261,7 @@ void loop() {
     case MODE_OFF:
       leds.setColorRGB(0, 0, 0, 0);
 
-      if (bascule_green == true && digitalRead(BUTTON_G) == LOW) {
+      if (digitalRead(BUTTON_G) == LOW) {
         ChangeMode(MODE_STANDARD);
       }
       break;
@@ -270,7 +274,7 @@ void loop() {
         freeze = millis();
       }
 
-      if (bascule_green == true && digitalRead(BUTTON_G) == LOW) {
+      if (digitalRead(BUTTON_G) == LOW) {
         if (start == 0) {
           start = millis();
         } 
@@ -280,7 +284,7 @@ void loop() {
         }
       }
 
-      if (bascule_red == true && digitalRead(BUTTON_R) == LOW) {
+      if (digitalRead(BUTTON_R) == LOW) {
         if (start == 0) {
           start = millis();
         } 
@@ -294,7 +298,7 @@ void loop() {
     case MODE_ECO:
       leds.setColorRGB(0, 0, 0, 255);
 
-      if (bascule_green == true && digitalRead(BUTTON_G) == LOW) {
+      if (digitalRead(BUTTON_G) == LOW) {
         if (start == 0) {
           start = millis();
         } 
@@ -304,7 +308,7 @@ void loop() {
         }
       }
 
-      if (bascule_red == true && digitalRead(BUTTON_R) == LOW) {
+      if (digitalRead(BUTTON_R) == LOW) {
         if (start == 0) {
           start = millis();
         } 
@@ -318,7 +322,7 @@ void loop() {
     case MODE_MAINT:
       leds.setColorRGB(0, 255, 165, 0);
 
-      if (bascule_red == true && digitalRead(BUTTON_R) == LOW) {
+      if (digitalRead(BUTTON_R) == LOW) {
         if (start == 0) {
           start = millis();
         } 
