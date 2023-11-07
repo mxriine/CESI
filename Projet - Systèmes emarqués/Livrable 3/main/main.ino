@@ -33,7 +33,6 @@ byte mode = MODE_OFF;
 
 ChainableLED leds(7, 8, NUM_LEDS);
 
-
 volatile bool bascule_red = false;
 volatile bool bascule_green = false;
 unsigned long freeze = 0;
@@ -123,13 +122,17 @@ void setup() {
 
 //Fonctions
 void RedEventF() {
-  start = millis();
   bascule_red = !bascule_red;
 }
 
 void GreenEventF() {
-  start = millis();
   bascule_green = !bascule_green;
+
+  if(bascule_green) {
+    if (mode = MODE_OFF) {
+      ChangeMode(MODE_STANDARD);
+    }
+  }
 }
 
 void ChangeMode(int newMode) {
@@ -339,7 +342,7 @@ void loop() {
       if ((millis() - start) >= 20000) {
         start = millis();
         ChangeMode(MODE_STANDARD);
-        freeze = 0;
+        start = 0;
       }
       break;
   }
