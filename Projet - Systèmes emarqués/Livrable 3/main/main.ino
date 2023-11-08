@@ -4,20 +4,18 @@
 #include "src/imported_libs/EEPROM/EEPROM.h"
 #include <SoftwareSerial.h>
 #include <BME280I2C.h>
-#include <RTClib.h>
-#include <SdFat.h>
+#include "RTClib.h"
 #include <Wire.h>
+#include <SPI.h>
+#include "SdFat.h"
 
 //Variables
-#define SD_CS_PIN 4
-
 #define LIGHT_PIN 0
-
-#define GPS_PIN_1 4
-#define GPS_PIN_2 5
 
 #define BUTTON_R 2
 #define BUTTON_G 3
+
+#define SD_CS_PIN 4
 
 #define MODE_OFF 0
 #define MODE_STANDARD 1
@@ -33,24 +31,29 @@ byte mode = MODE_OFF;
 
 ChainableLED leds(7, 8, NUM_LEDS);
 
-volatile bool bascule_red = false;
-volatile bool bascule_green = false;
 unsigned long freeze = 0;
 unsigned long start = 0;
+volatile bool verif_conf = false;
+
+//Constantes SD
+SdFat SD;
+File myFile;
+volatile bool verif_sd = false;
+
+unsigned long LOG_INTERVALL = 600000;
+int FILE_MAX_SIZE = 4096;
+String fileName = "";
+String data = "";
 
 //Constantes Capteur
 BME280I2C bme;
 RTC_DS1307 rtc;
 
-//Constante GPS
-TinyGPS GPS;
-SoftwareSerial gps(GPS_PIN_1, GPS_PIN_2);
-
-float latitude, longitude;
-
-//Constantes SD
-SdFat SD;
-File myFile;
+//Constantes GPS
+//volatile bool GpsValue = false;
+//float latitude, longitude;
+//SoftwareSerial gps(3, 4);
+//TinyGPS GPS;
 
 //Structures
 struct Sensor {
@@ -76,16 +79,6 @@ void setup() {
   pinMode(BUTTON_R, INPUT_PULLUP);
   pinMode(BUTTON_G, INPUT_PULLUP);
 
-  attachInterrupt(digitalPinToInterrupt(BUTTON_R), RedEventF, FALLING);
-  attachInterrupt(digitalPinToInterrupt(BUTTON_G), GreenEventF, FALLING);
-
-  //SD
-  if (!SD.begin(SD_CS_PIN)) {
-    Serial.println(F("Impossible de trouver la carte SD !"));
-    while (1);
-  }
-  Serial.println(F("Carte SD trouvée !"));
- 
   //BME280
   Wire.begin();
 
@@ -105,37 +98,31 @@ void setup() {
       Serial.println(F("Capteur UNKNOWN détecté ! Erreur !"));
   }
 
-  //Horloge 
+  //GPS
+  ///gps.begin(9600);
+
+  //Horloge
   rtc.begin();
   //rtc.adjust(DateTime(23, 11, 03, 13, 22, 00));
   if (!rtc.isrunning()) {
-    Serial.println(F("RTC n'est PAS en cours d'exécution !"));
+    Serial.println("RTC n'est PAS en cours d'exécution !");
     rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
   }
 
-  //GPS
-  gps.begin(9600);
+  //Carte SD
+  Serial.println("Initialisation de la Carte SD...");
+
+  if (!SD.begin(SD_CS_PIN)) {
+    Serial.println("Erreur d'initialisation de la Carte SD !");
+    return;
+  }
 
   Serial.println(F("Initialisation terminée !"));
   Serial.println(F(""));
 }
 
 //Fonctions
-void RedEventF() {
-  bascule_red = !bascule_red;
-}
-
-void GreenEventF() {
-  bascule_green = !bascule_green;
-
-  if(bascule_green) {
-    if (mode = MODE_OFF) {
-      ChangeMode(MODE_STANDARD);
-    }
-  }
-}
-
-void ChangeMode(int newMode) {
+void ChangeMode(int newMode, Stream* client) {
   mode = newMode;
 
   String name = F("");
@@ -153,9 +140,10 @@ void ChangeMode(int newMode) {
       name = F("Configuration");
       break;
   }
-  Serial.print(F("Lancement du mode "));
-  Serial.println(name);
-  Serial.println(F("==========================="));
+
+  client->print(F("Lancement du mode "));
+  client->println(name);
+  client->println(F("==========================="));
 }
 
 void addSensorValue(float* values, float value) {
@@ -166,7 +154,7 @@ void addSensorValue(float* values, float value) {
 }
 
 void SensorValues() {
-  float sensorTempValue(NAN), sensorHumValue(NAN), sensorPresValue(NAN), gpsValue(NAN);
+  float sensorTempValue(NAN), sensorHumValue(NAN), sensorPresValue(NAN);
   int sensorLightValue = analogRead(LIGHT_PIN);
 
   BME280::TempUnit tempUnit(BME280::TempUnit_Celsius);
@@ -177,51 +165,43 @@ void SensorValues() {
   float value = 0;
   for (int i = 0; i < sizeof(sensors) / sizeof(Sensor); i++) {
     switch (sensors[i].id) {
-    case 'T':
-      value = sensorTempValue;
-      addSensorValue(sensors[i].value, value);
-      break;
-    
-    case 'H':
-      value = sensorHumValue;
-      addSensorValue(sensors[i].value, value);
-      break;
+      case 'T':
+        value = sensorTempValue;
+        addSensorValue(sensors[i].value, value);
+        break;
 
-    case 'P':
-      value = sensorPresValue / 100.0F;
-      addSensorValue(sensors[i].value, value);
-      break;
+      case 'H':
+        value = sensorHumValue;
+        addSensorValue(sensors[i].value, value);
+        break;
 
-    case 'L':
-      value = sensorLightValue;
-      addSensorValue(sensors[i].value, value);
-      break;
+      case 'P':
+        value = sensorPresValue;
+        addSensorValue(sensors[i].value, value / 100.0F);
+        break;
 
-    case 'G':
-      value = gpsValue;
-      addSensorValue(sensors[i].value, value);
-      break;
+      case 'L':
+        value = sensorLightValue;
+        addSensorValue(sensors[i].value, value);
+        break;
     }
   }
-  unsigned long lastWrite = 0;
 }
 
 void WriteValue(bool sd, Stream* client) {
-
-  SensorValues(); 
   DateTime now = rtc.now();
 
-  String filename = F("data_");
-  filename += now.year();
-  filename += F("-");
-  filename += now.month();
-  filename += F("-");
-  filename += now.day();
-  filename += F(".csv");
+  //Nom du fichier
+  fileName = "data_";
+  fileName += now.year();
+  fileName += ".";
+  fileName += now.month();
+  fileName += ".";
+  fileName += now.day();
+  fileName += ".log";
 
-  String data = F("");
-  data += F("Date | ");
-  if (now.day() < 10) data += F("0");
+  //Date et heure de prise de mesure
+  String data = F("Date | ");
   data += now.day();
   data += F("/");
   data += now.month();
@@ -230,31 +210,70 @@ void WriteValue(bool sd, Stream* client) {
   data += F(" ");
   data += now.hour();
   data += F(":");
-  if (now.minute() < 10) data += F("0");
   data += now.minute();
   data += F(":");
-  if (now.second() < 10) data += F("0");
   data += now.second();
-  data += F("\n");
 
-  for (int i = 0; i < sizeof(sensors); i++) {
-    data += (sensors[i].name);
-    data += (F(": "));
-    data += (sensors[i].value[MAX_VALUE - 1]);
-    data += (F("\n"));
+  data += "\n";
+
+  SensorValues();
+
+  /*if (GpsValue = true) {
+    while(gps.available()){
+      if(GPS.encode(gps.read())){ 
+        GPS.f_get_position(&latitude,&longitude);
+
+        data += F("GPS |");
+        data += F("Latitude : ");
+        data += latitude;
+        data += F(" Longitude : ");
+        data += longitude;
+     }
+    }
+  }*/
+
+  //Créattion du fichier
+  myFile = SD.open("test.log", FILE_WRITE);
+
+  if (myFile && mode == MODE_STANDARD) {
+    client->println("Ecriture des données dans : test.log");
+
+    myFile.println(data);
+
+    for (int i = 0; i < sizeof(sensors) / sizeof(Sensor); i++) {
+      myFile.print(sensors[i].name);
+      myFile.print(F(": "));
+      myFile.println(sensors[i].value[MAX_VALUE - 1]);
+    }
+    myFile.println(F(" "));
+
+    myFile.println(F("==========================="));
+
+    myFile.close();
+
+  } else if (myFile && mode == MODE_MAINT) {
+    client->println(data);
+
+    for (int i = 0; i < sizeof(sensors) / sizeof(Sensor); i++) {
+      client->print(sensors[i].name);
+      client->print(F(": "));
+      client->println(sensors[i].value[MAX_VALUE - 1]);
+    }
+    client->println(F(" "));
+
+    client->println(F("==========================="));
   }
 
-  unsigned long age;
-  GPS.f_get_position(&latitude, &longitude, &age);
-  data += (F("Donnée GPS | "));
-  data += (F("\tLatitude : "));
-  data += (latitude);
-  data += (F("\tLongitude : "));
-  data += (longitude);
-  data += (F("\n"));
+  client->println(F("\n"));
+}
 
-  client->print(data);
-
+void wait() {
+  Serial.print(F("."));
+  delay(500);
+  Serial.print(F("."));
+  delay(500);
+  Serial.println(F("."));
+  delay(500);
 }
 
 //Boucle
@@ -265,14 +284,74 @@ void loop() {
       leds.setColorRGB(0, 0, 0, 0);
 
       if (digitalRead(BUTTON_G) == LOW) {
-        ChangeMode(MODE_STANDARD);
+        ChangeMode(MODE_STANDARD, &Serial);
       }
       break;
 
     case MODE_STANDARD:
       leds.setColorRGB(0, 0, 255, 0);
 
-      if (millis() - freeze >= 20000 || freeze == 0) {
+      //GpsValue = true;
+
+      if (millis() - freeze >= (LOG_INTERVALL) || freeze == 0) {
+        WriteValue(true, &Serial);
+        freeze = millis();
+      }
+
+      //si on tape la commande read
+      if (Serial.available() > 0) {
+        String command = Serial.readStringUntil('\n');
+        command.trim();
+
+        if (command == "read") {
+          Serial.println(F("Lecture des données..."));
+          Serial.println(F("==========================="));
+
+          myFile = SD.open("test.log", FILE_READ);
+
+          if (myFile) {
+            while (myFile.available()) {
+              Serial.write(myFile.read());
+            }
+            myFile.close();
+          } else {
+            Serial.println(F("Erreur d'ouverture du fichier test.txt"));
+          }
+
+          Serial.println(F("==========================="));
+          Serial.println(F("\n"));
+        }
+
+        if (command == "config") {
+          ChangeMode(MODE_CONFIG, &Serial);
+        }
+      }
+
+      if (digitalRead(BUTTON_G) == LOW) {
+        if (start == 0) {
+          start = millis();
+        } else if (millis() - start >= 5000) {
+          ChangeMode(MODE_ECO, &Serial);
+          start = 0;
+        }
+      }
+
+      if (digitalRead(BUTTON_R) == LOW) {
+        if (start == 0) {
+          start = millis();
+        } else if (millis() - start >= 5000) {
+          ChangeMode(MODE_MAINT, &Serial);
+          start = 0;
+        }
+      }
+      break;
+
+    case MODE_ECO:
+      leds.setColorRGB(0, 0, 0, 255);
+
+      //GpsValue = false;
+
+      if (millis() - freeze >= LOG_INTERVALL * 2 || freeze == 0) {
         WriteValue(true, &Serial);
         freeze = millis();
       }
@@ -280,9 +359,8 @@ void loop() {
       if (digitalRead(BUTTON_G) == LOW) {
         if (start == 0) {
           start = millis();
-        } 
-        else if (millis() - start >= 5000) {
-          ChangeMode(MODE_ECO);
+        } else if (millis() - start >= 5000) {
+          ChangeMode(MODE_STANDARD, &Serial);
           start = 0;
         }
       }
@@ -290,33 +368,8 @@ void loop() {
       if (digitalRead(BUTTON_R) == LOW) {
         if (start == 0) {
           start = millis();
-        } 
-        else if (millis() - start >= 5000) {
-          ChangeMode(MODE_MAINT);
-          start = 0;
-        }
-      } 
-      break;
-
-    case MODE_ECO:
-      leds.setColorRGB(0, 0, 0, 255);
-
-      if (digitalRead(BUTTON_G) == LOW) {
-        if (start == 0) {
-          start = millis();
-        } 
-        else if (millis() - start >= 5000) {
-          ChangeMode(MODE_STANDARD);
-          start = 0;
-        }
-      }
-
-      if (digitalRead(BUTTON_R) == LOW) {
-        if (start == 0) {
-          start = millis();
-        } 
-        else if (millis() - start >= 5000) {
-          ChangeMode(MODE_MAINT);
+        } else if (millis() - start >= 5000) {
+          ChangeMode(MODE_MAINT, &Serial);
           start = 0;
         }
       }
@@ -324,13 +377,25 @@ void loop() {
 
     case MODE_MAINT:
       leds.setColorRGB(0, 255, 165, 0);
+      
+      if (verif_sd == false) {
+        wait();
+
+        Serial.println(F("Vous pouvez retirer la carte SD."));
+        Serial.print(F("\n"));
+        verif_sd = true;
+      }
+      
+      if (millis() - freeze >= 20000 || freeze == 0) {
+        WriteValue(true, &Serial);
+        freeze = millis();
+      }
 
       if (digitalRead(BUTTON_R) == LOW) {
         if (start == 0) {
           start = millis();
-        } 
-        else if (millis() - start >= 5000) {
-          ChangeMode(MODE_STANDARD);
+        } else if (millis() - start >= 5000) {
+          ChangeMode(MODE_STANDARD, &Serial);
           start = 0;
         }
       }
@@ -339,10 +404,27 @@ void loop() {
     case MODE_CONFIG:
       leds.setColorRGB(0, 255, 255, 0);
 
-      if ((millis() - start) >= 20000) {
+      if (verif_conf == false) {
+        wait();
+
+        Serial.println(F("En cours de programmation"));
+        Serial.println(F("\n"));
+        verif_conf = true;
+      }
+
+      if (Serial.available() > 0) {
+        String command = Serial.readStringUntil('\n');
+        command.trim();
+
+        if (command == "standard") {
+          ChangeMode(MODE_STANDARD, &Serial);
+        }
+      }
+
+      if ((millis() - start) / 1000 > (30 * 60)) {
         start = millis();
-        ChangeMode(MODE_STANDARD);
-        start = 0;
+        ChangeMode(MODE_STANDARD, &Serial);
+        freeze = 0;
       }
       break;
   }
