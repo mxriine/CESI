@@ -1,12 +1,11 @@
-#include "MyForm.h"
+#include "authPage.h"
 using namespace System;
 using namespace System::Windows::Forms;
 
 [STAThreadAttribute]
-void Main(array<String^>^ args) {
+void Main0(array<String^>^ args) {
     Application::EnableVisualStyles();
     Application::SetCompatibleTextRenderingDefault(false);
-    projetpoo::MyForm form;
+    ProjetPOO::auth form;
     Application::Run(% form);
-    
 }

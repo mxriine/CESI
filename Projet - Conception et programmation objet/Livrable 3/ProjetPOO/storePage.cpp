@@ -1,4 +1,4 @@
-#include "MyForm1.h"
+#include "storePage.h"
 using namespace System;
 using namespace System::Windows::Forms;
 
@@ -6,6 +6,6 @@ using namespace System::Windows::Forms;
 void Main1(array<String^>^ args) {
     Application::EnableVisualStyles();
     Application::SetCompatibleTextRenderingDefault(false);
-    projetpoo::MyForm1 form;
-    Application::Run(% form);
+    ProjetPOO::storePage form2;
+    Application::Run(% form2);
 }
