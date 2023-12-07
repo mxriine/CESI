@@ -1,6 +1,6 @@
 #pragma once
-#include "client.h"
-#include "storePage.h"
+#include "Client.h"
+#include "StorePage.h"
 #include "GlobalData.h"
 
 namespace ProjetPOO {
@@ -22,7 +22,7 @@ namespace ProjetPOO {
 	public:
 		bool switchToCreate = false;
 		bool switchToStore = false;
-	
+
 	public:
 		auth(void)
 		{
@@ -56,7 +56,7 @@ namespace ProjetPOO {
 		/// <summary>
 		/// Variable nécessaire au concepteur.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -149,10 +149,10 @@ namespace ProjetPOO {
 	private: System::Void auth_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-		
+
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-		
+
 	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		myClient->setmail(textBox1->Text);
@@ -163,9 +163,9 @@ namespace ProjetPOO {
 			this->Close();
 		};
 	}
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	switchToCreate = true;
-	this->Close();
-}
-};
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		switchToCreate = true;
+		this->Close();
+	}
+	};
 }

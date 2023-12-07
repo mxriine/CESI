@@ -20,11 +20,10 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
-    <ProjectGuid>{A0DB16CC-0CC7-45FC-A4FB-EBA115D47F94}</ProjectGuid>
-    <EnableManagedPackageReferenceSupport>true</EnableManagedPackageReferenceSupport>
+    <ProjectGuid>{CBF85F03-2886-4A96-BE50-BFA6104E6FAA}</ProjectGuid>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <Keyword>ManagedCProj</Keyword>
-    <RootNamespace>ProjetPOO</RootNamespace>
+    <RootNamespace>ProjectPOO</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -114,13 +113,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="article.cpp" />
-    <ClCompile Include="authPage.cpp" />
-    <ClCompile Include="client.cpp" />
-    <ClCompile Include="creationPage.cpp" />
+    <ClCompile Include="Article.cpp" />
+    <ClCompile Include="AuthPage.cpp" />
+    <ClCompile Include="Client.cpp" />
+    <ClCompile Include="CreaPage.cpp" />
     <ClCompile Include="GlobalData.cpp" />
-    <ClCompile Include="Program.cpp" />
-    <ClCompile Include="storePage.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="StorePage.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Article.h" />
+    <ClInclude Include="AuthPage.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Client.h" />
+    <ClInclude Include="CreaPage.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="GlobalData.h" />
+    <ClInclude Include="StorePage.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -128,31 +141,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="article.h" />
-    <ClInclude Include="authPage.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="client.h" />
-    <ClInclude Include="creationPage.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="GlobalData.h" />
-    <ClInclude Include="storePage.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="authPage.resx">
-      <DependentUpon>authPage.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="creationPage.resx">
-      <DependentUpon>creationPage.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="storePage.resx">
-      <DependentUpon>storePage.h</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,6 +1,6 @@
 #pragma once
 #include "GlobalData.h"
-#include "client.h"
+#include "Client.h"
 
 namespace ProjetPOO {
 
@@ -57,7 +57,7 @@ namespace ProjetPOO {
 		/// <summary>
 		/// Variable nécessaire au concepteur.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -206,16 +206,16 @@ namespace ProjetPOO {
 	private: System::Void quit_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
-private: System::Void create_Click(System::Object^ sender, System::EventArgs^ e) {
-	/*
-	myClient->setmail(mailTextBox->Text);
-	myClient->setmdp(passwordTextBox->Text);
-	myClient->setprenom(nameTextBox->Text);
-	myClient->setnom(lastNameTextBox->Text);
-	myClient->settel(phoneTextBox->Text);
-	MessageBox::Show("done");
-	*/
-	myClient->create(mailTextBox->Text, passwordTextBox->Text, nameTextBox->Text, lastNameTextBox->Text, phoneTextBox->Text);
-}
-};
+	private: System::Void create_Click(System::Object^ sender, System::EventArgs^ e) {
+		/*
+		myClient->setmail(mailTextBox->Text);
+		myClient->setmdp(passwordTextBox->Text);
+		myClient->setprenom(nameTextBox->Text);
+		myClient->setnom(lastNameTextBox->Text);
+		myClient->settel(phoneTextBox->Text);
+		MessageBox::Show("done");
+		*/
+		myClient->create(mailTextBox->Text, passwordTextBox->Text, nameTextBox->Text, lastNameTextBox->Text, phoneTextBox->Text);
+	}
+	};
 }

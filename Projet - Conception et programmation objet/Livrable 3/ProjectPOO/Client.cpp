@@ -1,4 +1,4 @@
-#include "client.h"
+#include "Client.h"
 
 using namespace System::Data::SqlClient;
 using namespace System::Windows::Forms;
@@ -11,7 +11,7 @@ client::client()
 
 bool client::connect(String^ mail, String^ mdp)
 {
-    String^ connection = "Data Source=LAPTOP-SEAN\\SQLEXPRESS01;Initial Catalog=xshop;Integrated Security=True; Encrypt=False";
+    String^ connection = "Data Source=CACAHUETE;Initial Catalog=POO;Integrated Security=True;Encrypt=False";
     SqlConnection^ connexion = gcnew SqlConnection(connection);
     try {
 
@@ -43,35 +43,35 @@ bool client::connect(String^ mail, String^ mdp)
     }
 }
 
-    bool client::create(String^ Cmail, String^ Cmdp, String^ Cname, String^ Clastname, String^ Ctel)
-    {
-        mail = Cmail;
-        mdp = Cmdp;
-        prenom = Cname;
-        nom = Clastname;
-        tel = Ctel;
+bool client::create(String^ Cmail, String^ Cmdp, String^ Cname, String^ Clastname, String^ Ctel)
+{
+    mail = Cmail;
+    mdp = Cmdp;
+    prenom = Cname;
+    nom = Clastname;
+    tel = Ctel;
 
-        String^ connection = "Data Source=LAPTOP-SEAN\\SQLEXPRESS01;Initial Catalog=xshop;Integrated Security=True; Encrypt=False";
-        SqlConnection^ connexion = gcnew SqlConnection(connection);
-        try{
-            connexion->Open();
-            String^ command1 = "INSERT INTO client(nom,prenom,mail,mdp,tel,adresse,ville) VALUES";
-            String^ command2 = "('" + nom + "','" + prenom + "','" + mail + "','" + mdp + "','" + tel + "','" + adresse + "','" + ville + "')";
-            String^ command = command1 + command2;
-            SqlCommand^ sqlcommand = gcnew SqlCommand(command, connexion);
-            sqlcommand->ExecuteNonQuery();
-            MessageBox::Show("Commande SQL exécutée avec succès !");
-            connexion->Close();
-            return 1;
-        }
-        catch(SqlException^ lol){
-            MessageBox::Show(lol->Message);
-            connexion->Close();
-            return 0;
-        }
-
-        //throw gcnew System::NotImplementedException();
+    String^ connection = "Data Source=LAPTOP-SEAN\\SQLEXPRESS01;Initial Catalog=xshop;Integrated Security=True; Encrypt=False";
+    SqlConnection^ connexion = gcnew SqlConnection(connection);
+    try {
+        connexion->Open();
+        String^ command1 = "INSERT INTO client(nom,prenom,mail,mdp,tel,adresse,ville) VALUES";
+        String^ command2 = "('" + nom + "','" + prenom + "','" + mail + "','" + mdp + "','" + tel + "','" + adresse + "','" + ville + "')";
+        String^ command = command1 + command2;
+        SqlCommand^ sqlcommand = gcnew SqlCommand(command, connexion);
+        sqlcommand->ExecuteNonQuery();
+        MessageBox::Show("Commande SQL exécutée avec succès !");
+        connexion->Close();
+        return 1;
     }
+    catch (SqlException^ lol) {
+        MessageBox::Show(lol->Message);
+        connexion->Close();
+        return 0;
+    }
+
+    //throw gcnew System::NotImplementedException();
+}
 
 void client::retreive()
 {

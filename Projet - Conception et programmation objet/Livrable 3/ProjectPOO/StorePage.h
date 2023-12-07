@@ -1,6 +1,6 @@
 #pragma once
-#include "authPage.h"
-#include "client.h"
+#include "AuthPage.h"
+#include "Client.h"
 #include "GlobalData.h"
 
 namespace ProjetPOO {
@@ -20,7 +20,7 @@ namespace ProjetPOO {
 	public:
 		client^ myClient = GlobalData::GetMyClient();
 	public:
-		
+
 		storePage(void)
 		{
 			InitializeComponent();
@@ -48,7 +48,7 @@ namespace ProjetPOO {
 		/// <summary>
 		/// Variable nécessaire au concepteur.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>

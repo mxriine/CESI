@@ -1,7 +1,7 @@
-#include "authPage.h"
-#include "creationPage.h"
-#include "storePage.h"
-#include "client.h"
+#include "AuthPage.h"
+#include "CreaPage.h"
+#include "StorePage.h"
+#include "Client.h"
 
 using namespace System;
 using namespace System::Windows::Forms;

@@ -1,4 +1,4 @@
-#include "article.h"
+#include "Article.h"
 
 article::article()
 {

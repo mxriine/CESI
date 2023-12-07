@@ -1,11 +1,12 @@
-#include "authPage.h"
+#include "StorePage.h"
+
 using namespace System;
 using namespace System::Windows::Forms;
 
 [STAThreadAttribute]
-void Main0(array<String^>^ args) {
+void Main1(array<String^>^ args) {
     Application::EnableVisualStyles();
     Application::SetCompatibleTextRenderingDefault(false);
-    ProjetPOO::auth form;
-    Application::Run(% form);
+    ProjetPOO::storePage form2;
+    Application::Run(% form2);
 }
