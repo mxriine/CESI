@@ -20,10 +20,10 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
-    <ProjectGuid>{CBF85F03-2886-4A96-BE50-BFA6104E6FAA}</ProjectGuid>
+    <ProjectGuid>{F018615F-BF94-481B-BD72-A3FBD8DBBC84}</ProjectGuid>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <Keyword>ManagedCProj</Keyword>
-    <RootNamespace>ProjectPOO</RootNamespace>
+    <RootNamespace>ProjectTEST</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -81,8 +81,6 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies />
-      <SubSystem>Windows</SubSystem>
-      <EntryPointSymbol>Main</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -113,44 +111,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Article.cpp" />
-    <ClCompile Include="AuthPage.cpp" />
-    <ClCompile Include="Client.cpp" />
-    <ClCompile Include="CreaPage.cpp" />
-    <ClCompile Include="GlobalData.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="PanierPage.cpp" />
-    <ClCompile Include="Cryptage.cpp" />
-    <ClCompile Include="StorePage.cpp" />
+    <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Article.h" />
-    <ClInclude Include="AuthPage.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="Client.h" />
-    <ClInclude Include="CreaPage.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="GlobalData.h" />
-    <ClInclude Include="PanierPage.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="StorePage.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="PanierPage.resx">
-      <DependentUpon>PanierPage.h</DependentUpon>
-    </EmbeddedResource>
+    <ClInclude Include="Crypt.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
