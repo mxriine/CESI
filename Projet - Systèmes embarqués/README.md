@@ -22,9 +22,9 @@ Project 3W _-_ Groupe 1
 │   │   └── NewCode
 │   │       ├── main 
 │   │       └── imported_libs
-│   │           ├── ChainableLED
-│   │           ├── EEPROM
-│   │           └── RTClib
+│   │
+│   │
+│   │
 │   │      
 
 ```
