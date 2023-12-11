@@ -1,6 +1,6 @@
 # Projet - Programmation Orientee Objet
 
-Projet réalisé par Wassim Bennane, Elisa Rosas et Marine Mazou
+*Projet réalisé par Wassim Bennane, Elisa Rosas et Marine Mazou*
 
 ### Contexte :
 
