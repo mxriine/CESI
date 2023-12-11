@@ -13,6 +13,8 @@ Un grand nombre de sociétés utilisant des transports navals ont accepté d'éq
 
 L'un des dirigeants de l'agence a proposé une startup dans laquelle travaille son fils ingénieur pour la création du prototype.
 
+### Architecture :
+
 ```
 Projet - Systèmes embarqués
 ├── README.md
