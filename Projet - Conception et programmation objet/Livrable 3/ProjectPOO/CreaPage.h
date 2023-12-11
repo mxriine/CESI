@@ -1,6 +1,7 @@
 #pragma once
 #include "GlobalData.h"
 #include "Client.h"
+#include "Crypt.h"
 
 namespace ProjetPOO {
 
@@ -207,15 +208,10 @@ namespace ProjetPOO {
 		this->Close();
 	}
 	private: System::Void create_Click(System::Object^ sender, System::EventArgs^ e) {
-		/*
-		myClient->setmail(mailTextBox->Text);
-		myClient->setmdp(passwordTextBox->Text);
-		myClient->setprenom(nameTextBox->Text);
-		myClient->setnom(lastNameTextBox->Text);
-		myClient->settel(phoneTextBox->Text);
-		MessageBox::Show("done");
-		*/
-		myClient->create(mailTextBox->Text, passwordTextBox->Text, nameTextBox->Text, lastNameTextBox->Text, phoneTextBox->Text);
+		Crypt^ crypt = gcnew Crypt;
+		myClient->create(mailTextBox->Text, crypt->Encode(passwordTextBox->Text), nameTextBox->Text, lastNameTextBox->Text, phoneTextBox->Text);
+		MessageBox::Show("Account created !");
+		this->Close();
 	}
 	};
 }

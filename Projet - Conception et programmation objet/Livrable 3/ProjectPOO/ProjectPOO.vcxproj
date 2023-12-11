@@ -119,8 +119,8 @@
     <ClCompile Include="CreaPage.cpp" />
     <ClCompile Include="GlobalData.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="PanierPage.cpp" />
-    <ClCompile Include="Cryptage.cpp" />
+    <ClCompile Include="FinalizationWindow.cpp" />
+    <ClCompile Include="Crypt.cpp" />
     <ClCompile Include="StorePage.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -133,7 +133,8 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="GlobalData.h" />
-    <ClInclude Include="PanierPage.h">
+    <ClInclude Include="Crypt.h" />
+    <ClInclude Include="FinalizationWindow.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="StorePage.h">
@@ -146,11 +147,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="PanierPage.resx">
-      <DependentUpon>PanierPage.h</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
