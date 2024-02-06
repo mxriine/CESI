@@ -4,25 +4,45 @@ no service timestamps log datetime msec
 no service timestamps debug datetime msec
 no service password-encryption
 !
-hostname Switch
+hostname SWI2.2
+!
+enable secret 5 $1$mERr$GvDaTJK9lhdXRUPWKA74O0
 !
 !
 !
+ip ssh version 2
+ip domain-name DIGIPLEX.fr
+!
+username admin privilege 1 password 0 password
 !
 !
 !
 spanning-tree mode pvst
 spanning-tree extend system-id
+spanning-tree vlan 20 priority 8192
+!
+interface Port-channel1
+ switchport mode trunk
 !
 interface FastEthernet0/1
+ switchport mode trunk
+ channel-group 1 mode active
 !
 interface FastEthernet0/2
+ switchport mode trunk
+ channel-group 1 mode active
 !
 interface FastEthernet0/3
+ switchport access vlan 20
+ switchport mode access
 !
 interface FastEthernet0/4
+ switchport access vlan 20
+ switchport mode access
 !
 interface FastEthernet0/5
+ switchport access vlan 20
+ switchport mode access
 !
 interface FastEthernet0/6
 !
@@ -70,15 +90,24 @@ interface Vlan1
  no ip address
  shutdown
 !
+interface Vlan80
+ ip address 192.168.80.243 255.255.255.0
+!
+ip default-gateway 192.168.80.254
+!
 !
 !
 !
 line con 0
+ password password
+ login
 !
 line vty 0 4
- login
+ login local
+ transport input ssh
 line vty 5 15
- login
+ login local
+ transport input ssh
 !
 !
 !

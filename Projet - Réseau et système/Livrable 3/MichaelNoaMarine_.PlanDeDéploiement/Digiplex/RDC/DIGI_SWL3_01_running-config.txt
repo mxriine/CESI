@@ -4,7 +4,21 @@ no service timestamps log datetime msec
 no service timestamps debug datetime msec
 no service password-encryption
 !
-hostname Switch
+hostname MULTILAYER
+!
+!
+enable secret 5 $1$mERr$GvDaTJK9lhdXRUPWKA74O0
+!
+!
+!
+!
+!
+ip routing
+!
+!
+!
+!
+username admin password 0 password
 !
 !
 !
@@ -15,48 +29,102 @@ hostname Switch
 !
 !
 !
-!
-!
-!
-!
-!
-!
-!
-!
+ip ssh version 2
+ip domain-name DIGIPLEX.fr
+ip name-server 192.168.70.3
 !
 !
 spanning-tree mode pvst
+spanning-tree vlan 70-80 priority 24576
+spanning-tree vlan 10-60 priority 28672
 !
 !
 !
 !
 !
+!
+interface Port-channel1
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface Port-channel2
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface Port-channel3
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface Port-channel4
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface Port-channel5
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
 !
 interface FastEthernet0/1
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 3 mode active
 !
 interface FastEthernet0/2
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 3 mode active
 !
 interface FastEthernet0/3
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 1 mode active
 !
 interface FastEthernet0/4
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 1 mode active
 !
 interface FastEthernet0/5
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 2 mode active
 !
 interface FastEthernet0/6
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 2 mode active
 !
 interface FastEthernet0/7
+ switchport trunk native vlan 70
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
 !
 interface FastEthernet0/8
+ switchport access vlan 70
+ switchport trunk encapsulation dot1q
+ switchport mode access
 !
 interface FastEthernet0/9
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 4 mode active
 !
 interface FastEthernet0/10
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 4 mode active
 !
 interface FastEthernet0/11
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 5 mode active
 !
 interface FastEthernet0/12
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 5 mode active
 !
 interface FastEthernet0/13
+ switchport access vlan 70
 !
 interface FastEthernet0/14
 !
@@ -71,14 +139,24 @@ interface FastEthernet0/18
 interface FastEthernet0/19
 !
 interface FastEthernet0/20
+ switchport access vlan 70
+ switchport mode access
 !
 interface FastEthernet0/21
+ switchport access vlan 70
+ switchport mode access
 !
 interface FastEthernet0/22
+ switchport access vlan 70
+ switchport mode access
 !
 interface FastEthernet0/23
+ switchport access vlan 70
+ switchport mode access
 !
 interface FastEthernet0/24
+ switchport access vlan 70
+ switchport mode access
 !
 interface GigabitEthernet0/1
 !
@@ -88,11 +166,72 @@ interface Vlan1
  no ip address
  shutdown
 !
+interface Vlan10
+ mac-address 0000.0c73.6201
+ ip address 192.168.10.254 255.255.255.0
+ ip helper-address 192.168.70.1
+ ip nat inside
+!
+interface Vlan20
+ mac-address 0000.0c73.6202
+ ip address 192.168.20.254 255.255.255.0
+ ip helper-address 192.168.70.1
+ ip nat inside
+!
+interface Vlan30
+ mac-address 0000.0c73.6203
+ ip address 192.168.30.254 255.255.255.0
+ ip helper-address 192.168.70.1
+ ip nat inside
+!
+interface Vlan40
+ mac-address 0000.0c73.6204
+ ip address 192.168.40.254 255.255.255.0
+ ip helper-address 192.168.70.1
+ ip nat inside
+!
+interface Vlan50
+ mac-address 0000.0c73.6205
+ ip address 192.168.50.254 255.255.255.0
+ ip helper-address 192.168.70.1
+ ip nat inside
+!
+interface Vlan60
+ mac-address 0000.0c73.6206
+ ip address 192.168.60.254 255.255.255.0
+ ip helper-address 192.168.70.1
+ ip nat inside
+!
+interface Vlan70
+ mac-address 0000.0c73.6207
+ ip address 192.168.70.254 255.255.255.0
+ ip helper-address 192.168.70.1
+ ip nat inside
+!
+interface Vlan80
+ mac-address 0000.0c73.6208
+ ip address 192.168.80.254 255.255.255.0
+ ip helper-address 192.168.70.1
+ ip nat inside
+!
+router rip
+!
+ip nat inside source list 1 interface FastEthernet0/8 overload
 ip classless
+ip route 108.177.127.0 255.255.255.0 192.168.70.200 
 !
 ip flow-export version 9
 !
 !
+access-list 1 permit host 192.168.20.0
+access-list 1 permit 192.168.20.0 0.0.0.255
+access-list 1 permit 192.168.10.0 0.0.0.255
+access-list 1 permit 192.168.30.0 0.0.0.255
+access-list 1 permit 192.168.40.0 0.0.0.255
+access-list 1 permit 192.168.50.0 0.0.0.255
+access-list 1 permit 192.168.60.0 0.0.0.255
+access-list 1 permit 192.168.70.0 0.0.0.255
+access-list 1 permit 192.168.80.0 0.0.0.255
 !
 no cdp run
 !
@@ -102,11 +241,17 @@ no cdp run
 !
 !
 line con 0
+ password password
+ login
 !
 line aux 0
 !
 line vty 0 4
- login
+ login local
+ transport input ssh
+line vty 5 15
+ login local
+ transport input ssh
 !
 !
 !

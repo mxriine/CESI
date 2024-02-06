@@ -77,6 +77,7 @@ interface FastEthernet1/0
  switchport port-security mac-address sticky 00D0.58A6.B6D9
  switchport port-security mac-address sticky 00D0.BCAB.5310
  switchport port-security mac-address sticky 00D0.BCE2.4890
+ switchport port-security mac-address sticky 00D0.FF2D.668D
  switchport port-security mac-address sticky 00D0.FF37.DA11
  switchport port-security mac-address sticky 00E0.A307.6008
  switchport port-security mac-address sticky 00E0.F735.DEE2
