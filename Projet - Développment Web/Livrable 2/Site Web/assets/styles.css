@@ -1,0 +1,97 @@
+@font-face {
+    font-family: 'Khula';
+    /* Nom de la police */
+    src: url("C:\Users\pauli\PROJET-WEB\Khula");
+    /* Chemin vers le fichier de police */
+}
+
+body {
+    background-color: rgba(37, 37, 37, 1);
+}
+
+/* PAGE CONNEXION */
+
+#identifier {
+    color: white;
+    margin-top: 200px;
+    margin-left: 900px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    font-size: 45px;
+}
+
+#imgcon {
+    left: 0;
+    top: 0;
+    position: fixed;
+    height: 100vh;
+}
+
+.container {
+    float: right;
+}
+
+.parent {
+    font-size: 25px;
+    text-align: center;
+    width: 500px;
+    height: 50px;
+    color: white;
+    background-color: rgba(28, 143, 166, 0.918);
+    box-shadow: rgb(255, 255, 255) 0px 1px 3px;
+    margin-right: 200px;
+    margin-top: 30px;
+    border-radius: 10px;
+    border-bottom: 5px solid rgb(255, 255, 255);
+    padding: 20px;
+}
+
+.parent label {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+#mail,
+#mdp {
+    margin-left: 34px;
+    margin-top: 10px;
+    width: 170px;
+    border: 0;
+    border-radius: 10px;
+    padding: 8px 15px;
+    display: inline;
+}
+
+#mail {
+    margin-left: 125px;
+}
+
+#valider_co {
+    background-color: white;
+    font-size: 20px;
+    cursor: pointer;
+    justify-content: center;
+    margin-top: 50px;
+    margin-left: 430px;
+    font-weight: bold;
+    border-radius: 8px;
+    border:0;
+    padding: 8px;
+}
+
+#valider_co:hover{
+    background-color: rgba(28, 143, 166, 0.918);
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 2560px) {
+    #identifier {
+        margin-left: 60;
+    }
+    .container {
+        float: none;
+    }
+    .parent {
+        margin-right: 1000px;
+        margin-top: 30px;
+    }
+}

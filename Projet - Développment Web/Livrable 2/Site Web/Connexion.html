@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
+
+<head>
     <meta charset="utf-8">
     <title>Connexion</title>
     <link rel="icon" type="image/png" href="assets/img/logoWeb.png">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/styles.css">
 </head>
+
 <body>
     <h1 id="identifier">S'identifier</h1>
     <img src="assets/img/imgco.png" id="imgcon" alt="imgDebut">
-    
+
     <div class="container">
         <div class="parent">
             <label for="mail">EMAIL</label>
@@ -21,6 +23,25 @@
         </div>
         <button type="submit" id="valider_co">VALIDER</button>
     </div>
-    
+</body>
 
-</body></html>
+<script>
+    document.getElementById('valider_co').addEventListener('click', function () {
+        var email = document.getElementById('mail').value;
+        var motdepasse = document.getElementById('mdp').value;
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/save_data', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                console.log(xhr.responseText);
+                // Affichez ici un message de confirmation ou effectuez d'autres actions selon vos besoins
+            }
+        };
+        xhr.send(JSON.stringify({ mail: email, mdp: motdepasse }));
+    });
+</script>
+
+
+</html>
