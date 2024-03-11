@@ -26,22 +26,36 @@
 </body>
 
 <script>
-    document.getElementById('valider_co').addEventListener('click', function () {
-        var email = document.getElementById('mail').value;
-        var motdepasse = document.getElementById('mdp').value;
+    document.getElementById('connexionForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Empêche la soumission du formulaire par défaut
 
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', '/save_data', true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                console.log(xhr.responseText);
-                // Affichez ici un message de confirmation ou effectuez d'autres actions selon vos besoins
-            }
-        };
-        xhr.send(JSON.stringify({ mail: email, mdp: motdepasse }));
+        // Récupère les valeurs du formulaire
+        const email = document.getElementById('mail').value;
+        const motDePasse = document.getElementById('mdp').value;
+
+        // Requête AJAX pour soumettre les données du formulaire à l'API
+        fetch('/connexion', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, motDePasse }),
+        })
+            .then(response => response.json())
+            .then(data => {
+                // Traitez la réponse de l'API
+                if (data.authentifie) {
+                    // Authentification réussie, redirigez ou faites ce que vous voulez ici
+                    console.log('Authentification réussie');
+                } else {
+                    // Authentification échouée
+                    console.log('Authentification échouée');
+                }
+            })
+            .catch(error => {
+                console.error('Erreur lors de la connexion :', error);
+            });
     });
 </script>
-
 
 </html>
