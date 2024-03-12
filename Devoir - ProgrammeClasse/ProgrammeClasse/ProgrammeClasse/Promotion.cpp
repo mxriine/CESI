@@ -47,6 +47,7 @@ int Promotion::moyenneAge() {
 void Promotion::show() {
     cout << "Nom: " << name << endl;
     cout << "Type: " << type << endl;
+    cout << "Nombre d'etudiants: " << size << endl; // Afficher la taille de la liste des étudiants
     cout << " " << endl;
     cout << "Liste des etudiants: " << endl;
     cout << " " << endl;
