@@ -50,7 +50,7 @@ body {
 }
 
 #mail,
-#mdp {
+#password {
     margin-left: 34px;
     margin-top: 10px;
     width: 170px;
@@ -83,15 +83,3 @@ body {
 
 /* MEDIA QUERIES */
 
-@media screen and (max-width: 2560px) {
-    #identifier {
-        margin-left: 60;
-    }
-    .container {
-        float: none;
-    }
-    .parent {
-        margin-right: 1000px;
-        margin-top: 30px;
-    }
-}
