@@ -1,21 +1,15 @@
 <?php
-session_start();
 
-// Intialize variables
-$mail = "";
-$pass = "";
-$errors = array();
+$DBHost = "localhost";
+$DBUser = "root";
+$DBPass = "";
+$DBName = "projet_devweb";
 
-// Connect to the database
-$db = mysqli_connect('localhost', 'root', '', 'projet_devweb');
-
-// Register user
-if (isset($_POST['reg_user'])) {
-    // Receive all input values from the form
-    $mail = mysqli_real_escape_string($db, $_POST['mail']);
-    $pass = mysqli_real_escape_string($db, $_POST['pass']);
-
-    // Form validation: ensure that the form is correctly filled
-    if (empty($mail)) { array_push($errors, "Mail is required"); }
-    if (empty($pass)) { array_push($errors, "Password is required"); }
+try {
+    $conn = new PDO("mysql:host=$DBHost;dbname=$DBName", $DBUser, $DBPass);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Connected successfully";
+} catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
 }
+
