@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 18 mars 2024 à 09:26
+-- Généré le : lun. 18 mars 2024 à 16:13
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -65,10 +65,10 @@ INSERT INTO `campus` (`ID_Campus`, `Nom_Campus`, `Type_Campus`, `ID_Ville`) VALU
 (4, 'CampusD', 'Université', 4),
 (5, 'CampusE', 'École d’art', 5),
 (6, 'CampusF', 'Université', 6),
-(7, 'CampusG', 'École d’ingénieurs', 7),
-(8, 'CampusH', 'École de commerce', 8),
-(9, 'CampusI', 'École d’art', 9),
-(10, 'CampusJ', 'Université', 10);
+(7, 'CampusG', 'École d’ingénieurs', 6),
+(8, 'CampusH', 'École de commerce', 2),
+(9, 'CampusI', 'École d’art', 1),
+(10, 'CampusJ', 'Université', 4);
 
 -- --------------------------------------------------------
 
@@ -79,9 +79,9 @@ INSERT INTO `campus` (`ID_Campus`, `Nom_Campus`, `Type_Campus`, `ID_Ville`) VALU
 CREATE TABLE `entreprise` (
   `ID_Ent` int(11) NOT NULL,
   `Nom_Ent` varchar(50) DEFAULT NULL,
-  `Stagiaire_Ent` int(11) DEFAULT NULL,
-  `Moyenne_Ent` varchar(50) DEFAULT NULL,
-  `Secteur_Ent` varchar(50) DEFAULT NULL,
+  `Nb_Stag_Ent` int(11) DEFAULT NULL,
+  `Moyenne_Eval_Ent` varchar(50) DEFAULT NULL,
+  `Secteur_Act_Ent` varchar(50) DEFAULT NULL,
   `ID_Pilote` int(11) NOT NULL,
   `ID_Admin` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -90,17 +90,17 @@ CREATE TABLE `entreprise` (
 -- Déchargement des données de la table `entreprise`
 --
 
-INSERT INTO `entreprise` (`ID_Ent`, `Nom_Ent`, `Stagiaire_Ent`, `Moyenne_Ent`, `Secteur_Ent`, `ID_Pilote`, `ID_Admin`) VALUES
-(1, 'EntrepriseA', 5, 'B', 'Technologie', 1, 1),
-(2, 'EntrepriseB', 3, 'A', 'Finance', 2, 1),
-(3, 'EntrepriseC', 4, 'C', 'Éducation', 1, 2),
-(4, 'EntrepriseD', 2, 'B', 'Santé', 2, 2),
-(5, 'EntrepriseE', 6, 'A', 'Logistique', 3, 3),
-(6, 'EntrepriseF', 1, 'C', 'Art', 1, 1),
-(7, 'EntrepriseG', 3, 'B', 'Restauration', 2, 2),
-(8, 'EntrepriseH', 7, 'A', 'Droit', 3, 3),
-(9, 'EntrepriseI', 5, 'C', 'Agriculture', 1, 1),
-(10, 'EntrepriseJ', 4, 'B', 'Sport', 2, 2);
+INSERT INTO `entreprise` (`ID_Ent`, `Nom_Ent`, `Nb_Stag_Ent`, `Moyenne_Eval_Ent`, `Secteur_Act_Ent`, `ID_Pilote`, `ID_Admin`) VALUES
+(1, 'EntrepriseA', 5, '2', 'Informatique', 1, 1),
+(2, 'EntrepriseB', 3, '5', 'Mathématiques', 2, 1),
+(3, 'EntrepriseC', 0, '3', 'Développement web', 1, 2),
+(4, 'EntrepriseD', 2, '2', 'BTP', 2, 2),
+(5, 'EntrepriseE', 6, '5', 'Robotique', 3, 3),
+(6, 'EntrepriseF', 1, '3', 'Mathématiques', 1, 1),
+(7, 'EntrepriseG', 3, '2', 'Robotique', 2, 2),
+(8, 'EntrepriseH', 7, '5', 'BTP', 3, 3),
+(9, 'EntrepriseI', 5, '3', 'Informatique', 1, 1),
+(10, 'EntrepriseJ', 4, '4', 'Développement web', 2, 2);
 
 -- --------------------------------------------------------
 
@@ -112,7 +112,7 @@ CREATE TABLE `etudiant` (
   `ID_Etudiant` int(11) NOT NULL,
   `ID_Admin` int(11) NOT NULL,
   `ID_Pilote` int(11) NOT NULL,
-  `ID_Promo` int(11) NOT NULL,
+  `ID_Promotion` int(11) NOT NULL,
   `ID_Pers` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -120,7 +120,7 @@ CREATE TABLE `etudiant` (
 -- Déchargement des données de la table `etudiant`
 --
 
-INSERT INTO `etudiant` (`ID_Etudiant`, `ID_Admin`, `ID_Pilote`, `ID_Promo`, `ID_Pers`) VALUES
+INSERT INTO `etudiant` (`ID_Etudiant`, `ID_Admin`, `ID_Pilote`, `ID_Promotion`, `ID_Pers`) VALUES
 (1, 1, 1, 1, 8),
 (2, 2, 2, 2, 9),
 (3, 3, 1, 3, 10),
@@ -180,16 +180,16 @@ CREATE TABLE `noter` (
 --
 
 INSERT INTO `noter` (`ID_Offre`, `ID_Etudiant`, `Notes`) VALUES
-(1, 1, 15.00),
-(2, 2, 14.50),
-(3, 3, 16.75),
-(4, 4, 13.20),
-(5, 5, 12.00),
-(6, 6, 17.50),
-(7, 7, 11.00),
-(8, 8, 15.25),
-(9, 9, 14.00),
-(10, 10, 16.00);
+(1, 1, 5.00),
+(2, 2, 3.00),
+(3, 3, 2.00),
+(4, 4, 4.00),
+(5, 5, 1.00),
+(6, 6, 5.00),
+(7, 7, 2.00),
+(8, 8, 3.00),
+(9, 9, 5.00),
+(10, 10, 1.00);
 
 -- --------------------------------------------------------
 
@@ -200,12 +200,12 @@ INSERT INTO `noter` (`ID_Offre`, `ID_Etudiant`, `Notes`) VALUES
 CREATE TABLE `offre` (
   `ID_Offre` int(11) NOT NULL,
   `Titre_Offre` varchar(50) DEFAULT NULL,
-  `Niveau_Offre` varchar(50) DEFAULT NULL,
-  `Nb_Postulation` int(11) DEFAULT NULL,
-  `Nb_Place` int(11) DEFAULT NULL,
-  `Duree_Offre` int(11) DEFAULT NULL,
+  `Niveau` varchar(50) DEFAULT NULL,
+  `NB_Postulation` int(11) DEFAULT NULL,
+  `Duree_Stage` varchar(50) DEFAULT NULL,
+  `Remuneration` int(11) DEFAULT NULL,
   `Date_Offre` date DEFAULT NULL,
-  `Remuneration_Offre` int(11) DEFAULT NULL,
+  `NB_Places` int(11) DEFAULT NULL,
   `ID_Pilote` int(11) NOT NULL,
   `ID_Admin` int(11) NOT NULL,
   `ID_Ent` int(11) NOT NULL
@@ -215,17 +215,17 @@ CREATE TABLE `offre` (
 -- Déchargement des données de la table `offre`
 --
 
-INSERT INTO `offre` (`ID_Offre`, `Titre_Offre`, `Niveau_Offre`, `Nb_Postulation`, `Nb_Place`, `Duree_Offre`, `Date_Offre`, `Remuneration_Offre`, `ID_Pilote`, `ID_Admin`, `ID_Ent`) VALUES
-(1, 'OffreA', 'Débutant', 20, 2, 6, '2024-01-01', 500, 1, 1, 1),
-(2, 'OffreB', 'Intermédiaire', 15, 3, 12, '2024-02-01', 700, 2, 1, 2),
-(3, 'OffreC', 'Expert', 10, 1, 9, '2024-03-01', 1000, 3, 2, 3),
-(4, 'OffreD', 'Débutant', 25, 4, 3, '2024-04-01', 400, 1, 2, 4),
-(5, 'OffreE', 'Intermédiaire', 18, 2, 6, '2024-05-01', 600, 2, 3, 5),
-(6, 'OffreF', 'Expert', 8, 1, 12, '2024-06-01', 1200, 3, 1, 6),
-(7, 'OffreG', 'Débutant', 22, 3, 6, '2024-07-01', 500, 1, 2, 7),
-(8, 'OffreH', 'Intermédiaire', 12, 2, 9, '2024-08-01', 800, 2, 3, 8),
-(9, 'OffreI', 'Expert', 5, 1, 12, '2024-09-01', 1500, 3, 1, 9),
-(10, 'OffreJ', 'Débutant', 30, 5, 3, '2024-10-01', 450, 1, 2, 10);
+INSERT INTO `offre` (`ID_Offre`, `Titre_Offre`, `Niveau`, `NB_Postulation`, `Duree_Stage`, `Remuneration`, `Date_Offre`, `NB_Places`, `ID_Pilote`, `ID_Admin`, `ID_Ent`) VALUES
+(1, 'OffreA', 'Bac +4', 20, '6 semaines', 500, '2024-01-01', 2, 1, 1, 1),
+(2, 'OffreB', 'Bac +1', 15, '12 semaines', 700, '2024-02-01', 3, 2, 1, 2),
+(3, 'OffreC', 'Bac +5', 10, '9 semaines', 1000, '2024-03-01', 1, 3, 2, 3),
+(4, 'OffreD', 'Bac +2', 25, '3 semaines', 400, '2024-04-01', 4, 1, 2, 4),
+(5, 'OffreE', 'Bac +1', 18, '6 semaines', 600, '2024-05-01', 2, 2, 3, 5),
+(6, 'OffreF', 'Bac +3', 8, '12 semaines', 1200, '2024-06-01', 1, 3, 1, 6),
+(7, 'OffreG', 'Bac +2', 22, '6 semaines', 500, '2024-07-01', 3, 1, 2, 7),
+(8, 'OffreH', 'Bac +5', 12, '9 semaines', 800, '2024-08-01', 2, 2, 3, 8),
+(9, 'OffreI', 'Bac +5', 5, '12 semaines', 1500, '2024-09-01', 1, 3, 1, 9),
+(10, 'OffreJ', 'Bac +1', 30, '3 semaines', 450, '2024-10-01', 5, 1, 2, 10);
 
 -- --------------------------------------------------------
 
@@ -268,9 +268,9 @@ CREATE TABLE `personne` (
 --
 
 INSERT INTO `personne` (`ID_Pers`, `Nom_Pers`, `Prenom_Pers`, `Mdp_Pers`, `Mail_Pers`) VALUES
-(1, 'MAZOU', 'Marine', 'mdp1', 'marine.mazou@example.com'),
-(2, 'ROSAS', 'Elisa', 'mdp2', 'elisa.rosas@example.com'),
-(3, 'LAULHE', 'Estelle', 'mdp3', 'estelle.laulhe@example.com'),
+(1, 'Mazou', 'Marine', 'mdp1', 'marine.mazou@example.com'),
+(2, 'Rosas', 'Elisa', 'mdp2', 'elisa.rosas@example.com'),
+(3, 'Laulhe', 'Estelle', 'mdp3', 'estelle.laulhe@example.com'),
 (4, 'Clausse', 'Pauline', 'mdp4', 'pauline.clausse@example.com'),
 (5, 'Dupont', 'Lucas', 'mdp5', 'lucas.dupont@example.com'),
 (6, 'Martin', 'Sophie', 'mdp6', 'sophie.martin@example.com'),
@@ -323,51 +323,35 @@ CREATE TABLE `postuler` (
   `Lettre_Motivation` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Déchargement des données de la table `postuler`
---
-
-INSERT INTO `postuler` (`ID_Offre`, `ID_Etudiant`, `CV`, `Lettre_Motivation`) VALUES
-(1, 1, 'CV1.pdf', 'Lettre1.pdf'),
-(2, 2, 'CV2.pdf', 'Lettre2.pdf'),
-(3, 3, 'CV3.pdf', 'Lettre3.pdf'),
-(4, 4, 'CV4.pdf', 'Lettre4.pdf'),
-(5, 5, 'CV5.pdf', 'Lettre5.pdf'),
-(6, 6, 'CV6.pdf', 'Lettre6.pdf'),
-(7, 7, 'CV7.pdf', 'Lettre7.pdf'),
-(8, 8, 'CV8.pdf', 'Lettre8.pdf'),
-(9, 9, 'CV9.pdf', 'Lettre9.pdf'),
-(10, 10, 'CV10.pdf', 'Lettre10.pdf');
-
 -- --------------------------------------------------------
 
 --
--- Structure de la table `promo`
+-- Structure de la table `promotion`
 --
 
-CREATE TABLE `promo` (
-  `ID_Promo` int(11) NOT NULL,
-  `Type_Promo` varchar(50) DEFAULT NULL,
+CREATE TABLE `promotion` (
+  `ID_Promotion` int(11) NOT NULL,
+  `Specialite_Promotion` varchar(50) DEFAULT NULL,
   `Nom_Promo` varchar(50) DEFAULT NULL,
-  `Annee_Promo` int(11) DEFAULT NULL,
+  `Annee_Etude` int(11) DEFAULT NULL,
   `ID_Campus` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Déchargement des données de la table `promo`
+-- Déchargement des données de la table `promotion`
 --
 
-INSERT INTO `promo` (`ID_Promo`, `Type_Promo`, `Nom_Promo`, `Annee_Promo`, `ID_Campus`) VALUES
-(1, 'Licence', 'Informatique 2024', 2024, 1),
-(2, 'Master', 'Finance 2024', 2024, 2),
-(3, 'Doctorat', 'Droit 2024', 2024, 3),
-(4, 'Licence', 'Biologie 2024', 2024, 4),
-(5, 'Master', 'Arts Plastiques 2024', 2024, 5),
-(6, 'Doctorat', 'Physique 2024', 2024, 6),
-(7, 'Licence', 'Mathématiques 2024', 2024, 7),
-(8, 'Master', 'Histoire 2024', 2024, 8),
-(9, 'Doctorat', 'Philosophie 2024', 2024, 9),
-(10, 'Licence', 'Chimie 2024', 2024, 10);
+INSERT INTO `promotion` (`ID_Promotion`, `Specialite_Promotion`, `Nom_Promo`, `Annee_Etude`, `ID_Campus`) VALUES
+(1, 'Informatique', 'A1', 0, 1),
+(2, 'BTP', 'A1', 0, 2),
+(3, 'Développement web', 'A4', 0, 3),
+(4, 'Mathématiques', 'A3', 0, 4),
+(5, 'Robotique', 'A5', 0, 5),
+(6, 'Informatique', 'A1', 0, 6),
+(7, 'Robotique', 'A2', 0, 7),
+(8, 'Mathématiques', 'A4', 0, 8),
+(9, 'Développement web', 'A5', 0, 9),
+(10, 'BTP', 'A2', 0, 10);
 
 -- --------------------------------------------------------
 
@@ -488,7 +472,7 @@ ALTER TABLE `etudiant`
   ADD UNIQUE KEY `ID_Pers` (`ID_Pers`),
   ADD KEY `ID_Admin` (`ID_Admin`),
   ADD KEY `ID_Pilote` (`ID_Pilote`),
-  ADD KEY `ID_Promo` (`ID_Promo`);
+  ADD KEY `ID_Promotion` (`ID_Promotion`);
 
 --
 -- Index pour la table `evaluer`
@@ -541,10 +525,10 @@ ALTER TABLE `postuler`
   ADD KEY `ID_Etudiant` (`ID_Etudiant`);
 
 --
--- Index pour la table `promo`
+-- Index pour la table `promotion`
 --
-ALTER TABLE `promo`
-  ADD PRIMARY KEY (`ID_Promo`),
+ALTER TABLE `promotion`
+  ADD PRIMARY KEY (`ID_Promotion`),
   ADD KEY `ID_Campus` (`ID_Campus`);
 
 --
@@ -568,6 +552,82 @@ ALTER TABLE `ville`
   ADD PRIMARY KEY (`ID_Ville`),
   ADD KEY `ID_Region` (`ID_Region`),
   ADD KEY `ID_Site` (`ID_Site`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `administrateur`
+--
+ALTER TABLE `administrateur`
+  MODIFY `ID_Admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT pour la table `campus`
+--
+ALTER TABLE `campus`
+  MODIFY `ID_Campus` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT pour la table `entreprise`
+--
+ALTER TABLE `entreprise`
+  MODIFY `ID_Ent` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT pour la table `etudiant`
+--
+ALTER TABLE `etudiant`
+  MODIFY `ID_Etudiant` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT pour la table `offre`
+--
+ALTER TABLE `offre`
+  MODIFY `ID_Offre` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT pour la table `pays`
+--
+ALTER TABLE `pays`
+  MODIFY `ID_Pays` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT pour la table `personne`
+--
+ALTER TABLE `personne`
+  MODIFY `ID_Pers` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT pour la table `pilote`
+--
+ALTER TABLE `pilote`
+  MODIFY `ID_Pilote` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT pour la table `promotion`
+--
+ALTER TABLE `promotion`
+  MODIFY `ID_Promotion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT pour la table `region`
+--
+ALTER TABLE `region`
+  MODIFY `ID_Region` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT pour la table `site`
+--
+ALTER TABLE `site`
+  MODIFY `ID_Site` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT pour la table `ville`
+--
+ALTER TABLE `ville`
+  MODIFY `ID_Ville` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Contraintes pour les tables déchargées
@@ -598,7 +658,7 @@ ALTER TABLE `entreprise`
 ALTER TABLE `etudiant`
   ADD CONSTRAINT `etudiant_ibfk_1` FOREIGN KEY (`ID_Admin`) REFERENCES `administrateur` (`ID_Admin`),
   ADD CONSTRAINT `etudiant_ibfk_2` FOREIGN KEY (`ID_Pilote`) REFERENCES `pilote` (`ID_Pilote`),
-  ADD CONSTRAINT `etudiant_ibfk_3` FOREIGN KEY (`ID_Promo`) REFERENCES `promo` (`ID_Promo`),
+  ADD CONSTRAINT `etudiant_ibfk_3` FOREIGN KEY (`ID_Promotion`) REFERENCES `promotion` (`ID_Promotion`),
   ADD CONSTRAINT `etudiant_ibfk_4` FOREIGN KEY (`ID_Pers`) REFERENCES `personne` (`ID_Pers`);
 
 --
@@ -638,10 +698,10 @@ ALTER TABLE `postuler`
   ADD CONSTRAINT `postuler_ibfk_2` FOREIGN KEY (`ID_Etudiant`) REFERENCES `etudiant` (`ID_Etudiant`);
 
 --
--- Contraintes pour la table `promo`
+-- Contraintes pour la table `promotion`
 --
-ALTER TABLE `promo`
-  ADD CONSTRAINT `promo_ibfk_1` FOREIGN KEY (`ID_Campus`) REFERENCES `campus` (`ID_Campus`);
+ALTER TABLE `promotion`
+  ADD CONSTRAINT `promotion_ibfk_1` FOREIGN KEY (`ID_Campus`) REFERENCES `campus` (`ID_Campus`);
 
 --
 -- Contraintes pour la table `region`

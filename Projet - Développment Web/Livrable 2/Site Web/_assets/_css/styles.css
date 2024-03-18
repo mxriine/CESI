@@ -1,6 +1,8 @@
 @font-face {
-    font-family: 'Khula'; /* Nom de la police */
-    src: url("C:\Users\pauli\PROJET-WEB\Khula"); /* Chemin vers le fichier de police */
+    font-family: 'Khula';
+    /* Nom de la police */
+    src: url("C:\Users\pauli\PROJET-WEB\Khula");
+    /* Chemin vers le fichier de police */
 }
 
 
@@ -8,24 +10,25 @@ body {
     background-color: rgba(37, 37, 37, 1);
 }
 
-.imgprinc{
+.imgprinc {
     width: 10%;
     margin-right: 85%;
 }
 
 .Centrer {
     text-align: center;
-    
+
 }
 
-.Apropos{
-    text-align:center;
+.Apropos {
+    text-align: center;
     position: absolute;
-    top:95%;
-    right:25%;
-    
+    top: 95%;
+    right: 25%;
+
 }
-.Apropos a{
+
+.Apropos a {
     text-decoration: none;
     margin-right: 100px;
     color: rgba(255, 255, 255, 1);
@@ -41,36 +44,46 @@ body {
     font-size: 30px;
     text-align: center;
     position: relative;
-    top:50%;
-    color:#ffffff;
+    top: 50%;
+    color: #ffffff;
     font-family: 'Khula';
-    
+
 }
 
 
 .bouton-grand {
-    width:80px; /* Largeur du bouton */
-    height: 25px; /* Hauteur du bouton */
-    font-size: 10px; /* Taille de la police */
+    width: 80px;
+    /* Largeur du bouton */
+    height: 25px;
+    /* Hauteur du bouton */
+    font-size: 10px;
+    /* Taille de la police */
     font-weight: 700;
     margin-top: -3%;
     margin-left: -2%;
-    border-radius: 7px; /* ajustez la valeur selon la forme souhaitée */
-    background-color: #ffffff; /* couleur de fond */
-    color: #000000; /* couleur du texte */
-    border: #000000; /* suppression de la bordure par défaut */
+    border-radius: 7px;
+    /* ajustez la valeur selon la forme souhaitée */
+    background-color: #ffffff;
+    /* couleur de fond */
+    color: #000000;
+    /* couleur du texte */
+    border: #000000;
+    /* suppression de la bordure par défaut */
     cursor: pointer;
     text-decoration: none;
 }
+
 .alignement {
-    display:flex; /* Utiliser Flexbox */
-    align-items: center;/*justify-content: flex-end;*/
+    display: flex;
+    /* Utiliser Flexbox */
+    align-items: center;
+    /*justify-content: flex-end;*/
 }
 
 
 
 
-/*PAGE CONNEXION */
+/* PAGE CONNEXION */
 
 .parent {
     font-size: 25px;
@@ -85,10 +98,8 @@ body {
     border-radius: 10px;
     border-bottom: 5px solid rgb(255, 255, 255);
     padding: 20px;
-    
+
 }
-
-
 
 #valider_co {
     background-color: white;
@@ -99,11 +110,11 @@ body {
     margin-left: 430px;
     font-weight: bold;
     border-radius: 8px;
-    border:0;
+    border: 0;
     padding: 8px;
 }
 
-#valider_co:hover{
+#valider_co:hover {
     background-color: rgba(28, 143, 166, 0.918);
 }
 
@@ -115,19 +126,20 @@ body {
     font-size: 45px;
 }
 
-#imgcon{
-    left:0;
-    top:0;
-    position:fixed;
+#imgcon {
+    left: 0;
+    top: 0;
+    position: fixed;
     height: 100vh;
-    
+
 }
 
-#mail, #mdp {
+#mail,
+#mdp {
     margin-left: 34px;
     margin-top: 10px;
     width: 170px;
-    border:0;
+    border: 0;
     border-radius: 10px;
     padding: 8px 15px;
     display: inline;
@@ -137,14 +149,21 @@ body {
     float: right;
 }
 
-
-
-#mail{
+#mail {
     margin-left: 125px;
 }
 
-.parent label{
+.parent label {
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+.error {
+    color: red;
+    font-size: 15px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    position: absolute;
+    top: 70%;
+    left: 60%;
 }
 
 
@@ -154,36 +173,36 @@ body {
 
 
 
-.titre2{
-    color:rgba(28, 143, 166, 0.918);
+.titre2 {
+    color: rgba(28, 143, 166, 0.918);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     position: absolute;
-    top:3%;
-    left:30%;
+    top: 3%;
+    left: 30%;
 }
 
-.contenu{
-    gap:30px;
+.contenu {
+    gap: 30px;
     position: absolute;
-    top:30%;
-    left:15%;
+    top: 30%;
+    left: 15%;
     display: flex;
     flex-direction: column;
 }
 
-.eval{
+.eval {
     unicode-bidi: bidi-override;
     direction: rtl;
     color: #000000;
 }
 
-.eval input{
+.eval input {
 
     display: none;
-      
+
 }
 
-.eval label{
+.eval label {
     display: inline-block;
     font-size: 25px;
     padding: 0px;
@@ -191,46 +210,46 @@ body {
 
 }
 
-.eval input:checked ~ label,
-.eval input:checked~ label~ label{
-    color:orange;
+.eval input:checked~label,
+.eval input:checked~label~label {
+    color: orange;
 }
 
-.nameM{
-    color:rgba(28, 143, 166, 0.918);
+.nameM {
+    color: rgba(28, 143, 166, 0.918);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     gap: 90px;
 }
 
-.nameM > input{
+.nameM>input {
     border-radius: 5px;
     border-width: 3px;
     border-color: black;
-  }
-  
-.act{
-    color:rgba(28, 143, 166, 0.918);
+}
+
+.act {
+    color: rgba(28, 143, 166, 0.918);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     gap: 50px;
 }
 
-.act > select{
+.act>select {
     border-radius: 5px;
     height: 20px;
     border-color: black;
     border-width: 2px;
 }
-  
-.loc{
-    color:rgba(28, 143, 166, 0.918);
+
+.loc {
+    color: rgba(28, 143, 166, 0.918);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     gap: 128px;
 }
 
-.loc > select{
+.loc>select {
     border-radius: 5px;
     height: 20px;
     border-color: black;
@@ -239,18 +258,18 @@ body {
 
 
 
-.rating{
-    color:rgba(28, 143, 166, 0.918);
+.rating {
+    color: rgba(28, 143, 166, 0.918);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     gap: 110px;
 }
 
-.boutons-D{
+.boutons-D {
     position: absolute;
-    top:92%;
-    left:75%;
-    display:flex;
+    top: 92%;
+    left: 75%;
+    display: flex;
     flex-direction: row;
 }
 
@@ -263,7 +282,7 @@ body {
     border-color: rgba(28, 143, 166, 0.918);
 }
 
-.boutons-D #but2{
+.boutons-D #but2 {
     border-color: rgba(28, 143, 166, 0.918);
     display: flex;
     height: 25px;
@@ -272,12 +291,12 @@ body {
     cursor: pointer;
 }
 
-.boutons-D #but1:hover{
-    background-color:rgba(28, 143, 166, 0.918);
+.boutons-D #but1:hover {
+    background-color: rgba(28, 143, 166, 0.918);
 }
 
-.boutons-D #but2:hover{
-    background-color:rgba(28, 143, 166, 0.918);
+.boutons-D #but2:hover {
+    background-color: rgba(28, 143, 166, 0.918);
 }
 
 
@@ -292,8 +311,8 @@ body {
     border-color: rgba(28, 143, 166, 0.918);
 }
 
-.boutons-G #but3:hover{
-    background-color:rgba(28, 143, 166, 0.918);
+.boutons-G #but3:hover {
+    background-color: rgba(28, 143, 166, 0.918);
 }
 
 .boutons-G #but4 {
@@ -305,17 +324,17 @@ body {
     border-color: rgba(28, 143, 166, 0.918);
 }
 
-.boutons-G #but4:hover{
-    background-color:rgba(28, 143, 166, 0.918);
+.boutons-G #but4:hover {
+    background-color: rgba(28, 143, 166, 0.918);
 }
 
-.boutons-G{
+.boutons-G {
     position: absolute;
-    top:92%;
-    left:5%;
-    display:flex;
+    top: 92%;
+    left: 5%;
+    display: flex;
     flex-direction: row;
-    gap:10px;
+    gap: 10px;
     text-decoration: none;
 
 }
@@ -324,57 +343,65 @@ body {
 
 /*PAGE MODIFICATION OFFRE  */
 
-.Bloc1Offre{
+.Bloc1Offre {
     position: absolute;
-    top:30%;
-    left:10%;
+    top: 30%;
+    left: 10%;
     height: 20%;
     width: 15%;
     display: flex;
     flex-direction: column;
     font-weight: bold;
 }
-.Bloc2Offre{
+
+.Bloc2Offre {
     gap: 35px;
     position: absolute;
-    top:25%;
-    left:15%; 
-    width:25%;
+    top: 25%;
+    left: 15%;
+    width: 25%;
     display: flex;
     flex-direction: column;
     font-weight: bold;
-    gap:50px;
+    gap: 50px;
 
 }
-.Bloc3Offre{
+
+.Bloc3Offre {
     display: flex;
     flex-direction: row;
-    gap:40px;
+    gap: 40px;
     font-weight: bold;
 }
-.Bloc3Offre select{
-    position:absolute;
-    left:80%;
+
+.Bloc3Offre select {
+    position: absolute;
+    left: 80%;
     display: flex;
     flex-direction: row;
 }
-.Bloc3Offre input,textarea{
-    position:absolute;
-    left:80%;
+
+.Bloc3Offre input,
+textarea {
+    position: absolute;
+    left: 80%;
     display: flex;
     flex-direction: row;
 
 }
-.Bloc4Offre{
-    display:flex;
+
+.Bloc4Offre {
+    display: flex;
     flex-direction: column;
-    position:absolute;
-    left:65%;
-    top:25%;
-    width: 15%;;
+    position: absolute;
+    left: 65%;
+    top: 25%;
+    width: 15%;
+    ;
 }
-.Bloc5Offre{
-    display:flex;
+
+.Bloc5Offre {
+    display: flex;
     flex-direction: column;
     margin-bottom: 20px;
 }
@@ -386,13 +413,13 @@ body {
 
 /*PAGE MODIFICATION PILOTE  */
 
-.promotion{
+.promotion {
     position: relative;
-    top:90%;
+    top: 90%;
 }
 
-.namePilote{
-    color:rgba(28, 143, 166, 0.918);
+.namePilote {
+    color: rgba(28, 143, 166, 0.918);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     gap: 130px;
@@ -400,16 +427,19 @@ body {
 
 /* ======== DASHBOARD ADMIN / PILOTE========== */
 
-.CarreHaut{
+.CarreHaut {
     position: absolute;
-    top:30%;
-    left:15%;
+    top: 30%;
+    left: 15%;
     display: flex;
     flex-direction: row;
-    gap:80px;
+    gap: 80px;
 }
 
-.CarrePilote, .CarreEtudiant, .CarreStage, .CarreEntreprise {
+.CarrePilote,
+.CarreEtudiant,
+.CarreStage,
+.CarreEntreprise {
     height: 80px;
     width: 200px;
     border-radius: 8px;
@@ -417,32 +447,39 @@ body {
     text-align: center;
 }
 
-.CarrePilote label, .CarreEtudiant label, .CarreStage label, .CarreEntreprise label {
+.CarrePilote label,
+.CarreEtudiant label,
+.CarreStage label,
+.CarreEntreprise label {
     font-weight: bold;
     position: relative;
-    top:35%;
+    top: 35%;
     font-size: 25px;
 }
 
-.CarreBas{
+.CarreBas {
     position: absolute;
-    top:50%;
-    left:9%;
+    top: 50%;
+    left: 9%;
     display: flex;
     flex-direction: row;
-    gap:80px;
+    gap: 80px;
 }
 
-.CarreBasPilote{  /*Partie Pilote en +*/
+.CarreBasPilote {
+    /*Partie Pilote en +*/
     position: absolute;
-    top:50%;
-    left:19%;
+    top: 50%;
+    left: 19%;
     display: flex;
     flex-direction: row;
-    gap:80px;
+    gap: 80px;
 }
 
-.RectEtudiant, .RectOffre, .RectEntreprise, .RectPilote {
+.RectEtudiant,
+.RectOffre,
+.RectEntreprise,
+.RectPilote {
     height: 230px;
     width: 250px;
     border-radius: 8px;
@@ -450,7 +487,14 @@ body {
     text-align: center;
 }
 
-.creerEntre, .gererEntre, .creerOffre, .gererOffre, .creerEtudiant, .gererEtudiant, .creerPilote, .gererPilote{
+.creerEntre,
+.gererEntre,
+.creerOffre,
+.gererOffre,
+.creerEtudiant,
+.gererEtudiant,
+.creerPilote,
+.gererPilote {
     height: 30px;
     width: 200px;
     border-radius: 8px;
@@ -458,274 +502,292 @@ body {
     font-family: URW Chancery L, cursive
 }
 
-.creerEntre:hover, .gererEntre:hover, .creerOffre:hover, .gererOffre:hover, .creerEtudiant:hover, .gererEtudiant:hover, .creerPilote:hover, .gererPilote:hover{
+.creerEntre:hover,
+.gererEntre:hover,
+.creerOffre:hover,
+.gererOffre:hover,
+.creerEtudiant:hover,
+.gererEtudiant:hover,
+.creerPilote:hover,
+.gererPilote:hover {
     background-color: rgba(28, 143, 166, 0.918);
 }
 
-.boutonsTroisCarres{
+.boutonsTroisCarres {
     position: relative;
     display: flex;
     flex-direction: column;
-    top:30%;
+    top: 30%;
     left: 2%;
-    gap:30px;
+    gap: 30px;
 }
 
-label[for="TitreCarreBas"]{
+label[for="TitreCarreBas"] {
     position: relative;
-    top:10%;
+    top: 10%;
     font-family: URW Chancery L, cursive;
     font-size: 30px;
 }
 
 
 
-/* ======== PAGE VISIONNER UNE OFFRE / UNE ENTREPRISE / UN ETUDIANT ========== */*
-.BlocEtudiant{
-  
+/* ======== PAGE VISIONNER UNE OFFRE / UNE ENTREPRISE / UN ETUDIANT ========== */
+* .BlocEtudiant {
+
     height: 530px;
     width: 850px;
     border-radius: 15px;
     position: absolute;
-    display:flex;
+    display: flex;
     background-color: white;
-    top:55%;
-    left:50%;
+    top: 55%;
+    left: 50%;
     transform: translate(-50%, -50%);
     font-family: URW Chancery L, cursive;
 }
 
-.TStage{
+.TStage {
     position: absolute;
-    top:10%;
+    top: 10%;
     font-size: 30px;
     left: 5%;
     font-family: URW Chancery L, cursive
 }
 
-.flecheretour{
-    width:50px;
-    height:60px;
-    margin-top: 7%; 
+.flecheretour {
+    width: 50px;
+    height: 60px;
+    margin-top: 7%;
 }
 
-.boutonretour{
-    position:absolute;
-    border-radius: 7px; /* ajustez la valeur selon la forme souhaitée */
-    background-color: #ffffff; /* couleur de fond */
-    color: #000000; /* couleur du texte */
-    border: #000000; /* suppression de la bordure par défaut */
+.boutonretour {
+    position: absolute;
+    border-radius: 7px;
+    /* ajustez la valeur selon la forme souhaitée */
+    background-color: #ffffff;
+    /* couleur de fond */
+    color: #000000;
+    /* couleur du texte */
+    border: #000000;
+    /* suppression de la bordure par défaut */
     cursor: pointer;
     text-decoration: none;
 }
 
-.bouton-stat{
+.bouton-stat {
     width: 180px;
     height: 30px;
-    font-size: 80%; 
+    font-size: 80%;
     font-weight: 600;
-    border-radius: 7px; /* ajustez la valeur selon la forme souhaitée */
-    background-color: #ffffff; /* couleur de fond */
-    color: #000000; /* couleur du texte */
+    border-radius: 7px;
+    /* ajustez la valeur selon la forme souhaitée */
+    background-color: #ffffff;
+    /* couleur de fond */
+    color: #000000;
+    /* couleur du texte */
     cursor: pointer;
     text-decoration: none;
     box-shadow: rgb(70, 69, 69) 0px 1px 3px;
 }
-.bouton-stat:hover{
-background-color: rgba(28, 143, 166, 0.918);
+
+.bouton-stat:hover {
+    background-color: rgba(28, 143, 166, 0.918);
 }
 
-.Bloc1Etudiant{
+.Bloc1Etudiant {
     position: absolute;
     display: flex;
-    top:15%;
-    left:5%;
-    gap:500px;
-}
-.Bloc2Etudiant{
-    position:absolute;
-    display:flex;
-    flex-direction: column;
-    top:30%;
-    left:5%;
-    width:60%;
-    gap:35px;
-}
-.Bloc3Etudiant{
-    position:relative;
-    display:flex;
-    flex-direction: column;
-    font-weight: 600;
-    
-}
-.Bloc4Etudiant{
-    display:flex;
-    flex-direction: row;
-    position:absolute;
-    top:80%;
-    left:5%;
-    gap:410px;
-    align-items: end;
-    
+    top: 15%;
+    left: 5%;
+    gap: 500px;
 }
 
-.DescriptionStage{
+.Bloc2Etudiant {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 30%;
+    left: 5%;
+    width: 60%;
+    gap: 35px;
+}
+
+.Bloc3Etudiant {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+
+}
+
+.Bloc4Etudiant {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 80%;
+    left: 5%;
+    gap: 410px;
+    align-items: end;
+
+}
+
+.DescriptionStage {
 
     height: 80px;
     width: 400px;
     position: absolute;
-    top:25%;
+    top: 25%;
     left: 5%;
     display: flex;
     flex-direction: column;
     font-family: URW Chancery L, cursive;
-    gap:10px;
+    gap: 10px;
 }
 
-.CompRequises{
+.CompRequises {
     height: 40px;
     width: 400px;
     position: absolute;
-    top:50%;
+    top: 50%;
     left: 5%;
     font-family: URW Chancery L, cursive;
-    gap:10px;
+    gap: 10px;
 }
 
-.SectAct{
+.SectAct {
     height: 40px;
     width: 400px;
     position: absolute;
-    top:50%;
+    top: 50%;
     left: 5%;
     font-family: URW Chancery L, cursive;
-    gap:10px;
+    gap: 10px;
 }
 
-.StagiairePostulation{
+.StagiairePostulation {
     height: 40px;
     width: 800px;
     position: absolute;
-    top:70%;
+    top: 70%;
     left: 5%;
     display: flex;
     flex-direction: row;
     font-family: URW Chancery L, cursive;
-    gap:10px;
+    gap: 10px;
 }
 
 
-.Localisation{
+.Localisation {
 
     height: 40px;
     width: 400px;
     position: absolute;
-    top:60%;
+    top: 60%;
     left: 5%;
     display: flex;
     flex-direction: row;
     font-family: URW Chancery L, cursive;
-    gap:10px;
+    gap: 10px;
 }
 
-.EntrepriseStage{
+.EntrepriseStage {
 
     height: 40px;
     width: 400px;
     position: absolute;
-    top:70%;
+    top: 70%;
     left: 5%;
     display: flex;
     flex-direction: row;
     font-family: URW Chancery L, cursive;
-    gap:10px;
+    gap: 10px;
 }
 
-.NbPostulation{
+.NbPostulation {
 
     height: 40px;
     width: 400px;
     position: absolute;
-    top:90%;
+    top: 90%;
     left: 5%;
     display: flex;
     flex-direction: row;
     font-family: URW Chancery L, cursive;
-    gap:10px;
+    gap: 10px;
 }
 
-label[for="TitreBlocG"]{
+label[for="TitreBlocG"] {
     font-weight: bold;
 }
 
-.TempsStage{
+.TempsStage {
     height: 40px;
     width: 150px;
     position: absolute;
-    top:15%;
+    top: 15%;
     left: 75%;
     display: flex;
     flex-direction: column;
     font-family: URW Chancery L, cursive;
-    gap:5px;
+    gap: 5px;
 }
 
-.DateDebut{
+.DateDebut {
     height: 40px;
     width: 150px;
     position: absolute;
-    top:30%;
+    top: 30%;
     left: 75%;
     display: flex;
     flex-direction: column;
     font-family: URW Chancery L, cursive;
-    gap:5px;
+    gap: 5px;
 }
 
-.NiveauRequis{
+.NiveauRequis {
     height: 40px;
     width: 150px;
     position: absolute;
-    top:45%;
+    top: 45%;
     left: 75%;
     display: flex;
     flex-direction: column;
     font-family: URW Chancery L, cursive;
-    gap:5px;
+    gap: 5px;
 }
 
-.Remuneration{
+.Remuneration {
     height: 40px;
     width: 150px;
     position: absolute;
-    top:60%;
+    top: 60%;
     left: 75%;
     display: flex;
     flex-direction: column;
     font-family: URW Chancery L, cursive;
-    gap:5px;
+    gap: 5px;
 }
 
-.NBPlace{
+.NBPlace {
     height: 40px;
     width: 150px;
     position: absolute;
-    top:75%;
+    top: 75%;
     left: 75%;
     display: flex;
     flex-direction: column;
     font-family: URW Chancery L, cursive;
-    gap:5px;
+    gap: 5px;
 }
 
-label[for="TitreBlocD"]{
+label[for="TitreBlocD"] {
     font-weight: bold;
 }
 
-.boutonAjoutFavoris{
+.boutonAjoutFavoris {
     position: absolute;
-    left:75%;
-    top:93%;
+    left: 75%;
+    top: 93%;
     font-size: 13px;
     cursor: pointer;
     justify-content: center;
@@ -734,14 +796,15 @@ label[for="TitreBlocD"]{
     border-color: black;
 }
 
-.boutonAjoutFavoris:hover{
-    background-color: rgba(28, 143, 166, 0.918);;
+.boutonAjoutFavoris:hover {
+    background-color: rgba(28, 143, 166, 0.918);
+    ;
 }
 
-.Modifier{
+.Modifier {
     position: absolute;
-    left:75%;
-    top:93%;
+    left: 75%;
+    top: 93%;
     font-size: 13px;
     cursor: pointer;
     justify-content: center;
@@ -750,10 +813,10 @@ label[for="TitreBlocD"]{
     border-color: black;
 }
 
-.ModifierEntre{
+.ModifierEntre {
     position: absolute;
-    left:60%;
-    top:90%;
+    left: 60%;
+    top: 90%;
     font-size: 13px;
     cursor: pointer;
     justify-content: center;
@@ -762,14 +825,16 @@ label[for="TitreBlocD"]{
     border-color: black;
 }
 
-.Modifier:hover, .Retouner:hover, .ModifierEntre:hover{
+.Modifier:hover,
+.Retouner:hover,
+.ModifierEntre:hover {
     background-color: rgba(28, 143, 166, 0.918);
 }
 
-.Retouner{
+.Retouner {
     position: absolute;
-    left:88%;
-    top:93%;
+    left: 88%;
+    top: 93%;
     font-size: 13px;
     cursor: pointer;
     justify-content: center;
@@ -778,10 +843,10 @@ label[for="TitreBlocD"]{
     border-color: black;
 }
 
-.boutonVoirOffreEntre{
+.boutonVoirOffreEntre {
     position: absolute;
-    left:70%;
-    top:90%;
+    left: 70%;
+    top: 90%;
     font-size: 13px;
     cursor: pointer;
     justify-content: center;
@@ -790,168 +855,176 @@ label[for="TitreBlocD"]{
     border-color: black;
 }
 
-.boutonVoirOffreEntre:hover{
-    background-color: rgba(28, 143, 166, 0.918);;
+.boutonVoirOffreEntre:hover {
+    background-color: rgba(28, 143, 166, 0.918);
+    ;
 }
 
-.bouton-modifier{
+.bouton-modifier {
     width: 80px;
     height: 30px;
-    font-size: 80%; 
+    font-size: 80%;
     font-weight: 600;
-    border-radius: 7px; /* ajustez la valeur selon la forme souhaitée */
-    background-color: #ffffff; /* couleur de fond */
-    color: #000000; /* couleur du texte */
+    border-radius: 7px;
+    /* ajustez la valeur selon la forme souhaitée */
+    background-color: #ffffff;
+    /* couleur de fond */
+    color: #000000;
+    /* couleur du texte */
     cursor: pointer;
     text-decoration: none;
     box-shadow: rgb(70, 69, 69) 0px 1px 3px;
 }
-.bouton-modifier:hover{
-background-color: rgba(28, 143, 166, 0.918);
+
+.bouton-modifier:hover {
+    background-color: rgba(28, 143, 166, 0.918);
 }
 
-.label1{
+.label1 {
     font-weight: 600;
 }
-.label2{
+
+.label2 {
     font-weight: 600;
     font-size: 20px;
 }
 
 /*INSCRIPTION 1*/
 
-.messageErreurMDP
-{
-  color: red;
-  font-family: URW Chancery L, cursive;
-  position: absolute;
-  top:64%;
-  left: 22%;
-  font-size: 15px;
-}
-
-
-.messageErreurConfirmation{
+.messageErreurMDP {
     color: red;
     font-family: URW Chancery L, cursive;
     position: absolute;
-    top:79%;
+    top: 64%;
+    left: 22%;
+    font-size: 15px;
+}
+
+
+.messageErreurConfirmation {
+    color: red;
+    font-family: URW Chancery L, cursive;
+    position: absolute;
+    top: 79%;
     left: 39%;
     font-size: 15px;
 }
 
-#messageErreurChamps{
-    color:white;
-    position:absolute;
-    top:85%;
-    left:28%;   
+#messageErreurChamps {
+    color: white;
+    position: absolute;
+    top: 85%;
+    left: 28%;
     font-size: 20px;
     font-weight: bold;
     font-family: URW Chancery L, cursive;
-    display:none;
+    display: none;
 }
 
-#messageErreurChamps2, #messageErreurChamps3{
-    color:white;
-    position:absolute;
-    top:85%;
-    left:46%;   
+#messageErreurChamps2,
+#messageErreurChamps3 {
+    color: white;
+    position: absolute;
+    top: 85%;
+    left: 46%;
     font-size: 17px;
     font-weight: bold;
     font-family: URW Chancery L, cursive;
-    display:none;
+    display: none;
 }
 
-#messageErreurPiloteModif{
-    color:white;
-    position:absolute;
-    top:103%;
-    left:46%;   
+#messageErreurPiloteModif {
+    color: white;
+    position: absolute;
+    top: 103%;
+    left: 46%;
     font-size: 14px;
     font-weight: bold;
     font-family: URW Chancery L, cursive;
-    display:none;
+    display: none;
 }
 
-.TitreInscription{
+.TitreInscription {
     position: absolute;
-    top:10%;
-    left:35%;
+    top: 10%;
+    left: 35%;
     color: white;
     font-family: URW Chancery L, cursive;
 }
 
-label[for="Etape1"]{
+label[for="Etape1"] {
     position: absolute;
-    top:27%;
-    left:10%;
-    color:white;
-    font-size: 25px;
-    font-family: URW Chancery L, cursive;
-}
-
-.Id{
-    font-size: 25px;
-    width: 500px;
+    top: 27%;
+    left: 10%;
     color: white;
-    background-color: rgba(28, 143, 166, 0.918);
-    box-shadow: rgb(255, 255, 255) 0px 1px 3px;
-    position: absolute;
-    top:40%;
-    left:35%;
-    border-radius: 10px;
-    border-bottom: 5px solid rgb(255, 255, 255);
-    padding: 20px;
+    font-size: 25px;
     font-family: URW Chancery L, cursive;
 }
 
-.mdp{
+.Id {
     font-size: 25px;
     width: 500px;
     color: white;
     background-color: rgba(28, 143, 166, 0.918);
     box-shadow: rgb(255, 255, 255) 0px 1px 3px;
     position: absolute;
-    top:55%;
-    left:35%;
+    top: 40%;
+    left: 35%;
     border-radius: 10px;
     border-bottom: 5px solid rgb(255, 255, 255);
     padding: 20px;
     font-family: URW Chancery L, cursive;
 }
 
-.confirmdp{
+.mdp {
     font-size: 25px;
     width: 500px;
     color: white;
     background-color: rgba(28, 143, 166, 0.918);
     box-shadow: rgb(255, 255, 255) 0px 1px 3px;
     position: absolute;
-    top:70%;
-    left:35%;
+    top: 55%;
+    left: 35%;
     border-radius: 10px;
     border-bottom: 5px solid rgb(255, 255, 255);
     padding: 20px;
     font-family: URW Chancery L, cursive;
 }
 
-#identifiant, #motdp, #confmdp{
-    position:absolute;
-    left:50%;
+.confirmdp {
+    font-size: 25px;
+    width: 500px;
+    color: white;
+    background-color: rgba(28, 143, 166, 0.918);
+    box-shadow: rgb(255, 255, 255) 0px 1px 3px;
+    position: absolute;
+    top: 70%;
+    left: 35%;
+    border-radius: 10px;
+    border-bottom: 5px solid rgb(255, 255, 255);
+    padding: 20px;
+    font-family: URW Chancery L, cursive;
+}
+
+#identifiant,
+#motdp,
+#confmdp {
+    position: absolute;
+    left: 50%;
     border-radius: 5px;
     border-width: 0;
     height: 30px;
     width: 250px;
 }
 
-label[for="labelEtape1"]{
+label[for="labelEtape1"] {
     margin-left: 10%;
 }
 
-.boutonValidationInscription{
+.boutonValidationInscription {
     position: absolute;
-    left:63%;
-    top:85%;
+    left: 63%;
+    top: 85%;
     font-size: 23px;
     cursor: pointer;
     justify-content: center;
@@ -960,22 +1033,23 @@ label[for="labelEtape1"]{
     border-color: black;
 }
 
-.boutonValidationInscription:hover{
+.boutonValidationInscription:hover {
     background-color: rgba(28, 143, 166, 0.918);
 }
 
 /*Inscription 2*/
 
-.BlocNomPrenom{
+.BlocNomPrenom {
     display: flex;
     flex-direction: row;
     position: absolute;
-    top:40%;
-    left:10%;
-    gap:25px;
+    top: 40%;
+    left: 10%;
+    gap: 25px;
 }
 
-.prenom,.Nom{
+.prenom,
+.Nom {
     font-size: 25px;
     width: 500px;
     color: white;
@@ -987,16 +1061,18 @@ label[for="labelEtape1"]{
     font-family: URW Chancery L, cursive;
 }
 
-#Prenom, #nom, #centres{
-    position:relative;
-    left:16%;
+#Prenom,
+#nom,
+#centres {
+    position: relative;
+    left: 16%;
     border-radius: 5px;
     border-width: 0;
     height: 30px;
-    width: 250px; 
+    width: 250px;
 }
 
-.Promo{
+.Promo {
     font-size: 25px;
     width: 500px;
     color: white;
@@ -1007,11 +1083,11 @@ label[for="labelEtape1"]{
     padding: 20px;
     font-family: URW Chancery L, cursive;
     position: absolute;
-    top:57%;
-    left:10%;
+    top: 57%;
+    left: 10%;
 }
 
-.centre{
+.centre {
     font-size: 25px;
     width: 500px;
     color: white;
@@ -1022,14 +1098,14 @@ label[for="labelEtape1"]{
     padding: 20px;
     font-family: URW Chancery L, cursive;
     position: absolute;
-    top:57%;
-    left:47%;
+    top: 57%;
+    left: 47%;
 }
 
-.boutonValidationInscription2{
+.boutonValidationInscription2 {
     position: absolute;
-    left:75%;
-    top:85%;
+    left: 75%;
+    top: 85%;
     font-size: 23px;
     cursor: pointer;
     justify-content: center;
@@ -1038,33 +1114,33 @@ label[for="labelEtape1"]{
     border-color: black;
 }
 
-.boutonValidationInscription2:hover{
+.boutonValidationInscription2:hover {
     background-color: rgba(28, 143, 166, 0.918);
 }
 
-.messageErreurNom{
+.messageErreurNom {
     color: red;
     font-family: URW Chancery L, cursive;
     position: absolute;
-    top:35%;
+    top: 35%;
     left: 36%;
     font-size: 15px;
 }
 
-.messageErreurPrenom{
+.messageErreurPrenom {
     color: red;
     font-family: URW Chancery L, cursive;
     position: absolute;
-    top:35%;
+    top: 35%;
     left: 74%;
     font-size: 15px;
 }
 
-.messageErreurId{
+.messageErreurId {
     color: red;
     font-family: URW Chancery L, cursive;
     position: absolute;
-    top:49%;
+    top: 49%;
     left: 39%;
     font-size: 15px;
 }
@@ -1072,22 +1148,22 @@ label[for="labelEtape1"]{
 
 /*Supprimer entreprise*/
 
-.supr{
+.supr {
     height: 350px;
     width: 800px;
     border-radius: 15px;
     position: absolute;
-    display:flex;
+    display: flex;
     background-color: white;
-    top:55%;
-    left:50%;
-    transform: translate(-50%, -50%);  
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     text-align: center;
 }
 
-label[for="labelSuppr1"]{
+label[for="labelSuppr1"] {
     font-family: URW Chancery L, cursive;
     font-weight: bold;
     font-size: 28px;
@@ -1095,78 +1171,83 @@ label[for="labelSuppr1"]{
     top: 25%;
 }
 
-label[for="labelSuppr2"]{
+label[for="labelSuppr2"] {
     font-family: URW Chancery L, cursive;
     font-size: 18px;
     position: relative;
     top: 35%;
 }
 
-.boutonSuppAnn{
+.boutonSuppAnn {
     position: absolute;
-    top:80%;
+    top: 80%;
     left: 23%;
     display: flex;
-    gap:50px;
+    gap: 50px;
 }
 
-.boutonSuppr, .boutonAnnul{
+.boutonSuppr,
+.boutonAnnul {
     font-size: 23px;
     cursor: pointer;
     justify-content: center;
     font-weight: bold;
     border-radius: 8px;
-    border-color:grey;
+    border-color: grey;
 }
 
-.boutonAnnul:hover, .boutonSuppr:hover, .Postuler:hover{
+.boutonAnnul:hover,
+.boutonSuppr:hover,
+.Postuler:hover {
     background-color: rgba(28, 143, 166, 0.918);
 }
 
 /*PAGE POSTULATION*/
 
-.BlocPostulationOffre{
-        height: 500px;
-        width: 800px;
-        border-radius: 15px;
-        position: absolute;
-        display:flex;
-        background-color: white;
-        top:55%;
-        left:72%;
-        transform: translate(-50%, -50%);
-    
+.BlocPostulationOffre {
+    height: 500px;
+    width: 800px;
+    border-radius: 15px;
+    position: absolute;
+    display: flex;
+    background-color: white;
+    top: 55%;
+    left: 72%;
+    transform: translate(-50%, -50%);
+
 }
 
-.SaisieLettreM{
+.SaisieLettreM {
     position: absolute;
-    top:25%;
-    left:3%
+    top: 25%;
+    left: 3%
 }
 
-.importCV{
+.importCV {
     position: absolute;
-    top:90%;
-    left:3%;
+    top: 90%;
+    left: 3%;
     color: white;
 }
 
-.Postuler{
+.Postuler {
     font-size: 23px;
     cursor: pointer;
     justify-content: center;
     font-weight: bold;
     border-radius: 8px;
-    border-color:grey;
+    border-color: grey;
     position: absolute;
-    top:90%;
-    left:88%;
+    top: 90%;
+    left: 88%;
 }
 
 
 @font-face {
-    font-family: 'Khula'; /* Nom de la police */
-    src: url("C:\Users\pauli\PROJET-WEB\Khula"); /* Chemin vers le fichier de police */
+    font-family: 'Khula';
+    /* Nom de la police */
+    src: url("C:\Users\pauli\PROJET-WEB\Khula");
+    /* Chemin vers le fichier de police */
 }
 
 
@@ -1175,22 +1256,23 @@ body {
     background-color: rgba(37, 37, 37, 1);
 }
 
-.imgprinc{
+.imgprinc {
     width: 10%;
     margin-right: 85%;
 }
 
 .Centrer {
     text-align: center;
-    
+
 }
 
-.Apropos{
-    text-align:center;
+.Apropos {
+    text-align: center;
     margin-top: 21%;
-    
+
 }
-.Apropos a{
+
+.Apropos a {
     text-decoration: none;
     margin-right: 100px;
     color: rgba(255, 255, 255, 1);
@@ -1206,29 +1288,39 @@ body {
     font-size: 30px;
     text-align: center;
     margin-top: 10%;
-    color:#ffffff;
+    color: #ffffff;
     font-family: 'Khula';
-    
+
 }
 
 
 .bouton-grand {
-    width:80px; /* Largeur du bouton */
-    height: 25px; /* Hauteur du bouton */
-    font-size: 10px; /* Taille de la police */
+    width: 80px;
+    /* Largeur du bouton */
+    height: 25px;
+    /* Hauteur du bouton */
+    font-size: 10px;
+    /* Taille de la police */
     font-weight: 700;
     margin-top: -3%;
     margin-left: -2%;
-    border-radius: 7px; /* ajustez la valeur selon la forme souhaitée */
-    background-color: #ffffff; /* couleur de fond */
-    color: #000000; /* couleur du texte */
-    border: #000000; /* suppression de la bordure par défaut */
+    border-radius: 7px;
+    /* ajustez la valeur selon la forme souhaitée */
+    background-color: #ffffff;
+    /* couleur de fond */
+    color: #000000;
+    /* couleur du texte */
+    border: #000000;
+    /* suppression de la bordure par défaut */
     cursor: pointer;
     text-decoration: none;
 }
+
 .alignement {
-    display:flex; /* Utiliser Flexbox */
-    align-items: center;/*justify-content: flex-end;*/
+    display: flex;
+    /* Utiliser Flexbox */
+    align-items: center;
+    /*justify-content: flex-end;*/
 }
 
 
@@ -1249,7 +1341,7 @@ body {
     border-radius: 10px;
     border-bottom: 5px solid rgb(255, 255, 255);
     padding: 20px;
-    
+
 }
 
 
@@ -1263,11 +1355,11 @@ body {
     margin-left: 430px;
     font-weight: bold;
     border-radius: 8px;
-    border:0;
+    border: 0;
     padding: 8px;
 }
 
-#valider_co:hover{
+#valider_co:hover {
     background-color: rgba(28, 143, 166, 0.918);
 }
 
@@ -1279,19 +1371,20 @@ body {
     font-size: 45px;
 }
 
-#imgcon{
-    left:0;
-    top:0;
-    position:fixed;
+#imgcon {
+    left: 0;
+    top: 0;
+    position: fixed;
     height: 100vh;
-    
+
 }
 
-#mail, #mdp {
+#mail,
+#mdp {
     margin-left: 34px;
     margin-top: 10px;
     width: 170px;
-    border:0;
+    border: 0;
     border-radius: 10px;
     padding: 8px 15px;
     display: inline;
@@ -1303,11 +1396,11 @@ body {
 
 
 
-#mail{
+#mail {
     margin-left: 125px;
 }
 
-.parent label{
+.parent label {
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 
@@ -1318,46 +1411,46 @@ body {
     font-size: 20px;
     text-align: center;
     margin-top: -7%;
-    color:#ffffff;
+    color: #ffffff;
     font-family: 'Khula';
-    
+
 }
 
-.Bloc{
+.Bloc {
     height: 60%;
     width: 45%;
     border-radius: 15px;
     position: absolute;
-    display:flex;
+    display: flex;
     background-color: white;
-    top:55%;
-    left:50%;
+    top: 55%;
+    left: 50%;
     transform: translate(-50%, -50%);
 }
 
 
 
-.titre3{
-    color:rgba(28, 143, 166, 0.918);
+.titre3 {
+    color: rgba(28, 143, 166, 0.918);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     position: absolute;
-    top:3%;
-    left:35%;
+    top: 3%;
+    left: 35%;
 }
 
-.contenuCreerEntre{
-    gap:15px;
+.contenuCreerEntre {
+    gap: 15px;
     position: absolute;
-    top:30%;
-    left:15%;
+    top: 30%;
+    left: 15%;
     display: flex;
     flex-direction: column;
 }
 
 
 
-.name{
-    color:rgba(28, 143, 166, 0.918);
+.name {
+    color: rgba(28, 143, 166, 0.918);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     gap: 90px;
@@ -1365,17 +1458,17 @@ body {
 
 
 
-.description{
+.description {
     display: flex;
     flex-direction: row;
     gap: 57px;
-    color:rgba(28, 143, 166, 0.918);
+    color: rgba(28, 143, 166, 0.918);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.description > textarea{
+.description>textarea {
     position: absolute;
-    left:49%;
+    left: 49%;
     border-radius: 5px;
     border-color: black;
     border-width: 2px;
@@ -1383,13 +1476,13 @@ body {
 
 
 
-.boutons-D{
+.boutons-D {
     position: absolute;
-    top:92%;
-    left:75%;
-    display:flex;
+    top: 92%;
+    left: 75%;
+    display: flex;
     flex-direction: row;
-    gap:10px;
+    gap: 10px;
 
 }
 
@@ -1407,8 +1500,8 @@ body {
     border-color: rgba(28, 143, 166, 0.918);
 }
 
-.boutons-G #but3:hover{
-    background-color:rgba(28, 143, 166, 0.918);
+.boutons-G #but3:hover {
+    background-color: rgba(28, 143, 166, 0.918);
 }
 
 .boutons-G #but4 {
@@ -1420,28 +1513,28 @@ body {
     border-color: rgba(28, 143, 166, 0.918);
 }
 
-.boutons-G #but4:hover{
-    background-color:rgba(28, 143, 166, 0.918);
+.boutons-G #but4:hover {
+    background-color: rgba(28, 143, 166, 0.918);
 }
 
-.boutons-G{
+.boutons-G {
     position: absolute;
-    top:92%;
-    left:5%;
-    display:flex;
+    top: 92%;
+    left: 5%;
+    display: flex;
     flex-direction: row;
-    gap:10px;
+    gap: 10px;
     text-decoration: none;
 
 }
 
-.descriptionEntreprise{
+.descriptionEntreprise {
 
-    color:rgba(28, 143, 166, 0.918);
+    color: rgba(28, 143, 166, 0.918);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#DescriptionEntreprise{
+#DescriptionEntreprise {
     position: absolute;
     top: 22%;
     left: 49%;
@@ -1455,87 +1548,96 @@ body {
 /* CREER OFFRE*/
 
 
-.BlocCreerO{
+.BlocCreerO {
     height: 60%;
     width: 45%;
     border-radius: 15px;
     position: absolute;
-    display:flex;
+    display: flex;
     background-color: white;
-    top:55%;
-    left:50%;
+    top: 55%;
+    left: 50%;
     transform: translate(-50%, -50%);
     font-family: URW Chancery L, cursive;
 }
 
-.Bloc1CreerO{
+.Bloc1CreerO {
     position: absolute;
-    top:30%;
-    left:10%;
+    top: 30%;
+    left: 10%;
     height: 20%;
     width: 15%;
     display: flex;
     flex-direction: column;
     font-weight: bold;
 }
-.Bloc2CreerO{
+
+.Bloc2CreerO {
     gap: 35px;
     position: absolute;
-    top:25%;
-    left:15%; 
-    width:25%;
+    top: 25%;
+    left: 15%;
+    width: 25%;
     display: flex;
     flex-direction: column;
     font-weight: bold;
-    gap:50px;
+    gap: 50px;
 
 }
-.Bloc3CreerO{
+
+.Bloc3CreerO {
     display: flex;
     flex-direction: row;
-    gap:40px;
+    gap: 40px;
     font-weight: bold;
 }
-.Bloc3CreerO select{
-    position:absolute;
-    left:80%;
+
+.Bloc3CreerO select {
+    position: absolute;
+    left: 80%;
     display: flex;
     flex-direction: row;
 }
-.Bloc3CreerO input,textarea{
-    position:absolute;
-    left:80%;
+
+.Bloc3CreerO input,
+textarea {
+    position: absolute;
+    left: 80%;
     display: flex;
     flex-direction: row;
 
 }
-.Bloc4CreerO{
-    display:flex;
+
+.Bloc4CreerO {
+    display: flex;
     flex-direction: column;
-    position:absolute;
-    left:65%;
-    top:25%;
-    width: 15%;;
+    position: absolute;
+    left: 65%;
+    top: 25%;
+    width: 15%;
+    ;
 }
-.Bloc5CreerO{
-    display:flex;
+
+.Bloc5CreerO {
+    display: flex;
     flex-direction: column;
     margin-bottom: 20px;
 }
-    
+
 /*Modifier étudiant*/
 
 
-.nameEtudiant{
-    color:rgba(28, 143, 166, 0.918);
+.nameEtudiant {
+    color: rgba(28, 143, 166, 0.918);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     gap: 133px;
 }
 
 
-.PrenomEtudiant, #LabelPromo {
-    color:rgba(28, 143, 166, 0.918);
+.PrenomEtudiant,
+#LabelPromo {
+    color: rgba(28, 143, 166, 0.918);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     gap: 177px;
@@ -1545,27 +1647,29 @@ body {
     font-size: 13px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
-    gap:15px;
+    gap: 15px;
     position: absolute;
     left: 30%;
-    top:90%;
+    top: 90%;
 }
 
-#prenom, #nom, #promos {
+#prenom,
+#nom,
+#promos {
     border-radius: 5px;
     border-width: 2px;
     border-color: black;
 }
 
 .centres {
-    color:rgba(28, 143, 166, 0.918);
+    color: rgba(28, 143, 166, 0.918);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     gap: 186px;
 }
 
 .promo {
-    color:rgba(28, 143, 166, 0.918);
+    color: rgba(28, 143, 166, 0.918);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     gap: 149px;
@@ -1574,38 +1678,41 @@ body {
 
 /* STAGE TERMINE */
 
-.flecheretourST{
-    width:50px;
-    height:60px;
-    margin-top: 7%; 
+.flecheretourST {
+    width: 50px;
+    height: 60px;
+    margin-top: 7%;
 }
 
-.boutonretourST{
+.boutonretourST {
 
-    border-radius: 7px; 
-    background-color: #ffffff; 
-    color: #000000; 
+    border-radius: 7px;
+    background-color: #ffffff;
+    color: #000000;
     border: #000000;
     cursor: pointer;
     text-decoration: none;
 }
-.Bloc1ST{
-    position:absolute;
+
+.Bloc1ST {
+    position: absolute;
     display: flex;
     flex-direction: row;
-    left:30%;
-    top:22%;
+    left: 30%;
+    top: 22%;
     font-family: URW Chancery L, cursive;
-    gap:140px;
+    gap: 140px;
 }
-.label-2ST{
-    color:rgb(144, 206, 206);
-    font-size:45px;
+
+.label-2ST {
+    color: rgb(144, 206, 206);
+    font-size: 45px;
 }
+
 .scroll-section1ST {
-    position:fixed;
-    top:35%;
-    left:30%;
+    position: fixed;
+    top: 35%;
+    left: 30%;
     width: 40%;
     height: 32%;
     overflow-y: auto;
@@ -1614,127 +1721,142 @@ body {
 }
 
 .scroll-content1ST {
-    position:relative;
-    display:flex;
-    gap:90px;
+    position: relative;
+    display: flex;
+    gap: 90px;
     margin-bottom: 2%;
     margin-left: 0%;
-    background-color:white;
+    background-color: white;
     box-shadow: rgb(255, 255, 255) 0px 1px 3px;
     border-radius: 10px;
     border-bottom: 5px solid rgb(255, 255, 255);
     padding: 6%;
 }
+
 .scroll-content2ST {
-    position:relative;
-    display:flex;
-    gap:90px;
+    position: relative;
+    display: flex;
+    gap: 90px;
     margin-bottom: 2%;
     margin-left: 0%;
-    background-color:rgb(66, 66, 66);
+    background-color: rgb(66, 66, 66);
     box-shadow: rgb(255, 255, 255) 0px 1px 3px;
     border-radius: 10px;
     padding: 7%;
 }
-.bouton-evaluerST{
-    border-radius: 7px; 
-    background-color: #ffffff; 
-    color: #000000; 
+
+.bouton-evaluerST {
+    border-radius: 7px;
+    background-color: #ffffff;
+    color: #000000;
     cursor: pointer;
     text-decoration: none;
-    height:35px;
-    width:70px;
+    height: 35px;
+    width: 70px;
     font-weight: 600;
     box-shadow: rgb(70, 69, 69) 0px 3px 3px;
 }
-.label-stageST{
+
+.label-stageST {
     font-weight: 600;
     font-size: 20px;
 }
-div::-webkit-scrollbarST{
+
+div::-webkit-scrollbarST {
     width: 8px;
 }
-div::-webkit-scrollbarST-thumb{
+
+div::-webkit-scrollbarST-thumb {
     background: #aaa;
     border-radius: 5px;
 }
 
 /*Evaluer entreprise*/
 
-.BlocEval{
-  
+.BlocEval {
+
     height: 450px;
     width: 700px;
     border-radius: 15px;
     position: absolute;
     background-color: white;
-    top:55%;
-    left:50%;
+    top: 55%;
+    left: 50%;
     transform: translate(-50%, -50%);
     font-family: URW Chancery L, cursive;
 }
-.Bloc1Eval{
+
+.Bloc1Eval {
     position: absolute;
-    display:flex;
+    display: flex;
     flex-direction: row;
-    gap:70px;
-    top:2%;
-    left:3%;
+    gap: 70px;
+    top: 2%;
+    left: 3%;
 
 }
-.Bloc2Eval{
+
+.Bloc2Eval {
     position: absolute;
-    display:flex;
+    display: flex;
     flex-direction: column;
-    gap:15px;
-    top:20%;
-    left:25%;
+    gap: 15px;
+    top: 20%;
+    left: 25%;
     align-items: center;
 
 }
-.Bloc4Eval{
+
+.Bloc4Eval {
     position: absolute;
-    display:flex;
+    display: flex;
     flex-direction: column;
-    gap:15px;
-    top:10%;
-    left:82%;
+    gap: 15px;
+    top: 10%;
+    left: 82%;
 }
-.label-StageEval{
+
+.label-StageEval {
     font-size: 30px;
 }
-.label-localité{
+
+.label-localité {
     font-size: 15px;
 }
-.label-entrepriseEval{
+
+.label-entrepriseEval {
     margin-top: 50px;
     font-size: 20px;
     font-weight: 600;
 }
-.flecheretourEval{
-    width:50px;
-    height:60px;
-    margin-top: 7%; 
+
+.flecheretourEval {
+    width: 50px;
+    height: 60px;
+    margin-top: 7%;
 }
-.titre-wishlistEval{
-    font-size:30px;
+
+.titre-wishlistEval {
+    font-size: 30px;
 }
-.grasEval{
+
+.grasEval {
     font-weight: 700;
 }
-.evalEval{
+
+.evalEval {
     unicode-bidi: bidi-override;
     direction: rtl;
     color: #000000;
 }
 
-.evalEval input{
+.evalEval input {
 
     display: none;
 
 }
 
-.evalEval label{
+.evalEval label {
     display: inline-block;
     font-size: 25px;
     padding: 0px;
@@ -1742,147 +1864,173 @@ div::-webkit-scrollbarST-thumb{
 
 }
 
-.evalEval input:checked ~ label,
-.evalEval input:checked~ label~ label{
-    color:orange;
+.evalEval input:checked~label,
+.evalEval input:checked~label~label {
+    color: orange;
 }
 
-.ratingEval{
-    color:rgba(28, 143, 166, 0.918);
+.ratingEval {
+    color: rgba(28, 143, 166, 0.918);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     gap: 110px;
 }
 
-.boutonretourEval{
-    
-    border-radius: 7px; /* ajustez la valeur selon la forme souhaitée */
-    background-color: #ffffff; /* couleur de fond */
-    color: #000000; /* couleur du texte */
-    border: #000000; /* suppression de la bordure par défaut */
+.boutonretourEval {
+
+    border-radius: 7px;
+    /* ajustez la valeur selon la forme souhaitée */
+    background-color: #ffffff;
+    /* couleur de fond */
+    color: #000000;
+    /* couleur du texte */
+    border: #000000;
+    /* suppression de la bordure par défaut */
     cursor: pointer;
     text-decoration: none;
 }
-.bouton-confirmerEval{
+
+.bouton-confirmerEval {
     margin-top: 180px;
-    border-radius: 7px; /* ajustez la valeur selon la forme souhaitée */
-    background-color: #ffffff; /* couleur de fond */
-    color: #000000; /* couleur du texte */
+    border-radius: 7px;
+    /* ajustez la valeur selon la forme souhaitée */
+    background-color: #ffffff;
+    /* couleur de fond */
+    color: #000000;
+    /* couleur du texte */
     cursor: pointer;
-    height:30px;
+    height: 30px;
     width: 80px;
     text-decoration: none;
     box-shadow: rgb(70, 69, 69) 0px 1px 3px;
 }
-.boutonStageEval{
+
+.boutonStageEval {
     width: 180px;
     height: 60px;
-    font-size: 170%; /* Taille de la police */
+    font-size: 170%;
+    /* Taille de la police */
     font-weight: 700;
-    border-radius: 7px; /* ajustez la valeur selon la forme souhaitée */
-    background-color: #ffffff; /* couleur de fond */
-    color: #000000; /* couleur du texte */
+    border-radius: 7px;
+    /* ajustez la valeur selon la forme souhaitée */
+    background-color: #ffffff;
+    /* couleur de fond */
+    color: #000000;
+    /* couleur du texte */
     cursor: pointer;
     text-decoration: none;
     padding-left: 40px;
     box-shadow: rgb(70, 69, 69) 0px 1px 3px;
 }
-.boutonPostulerEval{
+
+.boutonPostulerEval {
     width: 90px;
     height: 35px;
-    font-size: 110%; /* Taille de la police */
+    font-size: 110%;
+    /* Taille de la police */
     font-weight: 00;
-    border-radius: 10px; /* ajustez la valeur selon la forme souhaitée */
-    background-color: #ffffff; /* couleur de fond */
-    color: #000000; /* couleur du texte */
+    border-radius: 10px;
+    /* ajustez la valeur selon la forme souhaitée */
+    background-color: #ffffff;
+    /* couleur de fond */
+    color: #000000;
+    /* couleur du texte */
     cursor: pointer;
     text-decoration: none;
 }
-.imgcoeurEval{
-    position:absolute;
-    width:30px;
-    height:35px;
-    top:32%;
-    left:5%;
+
+.imgcoeurEval {
+    position: absolute;
+    width: 30px;
+    height: 35px;
+    top: 32%;
+    left: 5%;
 }
-.boutoncroixEval{
-    background-color: #ffffff; /* couleur de fond */
+
+.boutoncroixEval {
+    background-color: #ffffff;
+    /* couleur de fond */
     cursor: pointer;
     border: #000000;
 }
 
-.imgcroixEval{
-    width:22px;
-    height:20px;
+.imgcroixEval {
+    width: 22px;
+    height: 20px;
 }
 
 
 /*Consulter stage*/
 
-.BlocConsul{
+.BlocConsul {
 
     height: 450px;
     width: 700px;
     border-radius: 15px;
     position: absolute;
-    display:flex;
+    display: flex;
     background-color: white;
-    top:55%;
-    left:50%;
+    top: 55%;
+    left: 50%;
     transform: translate(-50%, -50%);
     font-family: URW Chancery L, cursive;
 }
-.Bloc1Consul{
+
+.Bloc1Consul {
     position: absolute;
-    display:flex;
+    display: flex;
     flex-direction: row;
-    gap:10px;
-    top:2%;
-    left:3%;
+    gap: 10px;
+    top: 2%;
+    left: 3%;
 
 }
-.Bloc2Consul{
-    top:35%;
-    left:18%;
+
+.Bloc2Consul {
+    top: 35%;
+    left: 18%;
     height: 10%;
-    width:60%;
+    width: 60%;
 }
-.Bloc2Consul label{
+
+.Bloc2Consul label {
     font-size: 25px;
 }
 
 
 
 
-.flecheretourConsul{
-    width:50px;
-    height:60px;
-    margin-top: 7%; 
+.flecheretourConsul {
+    width: 50px;
+    height: 60px;
+    margin-top: 7%;
 }
-.titre-wishlistConsul{
-    font-size:40px;
-}
-.Bloc2Consul{
-    position:relative;
-    display:flex;
-    flex-direction:row;
 
-    gap:80px;
+.titre-wishlistConsul {
+    font-size: 40px;
+}
+
+.Bloc2Consul {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+
+    gap: 80px;
     align-items: center;
 
-    background-color:white;
+    background-color: white;
     box-shadow: rgb(255, 255, 255) 0px 1px 3px;
     border-radius: 10px;
     border-bottom: 5px solid rgb(255, 255, 255);
     padding: 4%;
 }
 
-.boutonretourConsul{
+.boutonretourConsul {
 
-    border-radius: 7px; 
-    background-color: #ffffff; 
-    color: #000000; 
-    border: #000000; 
+    border-radius: 7px;
+    background-color: #ffffff;
+    color: #000000;
+    border: #000000;
     cursor: pointer;
     text-decoration: none;
 }
