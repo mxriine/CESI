@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier un pilote</title>
+    <link rel="icon" type="image/png" href="/_assets/img/logoWeb.png">
+    <link rel="stylesheet" href="/_assets/_css/styles.css">
+    <script async src="/_assets/_java/JSModifPilote.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="alignement">
+            <img class = "imgprinc"src="/_assets/img/logoWeb.png" alt="Logo StagExplorer">
+               </div>
+               <div class="Titre1">
+                <h1>StagExplorer</h1>
+            </div> 
+    </header>
+   <section class="Bloc">
+        <div class="titre2">
+            <h1>MODIFIER UN PILOTE</h1>
+        </div>
+        <article class="contenu">
+            <div class="namePilote">
+                <label>Nom</label>
+                <input type="text" id="nomP" name="nom" placeholder="Durant">
+            </div>
+            <div class="PrenomEtudiant">
+                <label>Prénom</label>
+                <input type="text" id="prenomP" name="prenom" placeholder="Richard">
+            </div>
+            <div class="centres">
+            <label>Centre</label>
+            <select id="centreP" name="centre">
+                <option value="Pau" name="centre">Pau</option>
+                <option value="Toulouse" name="centre">Toulouse</option>
+                <option value="Tarbes" name="centre">Tarbes</option>
+                <option value="Paris" name="centre">Paris</option>
+                <option value="Lyon" name="centre">Lyon</option>
+            </select>
+            </div>
+            <label id="LabelPromo">Promotions</label>
+            <div class="promotion" id="promosP">
+                
+                <input type="checkbox" name="promosP" value="1A" checked>
+                <label for="1A">1e année</label>
+                <input type="checkbox" name="promosP" value="2A">
+                <label for="2A">2e année</label>
+                <input type="checkbox" name="promosP" value="3A">
+                <label for="3A">3e année</label>
+                <input type="checkbox" name="promosP" value="4A" checked>
+                <label for="4A">4e année</label>
+                <input type="checkbox" name="promosP" value="5A">
+                <label for="5A">5e année</label>
+            </div>
+        </article>
+        <label id="messageErreurPiloteModif">Tous les champs ne sont pas correctement remplis !</label>
+        <article class="boutons-D">
+            <button type="submit" id="but1">Sauvegarder</button>
+            <button type="button" id="but2" onclick="history.back()">Retour</button>
+        </article>
+        
+        <article class="boutons-G">
+            <a href="/Gérer/Supprimer/Supprimer_Pilote.html"><button type="button" id="but3">Supprimer le pilote</button></a>
+        </article>
+   </section>
+    
+
+</body>
+
+</html>

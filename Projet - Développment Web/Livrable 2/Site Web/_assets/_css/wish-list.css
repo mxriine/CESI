@@ -1,0 +1,107 @@
+@font-face {
+    font-family: 'Khula'; /* Nom de la police */
+    src: url("C:\Users\pauli\PROJET-WEB\Khula"); /* Chemin vers le fichier de police */
+}
+
+
+
+.Bloc{
+    height: 450px;
+    width: 700px;
+    border-radius: 15px;
+    position: absolute;
+    display:flex;
+    background-color: white;
+    top:55%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    font-family: URW Chancery L, cursive;
+}
+
+.Bloc3{
+    display:flex;
+    position: absolute;
+    flex-direction: column;
+    top:25%;
+    left:6%;
+    width: 75%;
+    height: 45%;
+    overflow-y: auto;
+    padding: 40px;
+}
+
+
+.flecheretour{
+    width:50px;
+    height:60px;
+
+}
+.titre-wishlist{
+    position: absolute;
+    left:40%;
+    font-size:40px;
+}
+.Bloc2{
+    position:relative;
+    display:flex;
+    flex-direction:row;
+
+    gap:70px;
+    align-items: center;
+
+    background-color:white;
+    box-shadow: rgb(255, 255, 255) 0px 1px 3px;
+    border-radius: 10px;
+    border-bottom: 5px solid rgb(255, 255, 255);
+    padding: 4%;
+}
+
+.boutonretour{
+    
+    border-radius: 7px; /* ajustez la valeur selon la forme souhaitée */
+    background-color: #ffffff; /* couleur de fond */
+    color: #000000; /* couleur du texte */
+    border: #000000; /* suppression de la bordure par défaut */
+    cursor: pointer;
+    text-decoration: none;
+}
+.boutonStage{
+    width: 180px;
+    height: 60px;
+    font-size: 170%; /* Taille de la police */
+    font-weight: 700;
+    border-radius: 7px; /* ajustez la valeur selon la forme souhaitée */
+    background-color: #ffffff; /* couleur de fond */
+    color: #000000; /* couleur du texte */
+    cursor: pointer;
+    text-decoration: none;
+    padding-left: 40px;
+    box-shadow: rgb(70, 69, 69) 0px 1px 3px;
+}
+.boutonPostuler{
+    width: 90px;
+    height: 35px;
+    font-size: 110%; /* Taille de la police */
+    font-weight: 400;
+    border-radius: 10px; /* ajustez la valeur selon la forme souhaitée */
+    background-color: #ffffff; /* couleur de fond */
+    color: #000000; /* couleur du texte */
+    cursor: pointer;
+    text-decoration: none;
+}
+.imgcoeur{
+    position:absolute;
+    width:30px;
+    height:35px;
+    top:32%;
+    left:5%;
+}
+.boutoncroix{
+    background-color: #ffffff; /* couleur de fond */
+    cursor: pointer;
+    border: #000000;
+}
+.imgcroix{
+    width:22px;
+    height:20px;
+}

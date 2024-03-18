@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'une offre</title>
+    <link rel="icon" type="image/png" href="/_assets/img/logoWeb.png">
+    <link rel="stylesheet" href="/_assets/_css/styles.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var appuyer = document.getElementById('appuyer');
+            var boutonModif = document.getElementById('boutonModif');
+            var retour = document.getElementById('retour');
+            appuyer.addEventListener('click', function () {
+                boutonModif.style.display = 'block';
+                retour.style.display = 'block';
+                ajoutFavoris.style.display = 'none';
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <button id="appuyer">Appuie</button>
+        <div class="alignement">
+            <img class="imgprinc" src="/_assets/img/logoWeb.png" alt="Logo StagExplorer">
+        </div>
+        <div class="Titre1">
+            <h1>StagExplorer</h1>
+        </div>
+    </header>
+    <section class="Bloc">
+        <article class="BlocG">
+            <div class="TitreStage">
+                <label class="TStage">Stage1</label>
+            </div>
+            <div class="DescriptionStage">
+                <label for="TitreBlocG">Description: </label>
+                <label>BlablaBlablaBlablaBlablaBlablaBlablaBlablaBlablaBlablaBlabla</label>
+            </div>
+            <div class="CompRequises">
+                <label for="TitreBlocG">Compétences requises:</label>
+                <label for="LabelG">Mathématiques, BTP</label>
+            </div>
+            <div class="Localisation">
+                <label for="TitreBlocG">Localité: </label>
+                <label for="LabelG">Paris, 8 Rue des Champs-Elysées</label>
+            </div>
+            <div class="EntrepriseStage">
+                <label for="TitreBlocG">Entreprise: </label>
+                <label for="LabelG">Cesi Industrie</label>
+            </div>
+            <div class="NbPostulation">
+                <label for="TitreBlocG">Nombre d'élèves ayant postulés: </label>
+                <label for="LabelG">35</label>
+            </div>
+        </article>
+        <article class="BlocD">
+            <div class="TempsStage">
+                <label for="TitreBlocD">Durée du stage</label>
+                <label>15 semaines</label>
+            </div>
+            <div class="DateDebut">
+                <label for="TitreBlocD">Date début</label>
+                <label>15 avril</label>
+            </div>
+            <div class="NiveauRequis">
+                <label for="TitreBlocD">Niveau requis</label>
+                <label>BAC +2</label>
+            </div>
+            <div class="Remuneration">
+                <label for="TitreBlocD">Rémunération</label>
+                <label>Non renseigné</label>
+            </div>
+            <div class="NBPlace">
+                <label for="TitreBlocD">Nombre de places</label>
+                <label>10</label>
+            </div>
+        </article>
+        <button class="boutonAjoutFavoris" id="ajoutFavoris" type="submit">Ajouter à mes favoris</button>
+        <button style="display: none;" id="boutonModif" class="Modifier" type="button">Modifier</button>
+        <a href="page_Offre - VErsionPA.html"><button style="display: none;" class="Retouner" id="retour"
+                type="button">Retour</button></a>
+    </section>
+
+</body>
+
+</html>

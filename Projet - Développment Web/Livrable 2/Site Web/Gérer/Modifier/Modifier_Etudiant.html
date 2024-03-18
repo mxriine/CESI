@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier un étudiant</title>
+    <link rel="icon" type="image/png" href="/_assets/img/logoWeb.png">
+    <link rel="stylesheet" href="/_assets/_css/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="alignement">
+            <img class = "imgprinc"src="/_assets/img/logoWeb.png" alt="Logo StagExplorer">
+               </div>
+               <div class="Titre1">
+                <h1>StagExplorer</h1>
+            </div> 
+    </header>
+   <section class="Bloc">
+        <div class="titre2">
+            <h1>MODIFIER UN ETUDIANT</h1>
+        </div>
+        <article class="contenu">
+            <div class="nameEtudiant">
+                <label>Nom</label>
+                <input type="text" id="nom" name="nom" value="Durant">
+            </div>
+            <div class="PrenomEtudiant">
+                <label>Prénom</label>
+                <input type="text" id="prenom" name="prenom" value="Richard">
+            </div>
+            <div class="centres">
+            <label>Centre</label>
+            <select id="centre" name="centre">
+                <option value="Pau" name="centre">Pau</option>
+                <option value="Toulouse" name="centre">Toulouse</option>
+                <option value="Tarbes" name="centre">Tarbes</option>
+                <option value="Paris" name="centre">Paris</option>
+                <option value="Lyon" name="centre">Lyon</option>
+            </select>
+            </div>
+            <div class="promo">
+                <label>Promotions</label>
+                <select id="promos" name="promo">
+                    <option value="1A" name="promo">1A</option>
+                    <option value="2A" name="promo">2A</option>
+                    <option value="3A" name="promo">3A</option>
+                    <option value="4A" name="promo">4A</option>
+                    <option value="5A" name="promo">5A</option>
+                </select>
+            </div>
+        </article>
+        <article class="boutons-D">
+            <button type="submit" id="but1">Sauvegarder</button>
+            <button type="button" id="but2" onclick="history.back()">Retour</button>
+        </article>
+        <article class="boutons-G">
+            <a href="/Gérer/Supprimer/Supprimer_Etudiant.html"><button type="button" id="but3">Supprimer l'étudiant</button></a>
+        </article>
+   </section>
+    
+
+</body>
+
+</html>
