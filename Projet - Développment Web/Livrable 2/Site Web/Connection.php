@@ -45,10 +45,10 @@ if (isset($_POST['mail']) && isset($_POST['mdp'])) {
             // Redirection en fonction du rôle
             switch ($role) {
                 case 'admin':
-                    header('Location: Users/Admin/Dashboard.html');
+                    header('Location: Users/Admin/Dashboard.php');
                     break;
                 case 'pilote':
-                    header('Location: Users/Pilote/Dashboard.html');
+                    header('Location: Users/Pilote/Dashboard.php');
                     break;
                 case 'etudiant':
                     header('Location: Users/Student/Entreprise_Show.html');

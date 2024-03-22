@@ -1,0 +1,195 @@
+/* DASHBOARD */
+
+body {
+    background-color: rgba(37, 37, 37, 1);
+    font-family: 'Khula', sans-serif;
+}
+
+.header {
+    display: flex;
+    /* Utiliser Flexbox */
+    align-items: center;
+    /*justify-content: flex-end;*/
+}
+
+.logo {
+    width: 10%;
+    margin-right: 85%;
+}
+
+.button-accueil {
+    width: 80px;
+    /* Largeur du bouton */
+    height: 25px;
+    /* Hauteur du bouton */
+
+    font-size: 15px;
+    /* Taille de la police */
+    font-weight: 550;
+    margin-left: -50%;
+    margin-top: -70%;
+    border-radius: 7px;
+    /* Valeur selon la forme souhaitée */
+
+    background-color: #ffffff;
+    /* Couleur de fond */
+    color: #000000;
+    /* Couleur du texte */
+    border: #000000;
+    /* Suppression de la bordure par défaut */
+
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.titre {
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+    top : 50%;
+    color: #ffffff;
+
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 38vw;
+    width: 20vw;
+    background-color: rgba(37, 37, 37, 1);
+    color: white;
+    text-align: center;
+    padding-top: 20vh;
+    padding-bottom: 0.5vh;
+    font-size: 3vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2vw;
+}
+
+.footer a {
+    text-align: center;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 1);
+    font-size: 1vw;
+}
+
+/* --- Dashboard Admin - Pilote  --- */
+
+.statistics {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+}
+
+.partie-entreprise,
+.partie-offre,
+.partie-pilote,
+.partie-etudiant {
+    height: 80px;
+    width: 200px;
+    border-radius: 8px;
+    background-color: white;
+    text-align: center;
+}
+
+.partie-entreprise a,
+.partie-offre a,
+.partie-pilote a,
+.partie-etudiant a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    top: 30%;
+    right: 2%;
+    font-size: 23px;
+}
+
+.affichage-fonction {
+    position: absolute;
+    top: 50%;
+    left: 14%;
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+}
+
+.fonction-entreprise,
+.fonction-offre,
+.fonction-pilote,
+.fonction-etudiant {
+    height: 230px;
+    width: 250px;
+    border-radius: 8px;
+    background-color: white;
+    text-align: center;
+}
+
+.fonction-entreprise p,
+.fonction-offre p,
+.fonction-pilote p,
+.fonction-etudiant p{
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    top: 5%;
+    font-size: 23px;
+}
+
+.button-fonction {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    top: 10%;
+    display: flex;
+    gap: 30px;
+}
+
+.creer-entreprise,
+.gerer-entreprise,
+.creer-offre,
+.gerer-offre,
+.creer-pilote,
+.gerer-pilote,
+.creer-etudiant,
+.gerer-etudiant {
+    height: 30px;
+    width: 200px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.creer-entreprise:hover,
+.gerer-entreprise:hover,
+.creer-offre:hover,
+.gerer-offre:hover,
+.creer-etudiant:hover,
+.gerer-etudiant:hover,
+.creer-pilote:hover,
+.gerer-pilote:hover {
+    background-color: rgba(28, 143, 166, 0.918);
+}
+
+/* --- Dashboard - Pilote  --- */
+.statistique {
+    position: absolute;
+    top: 30%;
+    left: 28%;
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+}
+
+.affichage-fonctionnalité {
+    position: absolute;
+    top: 50%;
+    left: 24%;
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+}
