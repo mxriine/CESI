@@ -1,3 +1,4 @@
+<!-- FORMULAIRE DE CONNEXION (EN PHP) -->
 <?php
     require_once('../Controleurs/connect.php');
 ?>
@@ -16,7 +17,7 @@
 
 <body>
     <h1 id="identifier">S'identifier</h1>
-    <img src="../_assets/img/imgco.png" id="imgcon" alt="imgDebut">
+    <img src="../_assets/img/imgco.png" id="img" alt="img">
 
     <form method="POST">
         <div class="container">
@@ -29,11 +30,11 @@
 
             <div class="parent">
                 <label for="mdp">MOT DE PASSE</label>
-                <input type="mdp" id="mdp" name="mdp">
+                <input type="password" id="mdp" name="mdp">
                 <p id="messageErreurMdp" class="error"><?php echo $error_message; ?></p>
             </div>
 
-            <button type="submit" id="valider_co">VALIDER</button>
+            <button type="submit" id="submit">VALIDER</button>
         </div>
     </form>
 </body>

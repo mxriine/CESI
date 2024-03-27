@@ -1,9 +1,10 @@
-<!-- RECUPERATION DES DONNEES (EN PHP) -->
+<!-- RECUPERATION DES DONNEES ET DES SESSIONS (EN PHP) -->
 <?php
-require_once('../../../Controleurs/dashboard.php');
+    require_once('../../../Controleurs/dashboard.php');
+    require_once('../../../Controleurs/session.php');
 ?>
 
-<!-- DASHBOARD ADMIN (EN HTML) -->
+<!-- DASHBOARD PILOTE (EN HTML) -->
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -17,37 +18,38 @@ require_once('../../../Controleurs/dashboard.php');
 </head>
 
 <body>
-    <header>
+<header>
         <div class="header">
-            <img class="logo" src="../../../_assets/img/logoWeb.png" alt="Logo StagExplorer">
-
-            <a href="../../../Main.php">
-                <button class="button-accueil">Accueil</button></a>
+            <img class="logo" src="../../_assets/img/logoWeb.png" alt="Logo StagExplorer">
         </div>
-
-
+        <div class="titre">
+            <h1>StagExplorer</h1>
+        </div>
+        <nav id="nav" class="nav">
+            <ul>
+                <li><a href="#"><?php echo isset($_SESSION['prenom']) ? $_SESSION['prenom'] : 'Utilisateur '; ?>(PILOTE)</a>
+                    <ul class="drop">
+                        <li><a href="../../../Main.php">Accueil</a></li>
+                        <li><a href="Controleurs/logout.php">Déconnexion</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
     </header>
 
-    <div class="titre">
-        <h1>StagExplorer</h1>
-    </div>
-
-    <section class="statistics">
-        <div class="partie-entreprise" href="#">
-            <a href="../../../Statistics/Statistics_Admin.html"><?php echo $totalEntreprises; ?> entreprises</a>
+    <section class="statistique">
+        <div class="partie-entreprise">
+            <p><?php echo $totalEntreprises; ?> entreprises</p>
         </div>
         <div class="partie-offre">
-            <a href="../../../Statistics/Statistics_Admin.html"><?php echo $totalOffres; ?> offres</a>
+            <p><?php echo $totalOffres; ?> offres</p>
         </div>
-        <div class="partie-pilote" href="#">
-            <a href="../../../Statistics/Statistics_Admin.html"><?php echo $totalPilotes; ?> pilotes</a>
-        </div>
-        <div class="partie-etudiant" href="#">
-            <a href="../../../Statistics/Statistics_Admin.html"><?php echo $totalEtudiants; ?> étudiants</a>
+        <div class="partie-etudiant">
+            <p><?php echo $totalEtudiants; ?> étudiants</p>
         </div>
     </section>
 
-    <section class="affichage-fonction">
+    <section class="affichage-fonctionnalité">
 
         <div class="fonction-entreprise">
             <p>Entreprise</p>
@@ -66,16 +68,6 @@ require_once('../../../Controleurs/dashboard.php');
                     <button class="creer-offre" type="button">Créer une offre</button></a>
                 <a href="PagesVisionAdmin/page_VisionOffre - VErsionPA.html">
                     <button class="gerer-offre" type="button">Gérer une offre</button></a>
-            </div>
-        </div>
-
-        <div class="fonction-pilote">
-            <p>Pilote</p>
-            <div class="button-fonction">
-                <a href="../../Gérer/Créer/Creation_Pilote.html">
-                    <button class="creer-pilote" type="button">Créer un pilote</button></a>
-                <a href="PagesVisionAdmin/page_VisionPilote - VErsionPA.html">
-                    <button class="gerer-pilote" type="button">Gérer un pilote</button></a>
             </div>
         </div>
 

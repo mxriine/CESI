@@ -1,37 +1,45 @@
+<!-- FORMULAIRE DE SESSION (EN PHP) -->
+<?php
+    require_once '../../../Controleurs/session.php';
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modifier une entreprise</title>
-    <link rel="icon" type="image/png" href="/_assets/img/logoWeb.png">
-    <link rel="stylesheet" href="/_assets/_css/styles.css">
+    <link rel="icon" type="image/png" href="../../../_assets/img/logoWeb.png">
+    <link rel="stylesheet" href="../../../_assets/_css/modifier.css">
 </head>
 
 <body>
     <header>
-        <div class="alignement">
-            <img class = "imgprinc"src="/_assets/img/logoWeb.png" alt="Logo StagExplorer">
-               </div>
-               <div class="Titre1">
-                <h1>StagExplorer</h1>
-            </div> 
+        <div class="header">
+            <img class="logo" src="../../../_assets/img/logoWeb.png" alt="Logo StagExplorer">
+        </div>
+        <div class="titre">
+            <h1>StagExplorer</h1>
+        </div>
     </header>
-   <section class="Bloc">
-        <div class="titre2">
+    
+    <section class="bloc">
+        <div class="titre1">
             <h1>MODIFIER UNE ENTREPRISE</h1>
         </div>
         <article class="contenu">
-            <div class="nameM">
+            <div class="nomEntreprise">
                 <label>Nom</label>
                 <input type="text" id="nom" name="Nom" value="Entreprise 1">
             </div>
             <div class="descriptionEntreprise">
                 <label>Description</label>
-                <textarea id="DescriptionEntreprise" name="Description" rows="2" cols="30" value="Description"></textarea>
+                <textarea id="DescriptionEntreprise" name="Description" rows="2" cols="30"
+                    value="Description"></textarea>
             </div>
-            <div class="act">
-            <label>Secteur d'activité</label>
+            <div class="activite">
+                <label>Secteur d'activité</label>
                 <select id="secteur_act" name="secteur_act">
                     <option value="rien" name="rien">Sélectionnnez</option>
                     <option value="BTP" name="BTP">BTP</option>
@@ -40,7 +48,7 @@
                     <option value="Sante" name="Sante">Santé</option>
                 </select>
             </div>
-            <div class="loc">
+            <div class="localite">
                 <label>Localité</label>
                 <select id="localite" name="localite">
                     <option value="rien" name="rien">Sélectionnnez</option>
@@ -74,9 +82,7 @@
             <a href="/Gérer/Supprimer/Supprimer_Entreprise.html"><button type="button" id="but3">Supprimer</button></a>
             <button type="submit" id="but4">Archiver</button>
         </article>
-   </section>
-    
-
+    </section>
 </body>
 
 </html>

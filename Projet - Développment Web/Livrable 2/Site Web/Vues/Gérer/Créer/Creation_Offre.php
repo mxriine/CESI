@@ -1,3 +1,8 @@
+<!-- FORMULAIRE DE SESSION (EN PHP) -->
+<?php
+    require_once '../../../Controleurs/session.php';
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -17,16 +22,6 @@
         <div class="titre">
             <h1>StagExplorer</h1>
         </div>
-        <nav id="nav" class="nav">
-            <ul>
-                <li><a href="">ADMINISTRATEUR</a>
-                    <ul class="drop">
-                        <li><a href="../../../Users/Admin/Dashboard.php">Voir le dashboard</a></li>
-                        <li><a href="">Déconnnexion</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
     </header>
 
     <section class="container">

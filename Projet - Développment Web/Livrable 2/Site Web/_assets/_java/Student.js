@@ -1,6 +1,5 @@
 // INSCRIPTION ET MODIFICATION DES ETUDIANTS
 
-
 // --- Inscription Etudiant Part 1 --- //
 
 // Déclaration des variables

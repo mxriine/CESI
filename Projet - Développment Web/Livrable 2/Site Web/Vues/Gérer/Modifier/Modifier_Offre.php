@@ -1,47 +1,51 @@
+<!-- FORMULAIRE DE SESSION (EN PHP) -->
+<?php
+    require_once '../../../Controleurs/session.php';
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil</title>
-    <link rel="icon" type="image/png" href="/_assets/img/logoWeb.png">
-    <link rel="stylesheet" href="/_assets/_css/styles.css">
+    <title>Modifier une offre</title>
+    <link rel="icon" type="image/png" href="../../../_assets/img/logoWeb.png">
+    <link rel="stylesheet" href="../../../_assets/_css/modifier.css">
 </head>
 
 <body>
     <header>
-        <div class="alignement">
-            <img class = "imgprinc"src="/_assets/img/logoWeb.png" alt="Logo StagExplorer">
+        <div class="header">
+            <img class="logo" src="../../../_assets/img/logoWeb.png" alt="Logo StagExplorer">
         </div>
-
-        <div class="Titre1">
+        <div class="titre">
             <h1>StagExplorer</h1>
         </div>
-                 
     </header>
     
-    <section class = "Bloc">
-        <div class = "titre3">
+    <section class = "bloc">
+        <div class = "titre1">
             <h1>MODIFIER UNE OFFRE</h1>
         </div>
-            <article class = "Bloc2Offre">
-                <div class="Bloc3Offre">
+            <article class = "BlocOffre1">
+                <div class="BlocOffre2">
                     <label>Titre</label>
                     <input class = "input1" type = "text" name = "Titre" value = "Stage 1" placeholder="Stage 1">
                 </div>
-                <div class="Bloc3Offre">
+                <div class="BlocOffre2">
                     <label>Description</label>
                     <textarea rows = 3 placeholder="Et licet quocumque oculos flexeris feminas adfatim multas spectare cirratas, quibus, si nupsissent, per aetatem ter iam nixus poterat suppetere liberorum, ad usque taedium pedibus pavimenta tergentes iactari volucriter gyris, dum exprimunt innumera simulacra, quae finxere fabulae theatrales." ></textarea>  
                 </div>
-                <div class="Bloc3Offre">
+                <div class="BlocOffre2">
                     <label>Compétences requises</label>
                     <textarea rows = 3 placeholder="Développement Web (JS, HTML, ....)" ></textarea> 
                 </div>
-                <div class="Bloc3Offre">
+                <div class="BlocOffre2">
                     <label>Entreprise</label>
                     <input class = "input1" type = "text" name = "Entreprise"  value = "CESI Industrie" placeholder="Entrez le nom d'une entreprise">
                 </div>
-                <div class="Bloc3Offre">
+                <div class="BlocOffre2">
                     <label>Localité</label>
                     <select  name = "Localité">
                         <option name = "Sélectionnez">Sélectionnez</option>
@@ -51,24 +55,24 @@
                 </div>
             </article>
            
-        <article class = "Bloc4Offre">
-                <div class="Bloc5Offre">
+        <article class = "BlocOffre3">
+                <div class="BlocOffre4">
                     <label>Durée de stage</label>
                     <input class = "input1" type ="datetime" name = "DuréeStage" value = "15 semaines"> 
                 </div>
-                <div class="Bloc5Offre">
+                <div class="BlocOffre4">
                     <label>Date début</label>
                     <input class = "input1" type ="date" name = "Datedébut" value="Datedébut">
                 </div>
-                <div class="Bloc5Offre">
+                <div class="BlocOffre4">
                     <label>Rémunération</label>
                     <input class = "input1" type = "number" name = "Rémunération" value="Remuneration">    
                 </div>
-                <div class="Bloc5Offre">
+                <div class="BlocOffre4">
                     <label>Nombre de place</label>
                     <input class = "input1" type = "number" name = "Nombredeplace" vaue ="Nombredeplace">
                 </div>
-                <div class="Bloc5Offre">
+                <div class="BlocOffre4">
                     <label>Niveau requis</label>
                     <select class = "input1" name = "Niveau requis">
                         <option name = "Sélectionnez">Sélectionnez</option>
@@ -88,7 +92,7 @@
         </article>
         
         <article class="boutons-G">
-            <a href="/Gérer/Supprimer/Supprimer_Offre.html"><button type="button" id="but3">Supprimer le pilote</button></a>
+            <a href="/Gérer/Supprimer/Supprimer_Offre.html"><button type="button" id="but3">Supprimer l'offre</button></a>
         </article>
     </section>
 

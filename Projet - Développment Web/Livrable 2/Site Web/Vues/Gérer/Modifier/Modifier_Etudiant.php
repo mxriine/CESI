@@ -1,38 +1,46 @@
+<!-- FORMULAIRE DE SESSION (EN PHP) -->
+<?php
+    require_once '../../../Controleurs/session.php';
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modifier un étudiant</title>
-    <link rel="icon" type="image/png" href="/_assets/img/logoWeb.png">
-    <link rel="stylesheet" href="/_assets/_css/styles.css">
+    <link rel="icon" type="image/png" href="../../../_assets/img/logoWeb.png">
+    <link rel="stylesheet" href="../../../_assets/_css/modifier.css">
 </head>
 
 <body>
     <header>
-        <div class="alignement">
-            <img class = "imgprinc"src="/_assets/img/logoWeb.png" alt="Logo StagExplorer">
-               </div>
-               <div class="Titre1">
-                <h1>StagExplorer</h1>
-            </div> 
+        <div class="header">
+            <img class="logo" src="../../../_assets/img/logoWeb.png" alt="Logo StagExplorer">
+        </div>
+        <div class="titre">
+            <h1>StagExplorer</h1>
+        </div>
     </header>
-   <section class="Bloc">
-        <div class="titre2">
+    
+   <section class="bloc">
+        <div class="titre1">
             <h1>MODIFIER UN ETUDIANT</h1>
         </div>
         <article class="contenu">
-            <div class="nameEtudiant">
+            <div class="name">
                 <label>Nom</label>
                 <input type="text" id="nom" name="nom" value="Durant">
             </div>
-            <div class="PrenomEtudiant">
+            <div class="prenom">
                 <label>Prénom</label>
                 <input type="text" id="prenom" name="prenom" value="Richard">
             </div>
             <div class="centres">
             <label>Centre</label>
             <select id="centre" name="centre">
+                <option name = "Sélectionnez">Sélectionnez</option>
                 <option value="Pau" name="centre">Pau</option>
                 <option value="Toulouse" name="centre">Toulouse</option>
                 <option value="Tarbes" name="centre">Tarbes</option>
@@ -43,6 +51,7 @@
             <div class="promo">
                 <label>Promotions</label>
                 <select id="promos" name="promo">
+                    <option name = "Sélectionnez">Sélectionnez</option>
                     <option value="1A" name="promo">1A</option>
                     <option value="2A" name="promo">2A</option>
                     <option value="3A" name="promo">3A</option>

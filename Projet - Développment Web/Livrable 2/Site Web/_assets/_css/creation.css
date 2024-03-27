@@ -17,37 +17,11 @@ body {
     margin-right: 85%;
 }
 
-.button-accueil {
-    width: 80px;
-    /* Largeur du bouton */
-    height: 25px;
-    /* Hauteur du bouton */
-
-    font-size: 15px;
-    /* Taille de la police */
-    font-weight: 550;
-    margin-left: -50%;
-    margin-top: -70%;
-    border-radius: 7px;
-    /* Valeur selon la forme souhaitée */
-
-    background-color: #ffffff;
-    /* Couleur de fond */
-    color: #000000;
-    /* Couleur du texte */
-    border: #000000;
-    /* Suppression de la bordure par défaut */
-
-    cursor: pointer;
-    text-decoration: none;
-}
-
 .titre {
     font-size: 20px;
     text-align: center;
     margin-top: -7%;
     color: #ffffff;
-
 }
 
 .footer {
@@ -74,73 +48,6 @@ body {
 }
 
 /* --- Creation Entreprise --- */
-
-.nav {
-    width: 80px;
-    height: 25px;
-
-    font-size: 15px;
-    font-weight: 500;
-    position: absolute;
-    border-radius: 7px;
-    top: 5%;
-    right: 9%;
-}
-
-.nav ul {
-    list-style-type: none;
-}
-
-.nav ul li {
-    float: left;
-    text-align: left;
-    position: relative;
-}
-
-.nav ul::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.nav a {
-    display: block;
-    text-decoration: none;
-    color: white;
-    border-bottom: 2px solid transparent;
-    padding: 10px 0px;
-}
-
-.nav a:hover {
-    color: rgba(28, 143, 166, 0.918);
-    border-bottom: 2px solid rgba(28, 143, 166, 0.918);
-}
-
-.nav ul li:hover .drop {
-    display: block;
-}
-
-.drop {
-    display: none;
-    background-color: rgba(37, 37, 37, 1);
-    position: absolute;
-    width: 100%;
-    z-index: 1000;
-}
-
-.drop li {
-    float: none;
-    width: 100%;
-    text-align: center;
-}
-
-.drop a {
-    border-bottom: none;
-}
-
-.drop a:hover {
-    border-bottom: none;
-}
 
 .container {
     height: 60%;

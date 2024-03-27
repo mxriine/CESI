@@ -1,3 +1,8 @@
+<!-- FORMULAIRE DE SESSION (EN PHP) -->
+<?php
+    require_once '../../../Controleurs/session.php';
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -18,18 +23,6 @@
         <div class="titre">
             <h1>StagExplorer</h1>
         </div>
-        <nav class="nav" id="nav">
-            <ul>
-                <li><a href="">ETUDIANT</a>
-                    <ul class="drop">
-                        <li><a href="/Student/Wishlist.html">Ma wish-list</a></li>
-                        <li><a href="/Student/Stage_Show.html">Consulter mes stages</a></li>
-                        <li><a href="">Consulter mes stats</a></li>
-                        <li><a href="">Déconnnexion</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
     </header>
 
     <section class="container">

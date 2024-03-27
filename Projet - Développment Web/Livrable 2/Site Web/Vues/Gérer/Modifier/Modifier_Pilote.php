@@ -1,39 +1,46 @@
+<!-- FORMULAIRE DE SESSION (EN PHP) -->
+<?php
+    require_once '../../../Controleurs/session.php';
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modifier un pilote</title>
-    <link rel="icon" type="image/png" href="/_assets/img/logoWeb.png">
-    <link rel="stylesheet" href="/_assets/_css/styles.css">
-    <script async src="/_assets/_java/JSModifPilote.js"></script>
+    <link rel="icon" type="image/png" href="../../../_assets/img/logoWeb.png">
+    <link rel="stylesheet" href="../../../_assets/_css/modifier.css">
 </head>
 
 <body>
     <header>
-        <div class="alignement">
-            <img class = "imgprinc"src="/_assets/img/logoWeb.png" alt="Logo StagExplorer">
-               </div>
-               <div class="Titre1">
-                <h1>StagExplorer</h1>
-            </div> 
+        <div class="header">
+            <img class="logo" src="../../../_assets/img/logoWeb.png" alt="Logo StagExplorer">
+        </div>
+        <div class="titre">
+            <h1>StagExplorer</h1>
+        </div>
     </header>
-   <section class="Bloc">
-        <div class="titre2">
+
+   <section class="bloc">
+        <div class="titre1">
             <h1>MODIFIER UN PILOTE</h1>
         </div>
         <article class="contenu">
-            <div class="namePilote">
+            <div class="name">
                 <label>Nom</label>
                 <input type="text" id="nomP" name="nom" placeholder="Durant">
             </div>
-            <div class="PrenomEtudiant">
+            <div class="prenom">
                 <label>Prénom</label>
                 <input type="text" id="prenomP" name="prenom" placeholder="Richard">
             </div>
             <div class="centres">
             <label>Centre</label>
             <select id="centreP" name="centre">
+                <option name = "Sélectionnez">Sélectionnez</option>
                 <option value="Pau" name="centre">Pau</option>
                 <option value="Toulouse" name="centre">Toulouse</option>
                 <option value="Tarbes" name="centre">Tarbes</option>
@@ -43,7 +50,6 @@
             </div>
             <label id="LabelPromo">Promotions</label>
             <div class="promotion" id="promosP">
-                
                 <input type="checkbox" name="promosP" value="1A" checked>
                 <label for="1A">1e année</label>
                 <input type="checkbox" name="promosP" value="2A">
@@ -56,7 +62,8 @@
                 <label for="5A">5e année</label>
             </div>
         </article>
-        <label id="messageErreurPiloteModif">Tous les champs ne sont pas correctement remplis !</label>
+
+        <p id="messageErreurPiloteModif"></p>
         <article class="boutons-D">
             <button type="submit" id="but1">Sauvegarder</button>
             <button type="button" id="but2" onclick="history.back()">Retour</button>
