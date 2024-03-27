@@ -5,23 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Créer une entreprise</title>
-    <link rel="icon" type="image/png" href="/_assets/img/logoWeb.png">
-    <link rel="stylesheet" href="/_assets/_css/styles.css">
+    <link rel="icon" type="image/png" href="../../../_assets/img/logoWeb.png">
+    <link rel="stylesheet" href="../../../_assets/_css/creation.css">
 </head>
 
 <body>
     <header>
-        <div class="alignement">
-            <img class="imgprinc" src="/_assets/img/logoWeb.png" alt="Logo StagExplorer">
+        <div class="header">
+            <img class="logo" src="../../../_assets/img/logoWeb.png" alt="Logo StagExplorer">
         </div>
-        <div class="Titre1">
+        <div class="titre">
             <h1>StagExplorer</h1>
         </div>
+        <nav id="nav" class="nav">
+            <ul>
+                <li><a href="">ADMINISTRATEUR</a>
+                    <ul class="drop">
+                        <li><a href="../../../Users/Admin/Dashboard.php">Voir le dashboard</a></li>
+                        <li><a href="">Déconnnexion</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
     </header>
-    <section class="Bloc">
-        <div class="titre2">
+
+    <section class="container">
+        <div class="title">
             <h1>CREER UNE ENTREPRISE</h1>
         </div>
+
         <article class="contenu">
             <div class="name">
                 <label>Nom</label>
@@ -29,9 +41,9 @@
             </div>
             <div class="description">
                 <label>Description</label>
-                <textarea id="Description" name="Description" rows="50" cols="50">Décrivez l'entreprise</textarea>
+                <textarea placeholder="Description" name="Description" rows="1" cols="30"></textarea><br>
             </div>
-            <div class="act">
+            <div class="activite">
                 <label>Secteur d'activité</label>
                 <select id="secteur_act" name="secteur_act">
                     <option value="rien" name="rien">Sélectionnnez</option>
@@ -41,7 +53,7 @@
                     <option value="Sante" name="Sante">Santé</option>
                 </select>
             </div>
-            <div class="loc">
+            <div class="localite">
                 <label>Localité</label>
                 <select id="localite" name="localite">
                     <option value="rien" name="rien">Sélectionnnez</option>
@@ -67,6 +79,7 @@
                 </div>
             </div>
         </article>
+        
         <article class="boutons">
             <button type="submit" id="but1">Sauvegarder</button>
             <button type="button" id="but2">Retour</button>

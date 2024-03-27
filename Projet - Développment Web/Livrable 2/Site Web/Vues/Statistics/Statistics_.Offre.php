@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page des offres</title>
-    <link rel="icon" type="image/png" href="../_assets/img/logoWeb.png">
-    <link rel="stylesheet" href="../_assets/_css/statistics.css">
+    <link rel="icon" type="image/png" href="../../_assets/img/logoWeb.png">
+    <link rel="stylesheet" href="../../_assets/_css/statistics.css">
 
 </head>
 
 <body>
     <header>
         <div class="header">
-            <img class="logo" src="../_assets/img/logoWeb.png" alt="Logo StagExplorer">
+            <img class="logo" src="../../_assets/img/logoWeb.png" alt="Logo StagExplorer">
         </div>
         <div class="titre">
             <h1>StagExplorer</h1>
@@ -22,7 +22,7 @@
             <ul>
                 <li><a href="">ADMINISTRATEUR</a>
                     <ul class="drop">
-                        <li><a href="../Users/Admin/Dashboard.php">Voir le dashboard</a></li>
+                        <li><a href="../../Users/Admin/Dashboard.php">Voir le dashboard</a></li>
                         <li><a href="">Déconnnexion</a></li>
                     </ul>
                 </li>
@@ -32,13 +32,13 @@
 
     <section class="container">
         <p class="name">Dashboard Statistiques Offres</p>
-        <img class="graph" src="../_assets/img/graphique.png">
+        <img class="graph" src="../../_assets/img/graphique.png">
     </section>
 
 
     <aside>
         <p id="filtres">Filtre</p>
-        <img class="filter" src="../_assets/img/filtrer.jpg" alt="Logo Filtrer">
+        <img class="filter" src="../../_assets/img/filtrer.jpg" alt="Logo Filtrer">
 
         <section class="competence">
             <label class="separation">Compétences</label>

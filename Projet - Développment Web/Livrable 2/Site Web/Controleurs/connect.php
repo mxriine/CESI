@@ -1,7 +1,9 @@
-<!-- VERIFICATION DES ENTREES (EN PHP) -->
 <?php
+// Démarrez la session
+session_start();
+
 // Inclure le fichier de connexion à la base de données
-require_once('_assets/_php/server.php');
+require_once('../server.php');
 
 // Initialiser les variables
 $error_message = "";
@@ -17,9 +19,9 @@ if (isset($_POST['mail']) && isset($_POST['mdp'])) {
     $row = $result->fetch(PDO::FETCH_ASSOC);
 
     if ($row) {
-        // Stocker les informations d'identification dans des cookies
-        setcookie('mail', $row['Mail_Pers'], time() + (86400 * 30), "/"); // Cookie valide pendant 30 jours
-        setcookie('mdp', $row['Mdp_Pers'], time() + (86400 * 30), "/");
+        // Stocker les informations d'identification dans des variables de session
+        $_SESSION['mail'] = $row['Mail_Pers'];
+        $_SESSION['mdp'] = $row['Mdp_Pers'];
 
         // Requête pour obtenir le rôle de l'utilisateur
         $sqlrole = "SELECT 
@@ -39,23 +41,23 @@ if (isset($_POST['mail']) && isset($_POST['mdp'])) {
         $rowrole = $resultrole->fetch(PDO::FETCH_ASSOC);
 
         if ($rowrole) {
-            // Récupérer le rôle de l'utilisateur
-            $role = $rowrole['role'];
+            // Récupérer le rôle de l'utilisateur et le stocker dans une variable de session
+            $_SESSION['role'] = $rowrole['role'];
 
             // Redirection en fonction du rôle
-            switch ($role) {
+            switch ($_SESSION['role']) {
                 case 'admin':
-                    header('Location: Users/Admin/Dashboard.php');
+                    header('Location: ../Vues/Users/Admin/Dashboard.php');
                     break;
                 case 'pilote':
-                    header('Location: Users/Pilote/Dashboard.php');
+                    header('Location: ../Vues/Users/Pilote/Dashboard.php');
                     break;
                 case 'etudiant':
-                    header('Location: Users/Student/Entreprise_Show.html');
+                    header('Location: ../Vues/Users/Student/Entreprise_Show.html');
                     break;
                 default:
                     // Gérer le cas où le rôle est inconnu
-                    header('Location: connection.php');
+                    header('Location: ../Vues/connection.php');
                     break;
             }
         }
@@ -63,45 +65,6 @@ if (isset($_POST['mail']) && isset($_POST['mdp'])) {
         // Adresse e-mail ou mot de passe incorrect
         $error_message = "Adresse e-mail ou mot de passe incorrect";
         setcookie('error_message', $error_message, time() + 10, "/"); // Cookie valide pendant 10 secondes
-
     }
 }
 ?>
-
-<!-- FORMULAIRE DE CONNEXION (EN HTML) -->
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="utf-8">
-    <title>Connexion</title>
-    <link rel="icon" type="image/png" href="_assets/img/logoWeb.png">
-    <link rel="stylesheet" href="_assets/_css/styles.css">
-    <script src="_assets/_js/connection.js"></script>
-</head>
-
-<body>
-    <h1 id="identifier">S'identifier</h1>
-    <img src="_assets/img/imgco.png" id="imgcon" alt="imgDebut">
-
-    <form method="POST">
-        <div class="container">
-
-            <div class="parent">
-                <label for="mail">EMAIL</label>
-                <input type="email" id="mail" name="mail" placeholder="jean.bertrand@gmail.com">
-                <p id="messageErreurMail" class="error"><?php echo $error_message; ?></p>
-            </div>
-
-            <div class="parent">
-                <label for="mdp">MOT DE PASSE</label>
-                <input type="mdp" id="mdp" name="mdp">
-                <p id="messageErreurMdp" class="error"><?php echo $error_message; ?></p>
-            </div>
-
-            <button type="submit" id="valider_co">VALIDER</button>
-        </div>
-    </form>
-</body>
-
-</html>

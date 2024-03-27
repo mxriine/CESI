@@ -4,45 +4,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription</title>
-    <link rel="icon" type="image/png" href="/_assets/img/logoWeb.png">
-    <link rel="stylesheet" href="/_assets/_css/styles.css">
-    <script async src="../JS/assets.js"></script>
-
+    <title>Créer un étudiant</title>
+    <link rel="icon" type="image/png" href="../../../_assets/img/logoWeb.png">
+    <link rel="stylesheet" href="../../../_assets/_css/creation.css">
+    <script src="../../../_assets/_java/student.js"></script>
 </head>
 
 <body>
     <header>
-        <div class="alignement">
-            <img class="imgprinc" src="/_assets/img/logoWeb.png" alt="Logo StagExplorer">
+        <div class="header">
+            <img class="logo" src="../../../_assets/img/logoWeb.png" alt="Logo StagExplorer">
         </div>
-
+        <div class="titre">
+            <h1>StagExplorer</h1>
+        </div>
+        <nav id="nav" class="nav">
+            <ul>
+                <li><a href="">ADMINISTRATEUR</a>
+                    <ul class="drop">
+                        <li><a href="../../../Users/Admin/Dashboard.php">Voir le dashboard</a></li>
+                        <li><a href="">Déconnnexion</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
     </header>
-    <div class="TitreInscription">
-        <h1>Création compte Etudiant</h1>
-    </div>
+
     <div id="BLOC_INSCRIPTION1">
-        <label for="Etape1">Etape 1: Entrez les informations</label>
-        
-        <section class="BlocInscription">
+        <section class="container">
+            <div class="title">
+                <h1>CREER UN ETUDIANT</h1>
+                <p for="Etape1">Etape 1: Entrez les informations</p>
+            </div>
+
             <p id="messageErreurId" class="messageErreurId"></p>
-            <div class="Id">
+            <div class="id">
                 <label for="labelEtape1">Identifiant</label>
                 <input type="text" id="identifiant" name="identifiant" placeholder="Luc64" required>
             </div>
+
             <p id="messageErreurMDP" class="messageErreurMDP"></p>
             <div class="mdp">
                 <label for="labelEtape1">Mot de passe</label>
                 <input type="password" id="motdp" name="motdepasse" required>
             </div>
-            <p id="messageErreurConfirmation" class="messageErreurConfirmation"></p>
 
+            <p id="messageErreurConfirmation" class="messageErreurConfirmation"></p>
             <div class="confirmdp">
                 <label for="labelEtape1">Confirmation</label>
                 <input type="password" id="confmdp" name="confmotdp" required>
             </div>
+
+            <p id="messageErreurMail" class="messageErreurMail"></p>
             <button class="boutonValidationInscription" id="boutonValidationInscription1" type="submit">VALIDER</button>
-            <label id="messageErreurChamps">Tous les champs ne sont pas correctement remplis !</label>
         </section>
     </div>
 
@@ -51,7 +65,7 @@
         <p id="messageErreurNom" class="messageErreurNom"></p>
         <p id="messageErreurPrenom" class="messageErreurPrenom"></p>
         <section class="BlocNomPrenom">
-            
+
             <div class="Nom">
                 <label for="labelEtape1">Nom</label>
                 <input type="text" id="nom" name="nom" placeholder="MARTIN">
@@ -94,10 +108,10 @@
                 <option value="Paris">Paris</option>
                 <option value="Lyon">Lyon</option>
             </select>
-        
+
         </section>
         <button class="boutonValidationInscription2" id="boutonValidationInscription2" type="submit">VALIDER</button>
-        <label id="messageErreurChamps2">Tous les champs ne sont pas correctement remplis !</label>
+        <p id="messageErreurChamps2"></p>
     </div>
 
 </body>

@@ -4,44 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page des offres</title>
-    <link rel="icon" type="image/png" href="/_assets/img/logoWeb.png">
-    <link rel="stylesheet" href="/_assets/_css/dashboardoffres.css">
-
+    <title>Page des entreprises</title>
+    <link rel="icon" type="image/png" href="../../_assets/img/logoWeb.png">
+    <link rel="stylesheet" href="../../_assets/_css/statistics.css">
 </head>
 
 <body>
     <header>
-        <div class="alignement">
-            <img class="imgprinc" src="/_assets/img/logoWeb.png" alt="Logo StagExplorer">
+        <div class="header">
+            <img class="logo" src="../../_assets/img/logoWeb.png" alt="Logo StagExplorer">
         </div>
-        <div class="Titre1">
+        <div class="titre">
             <h1>StagExplorer</h1>
         </div>
-        <nav class="Menu" id="menuE">
+        <nav id="nav" class="nav">
             <ul>
-                <li class="deroulant"><a href="">NOM DE L'ETUDIANT</a>
-                    <ul class="sous">
-                        <li><a href="/Student/Wishlist.html">Ma wish-list</a></li>
-                        <li><a href="/Student/Stage_Show.html">Consulter mes stages</a></li>
-                        <li><a href="">Consulter mes stats</a></li>
+                <li><a href="">ADMINISTRATEUR</a>
+                    <ul class="drop">
+                        <li><a href="../../Users/Admin/Dashboard.php">Voir le dashboard</a></li>
                         <li><a href="">Déconnnexion</a></li>
                     </ul>
                 </li>
             </ul>
         </nav>
     </header>
-    <section class="Bloc1">
-        <label class="label3">Dashboard Statistiques Offres</label>
-        <img class="imggraph" src="/_assets/img/graphique.png">
+
+    <section class="container">
+        <p class="name">Dashboard Statistiques Entreprise</p>
+        <img class="graph" src="../../_assets/img/graphique.png">
     </section>
 
 
     <aside>
-        <label id="filtres">Filtrer</label>
-        <img class="imgfiltrer" src="/_assets/img/filtrer.jpg" alt="Logo Filtrer">
-        <section class="competences">
-            <label class="trait">Compétences</label>
+        <p id="filtres">Filtre</p>
+        <img class="filter" src="../../_assets/img/filtrer.jpg" alt="Logo Filtrer">
+
+        <section class="competence">
+            <label class="separation">Compétences</label>
             <div>
                 <input type="checkbox" name="Informatique" value="Informatique">
                 <label for="Informatique">Informatique</label>
@@ -65,7 +64,7 @@
         </section>
 
         <section class="localite">
-            <label class="trait">Localités</label>
+            <label class="separation">Localités</label>
             <div>
                 <input type="checkbox" name="pau" value="pau">
                 <label for="pau">Pau</label>
@@ -92,8 +91,8 @@
             </div>
         </section>
 
-        <section class="promotions">
-            <label class="trait" for="promotion">Promotions</label>
+        <section class="promotion">
+            <label class="separation" for="promotion">Promotions</label>
             <div>
                 <select name="promotion" id="promotion">
                     <option>Sélectionner</option>
