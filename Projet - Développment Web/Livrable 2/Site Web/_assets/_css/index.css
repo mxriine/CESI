@@ -155,7 +155,6 @@ body {
     top: 5%;
     font-size: 30px;
     font-weight: bold;
-    font-family: URW Chancery L, cursive;
 }
 
 .publier {
@@ -170,7 +169,6 @@ body {
     height: 85px;
     width: 700px;
     left: 5%;
-    font-family: URW Chancery L, cursive;
 }
 
 .compDemandes {
@@ -179,7 +177,6 @@ body {
     height: 30px;
     width: 700px;
     left: 5%;
-    font-family: URW Chancery L, cursive;
 }
 
 .boutonVision {

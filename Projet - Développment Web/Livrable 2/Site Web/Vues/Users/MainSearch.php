@@ -31,6 +31,7 @@ require_once('../../Controleurs/display.php');
     <!-- BLOC DES OFFRES -->
     <div id="BLOC_OFFRES">
         <div class="scroll-section">
+
             <div class="scroll-content">
                 <label class="TitreOffreEntreprise">Stage 1</label>
                 <div class="publier">
@@ -44,9 +45,13 @@ require_once('../../Controleurs/display.php');
                     <label for="TitreDescription/Comp">Compétences requises:</label>
                     <label>maths</label>
                 </div>
-                <a href="../PagesVisionSeuleVersionPA/page_OffreSeule - VersionPA.html"><button class="boutonVision" type="button">Visionner</button></a>
-                <a href="../Modification/modifier_Offre.html"><button class="boutonModif" type="button">Modifier</button></a>
+
+                <a href="../PagesVisionSeuleVersionPA/page_OffreSeule - VersionPA.html">
+                    <button class="boutonVision" type="button">Visionner</button></a>
+                <a href="../Modification/modifier_Offre.html">
+                    <button class="boutonModif" type="button">Modifier</button></a>
             </div>
+
             <div class="scroll-content">
                 <label class="TitreOffreEntreprise">Stage 2</label>
                 <div class="publier">
@@ -60,9 +65,13 @@ require_once('../../Controleurs/display.php');
                     <label for="TitreDescription/Comp">Compétences requises:</label>
                     <label>maths</label>
                 </div>
-                <button class="boutonVision" type="button">Visionner</button>
-                <a href="../Modification/modifier_Offre.html"><button class="boutonModif" type="button">Modifier</button></a>
+
+                <a href="../Modification/modifier_Offre.html">
+                    <button class="boutonVision" type="button">Visionner</button>
+                    <a href="../Modification/modifier_Offre.html">
+                        <button class="boutonModif" type="button">Modifier</button></a>
             </div>
+
             <div class="scroll-content">
                 <label class="TitreOffreEntreprise">Stage 3</label>
                 <div class="publier">
@@ -76,9 +85,13 @@ require_once('../../Controleurs/display.php');
                     <label for="TitreDescription/Comp">Compétences requises:</label>
                     <label>maths</label>
                 </div>
-                <button class="boutonVision" type="button">Visionner</button>
-                <a href="../Modification/modifier_Offre.html"><button class="boutonModif" type="button">Modifier</button></a>
+
+                <a href="../Modification/modifier_Offre.html">
+                    <button class="boutonVision" type="button">Visionner</button>
+                    <a href="../Modification/modifier_Offre.html">
+                        <button class="boutonModif" type="button">Modifier</button></a>
             </div>
+
             <div class="scroll-content">
                 <label class="TitreOffreEntreprise">Stage 4</label>
                 <div class="publier">
@@ -416,7 +429,7 @@ require_once('../../Controleurs/display.php');
 
         <!-- Filtre -->
         <aside>
-        <label id="filtres">Filtrer</label>
+            <label id="filtres">Filtrer</label>
             <img class="imgfiltrer" src="../../_assets/img/filtrer.jpg" alt="Logo Filtrer">
 
             <section class="competences">
@@ -538,7 +551,7 @@ require_once('../../Controleurs/display.php');
 
         <!-- Filtre -->
         <aside>
-        <label id="filtres">Filtrer</label>
+            <label id="filtres">Filtrer</label>
             <img class="imgfiltrer" src="../../_assets/img/filtrer.jpg" alt="Logo Filtrer">
 
             <section class="competences">
@@ -645,4 +658,22 @@ require_once('../../Controleurs/display.php');
             });
         }
     });
+
+    // Récupération du rôle de l'utilisateur depuis PHP (peut être stocké dans une variable JavaScript)
+    var role = "<?php echo $role; ?>";
+
+    // Sélection de tous les boutons "Modifier" avec la classe boutonModif
+    var boutonsModifier = document.querySelectorAll('.boutonModif');
+
+    // Vérification si des boutons ont été trouvés
+    if (boutonsModifier.length > 0) {
+        boutonsModifier.forEach(function(bouton) {
+            // Si l'utilisateur est un admin ou un pilote, afficher les boutons "Modifier"
+            if (role === 'admin' || role === 'pilote') {
+                bouton.style.display = 'inline-block'; // Afficher le bouton
+            } else {
+                bouton.style.display = 'none'; // Cacher le bouton
+            }
+        });
+    }
 </script>

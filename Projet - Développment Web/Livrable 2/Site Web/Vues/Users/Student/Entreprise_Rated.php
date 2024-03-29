@@ -1,38 +1,46 @@
+<!-- RECUPERATION DES DONNEES (EN PHP) -->
+<?php
+require_once('../../../Controleurs/session.php');
+?>
+
+<!-- DASHBOARD ADMIN (EN HTML) -->
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
+    <title>Main</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page d'une offre</title>
-    <link rel="icon" type="image/png" href="/_assets/img/logoWeb.png">
-    <link rel="stylesheet" href="/_assets/_css/styles.css">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../../../_assets/img/logoWeb.png">
+    <link rel="stylesheet" href="../../../_assets/_css/entreprise.css">
+    <script src="../../../_assets/_js/main.js"></script>
 </head>
 
 <body>
     <header>
-        <div class="alignement">
-            <img class="imgprinc" src="/_assets/img/logoWeb.png" alt="Logo StagExplorer">
+        <div class="header">
+            <img class="logo" src="../../../_assets/img/logoWeb.png" alt="Logo StagExplorer">
         </div>
-        <div class="Titre1">
+        <div class="titre">
             <h1>StagExplorer</h1>
         </div>
     </header>
 
-    <section class="BlocEval">
-
-        <div class="Bloc1Eval">
-            <button class="boutonretourEval">
-                <img class="flecheretourEval" src="/_assets/img/flecheRetour.png">
+    <section class="container">
+        <div class="entete">
+            <button class="bouton-retour">
+                <img class="fleche-retour" src="../../../_assets/img/flecheRetour.png">
             </button>
-            <h1 class="titre-wishlistEval">Evaluation de l'entreprise</h1>
+            <h1 class="name">Evaluation de l'entreprise</h1>
         </div>
+
         <div class="Bloc2Eval">
             <label class="label-StageEval">Stage 1</label>
             <label class="label-localitéEval">Localité: Paris, 8 Rue des Champs-Elysées</label>
             <label class="label-localitéEval">Entreprise: CESI Industrie</label>
             <label class="label-entrepriseEval">Qu'avez-vous pensé de l'entreprise</label>
+
             <div class="ratingEval">
                 <div class="evalEval">
                     <input type="radio" id="star5" name="ratingEval" value="5">

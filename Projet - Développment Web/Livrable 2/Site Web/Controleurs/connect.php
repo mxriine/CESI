@@ -50,7 +50,7 @@ if (isset($_POST['mail']) && isset($_POST['mdp'])) {
                 header('Location: ../Vues/Users/Pilote/DashboardP.php');
                 exit();
             case 'etudiant':
-                header('Location: ../Vues/Users/Student/Entreprise_Show.html');
+                header('Location: ../Vues/Users/MainSearch.php');
                 exit();
             default:
                 // Gérer le cas où le rôle est inconnu

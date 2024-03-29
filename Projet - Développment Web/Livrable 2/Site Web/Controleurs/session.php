@@ -18,8 +18,8 @@ switch ($role) {
             <ul>
                 <li><a href="#">' . $prenom . ' (ADMIN)</a>
                     <ul class="drop">
-                        <li><a href="../../../Main.php">Accueil</a></li>
-                        <li><a href="Controleurs/logout.php">Déconnexion</a></li>
+                        <li><a href="/Site Web/Main.php">Accueil</a></li>
+                        <li><a href="/Site Web/Controleurs/logout.php">Déconnexion</a></li>
                     </ul>
                 </li>
             </ul>
@@ -30,8 +30,8 @@ switch ($role) {
                 <ul>
                     <li><a href="#">' . $prenom . ' (ADMIN)</a>
                         <ul class="drop">
-                            <li><a href="Vues/Users/Admin/DashboardA.php">Voir le dashboard</a></li>
-                            <li><a href="Controleurs/logout.php">Déconnexion</a></li>
+                            <li><a href="/Site Web/Vues/Users/Admin/DashboardA.php">Voir le dashboard</a></li>
+                            <li><a href="/Site Web/Controleurs/logout.php">Déconnexion</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -46,8 +46,8 @@ switch ($role) {
             <ul>
                 <li><a href="#">' . $prenom . ' (PILOTE)</a>
                     <ul class="drop">
-                        <li><a href="../../../Main.php">Accueil</a></li>
-                        <li><a href="Controleurs/logout.php">Déconnexion</a></li>
+                        <li><a href="/Site Web/Main.php">Accueil</a></li>
+                        <li><a href="/Site Web/Controleurs/logout.php">Déconnexion</a></li>
                     </ul>
                 </li>
             </ul>
@@ -56,10 +56,10 @@ switch ($role) {
             // Affichage de la navigation par défaut pour les pilotes et étudiants
             echo '<nav id="nav" class="nav">
                 <ul>
-                    <li><a href="#">' . $prenom . ' (ADMIN)</a>
+                    <li><a href="#">' . $prenom . ' (PILOTE)</a>
                         <ul class="drop">
-                            <li><a href="Vues/Users/Admin/DashboardP.php">Voir le dashboard</a></li>
-                            <li><a href="Controleurs/logout.php">Déconnexion</a></li>
+                            <li><a href="/Site Web/Vues/Users/Pilote/DashboardP.php">Voir le dashboard</a></li>
+                            <li><a href="/Site Web/Controleurs/logout.php">Déconnexion</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -72,8 +72,8 @@ switch ($role) {
                 <ul>
                     <li><a href="#">' . $prenom . ' (ETUDIANT)</a>
                         <ul class="drop">
-                            <li><a href="../../Users/Admin/Dashboard.php">Voir le dashboard</a></li>
-                            <li><a href="Controleurs/logout.php">Déconnexion</a></li>
+                            <li><a href="#">Ma WishList</a></li>
+                            <li><a href="/Site Web/Controleurs/logout.php">Déconnexion</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -90,7 +90,7 @@ switch ($role) {
 <html lang="fr">
 
 <head>
-    <link rel="stylesheet" href="../_assets/_css/styles.css">
+    <link rel="stylesheet" href="/Site Web/_assets/_css/styles.css">
 </head>
 
 </html>
