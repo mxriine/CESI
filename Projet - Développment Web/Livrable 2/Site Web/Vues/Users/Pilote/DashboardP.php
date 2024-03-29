@@ -1,7 +1,7 @@
 <!-- RECUPERATION DES DONNEES ET DES SESSIONS (EN PHP) -->
 <?php
-    require_once('../../../Controleurs/dashboard.php');
-    require_once('../../../Controleurs/session.php');
+require_once('../../../Controleurs/dashboard.php');
+require_once('../../../Controleurs/session.php');
 ?>
 
 <!-- DASHBOARD PILOTE (EN HTML) -->
@@ -18,23 +18,13 @@
 </head>
 
 <body>
-<header>
+    <header>
         <div class="header">
-            <img class="logo" src="../../_assets/img/logoWeb.png" alt="Logo StagExplorer">
+            <img class="logo" src="../../../_assets/img/logoWeb.png" alt="Logo StagExplorer">
         </div>
         <div class="titre">
             <h1>StagExplorer</h1>
         </div>
-        <nav id="nav" class="nav">
-            <ul>
-                <li><a href="#"><?php echo isset($_SESSION['prenom']) ? $_SESSION['prenom'] : 'Utilisateur '; ?>(PILOTE)</a>
-                    <ul class="drop">
-                        <li><a href="../../../Main.php">Accueil</a></li>
-                        <li><a href="Controleurs/logout.php">Déconnexion</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
     </header>
 
     <section class="statistique">

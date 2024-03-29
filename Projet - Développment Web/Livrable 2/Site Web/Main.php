@@ -19,11 +19,15 @@
         <div class="header">
             <img class="logo" src="_assets/img/logoWeb.png" alt="Logo StagExplorer">
         </div>
-
+        <div class="titre">
+            <h1>StagExplorer</h1>
+        </div>
     </header>
-    <div class="titre">
-        <h1>StagExplorer</h1>
+
+    <div class="bouton">
+        <a href="../Site Web/Vues/Users/MainSearch.php">STAGE</a>
     </div>
+
     <footer>
         <div class="footer">
             <a href="#">Confidentialité</a>

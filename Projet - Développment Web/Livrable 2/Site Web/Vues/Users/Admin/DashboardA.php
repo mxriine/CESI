@@ -22,11 +22,10 @@
         <div class="header">
             <img class="logo" src="../../../_assets/img/logoWeb.png" alt="Logo StagExplorer">
         </div>
+        <div class="titre">
+            <h1>StagExplorer</h1>
+        </div>
     </header>
-
-    <div class="titre">
-        <h1>StagExplorer</h1>
-    </div>
 
     <section class="statistics">
         <div class="partie-entreprise" href="#">

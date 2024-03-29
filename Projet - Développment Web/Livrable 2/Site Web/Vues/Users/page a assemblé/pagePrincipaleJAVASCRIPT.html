@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page des offres</title>
+    <link rel="icon" type="image/png" href="../Images/logoWeb.png">
+    <link rel="stylesheet" href="../../../_assets/_css/bordel/style1.css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            var options=document.getElementsByName('navigation');
+            var boutonCache=document.getElementById('cacher')
+            for(var i=0; i<options.length;i++){
+                options[i].addEventListener('change', function(){
+                    if(this.checked && this.value=='entreprise'){
+                        BLOC_ENTREPRISES.style.display='block';
+                        BLOC_OFFRES.style.display='none';
+                    }
+                    if(this.checked && this.value=='offres'){
+                        BLOC_ENTREPRISES.style.display='none';
+                        BLOC_OFFRES.style.display='block';
+                    }
+                });
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+    <header>
+        <div class="alignement">
+            <img class = "imgprinc" src="../Images/logoWeb.png" alt="Logo StagExplorer">
+               </div>
+               <div class="Titre1">
+                <h1>StagExplorer</h1>
+            </div> 
+            <nav class="Menu" id="menuE">
+                <ul>
+                    <li class="deroulant"><a href="">NOM DE L'ETUDIANT</a>
+                        <ul class="sous">
+                            <li><a href="../Etudiant/wishlist.html">Ma wish-list</a></li>
+                            <li><a href="../Etudiant/consulterStage.html">Consulter mes stages</a></li>
+                            <li><a href="">Consulter mes stats</a></li>
+                            <li><a href="">Déconnnexion</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+    </header>
+    <nav class="barreR">
+        <label class="search">Rechercher:</label>
+        <div>
+        <input type="radio" id="entreprise" name="navigation" value="entreprise" >
+        <label for="entreprise">Entreprises</label>
+        </div>
+        <div>
+        <input type="radio" id="offre" name="navigation" value="offres">
+        <label for="offres">Offres</label>
+    </div>
+    <div>
+        <input type="radio" id="stat" name="navigation" value="stat">
+        <label for="stat">Statistiques</label>
+    </div>
+    </nav>
+    <div id="BLOC_OFFRES">
+    <div class="scroll-section">
+        <div class="scroll-content">
+            <label class="TitreOffreEntreprise">Stage 1</label>
+            <div class="publier">
+                <label>Publié le 05/03/2022</label>
+            </div>
+            <div class="description">
+                <label id="TitreDescription/Comp">Description</label><br><br>
+                <label>Et licet quocumque oculos flexeris feminas adfatim multas spectare cirratas, quibus.</label>
+            </div>
+            <div class="compDemandes">
+                <label id="TitreDescription/Comp">Compétences requises:</label>
+                <label>maths</label>
+            </div>
+            <a href="../PagesVisionSeuleVersionEtudiant/page_OffreSeule.html"><button class="boutonVision" type="button">Visionner</button></a>
+            <button style="display: none;" id="cacher">Caché</button>
+        </div>
+        <div class="scroll-content">
+            <label class="TitreOffreEntreprise">Stage 2</label>
+            <div class="publier">
+                <label>Publié le 05/03/2022</label>
+            </div>
+            <div class="description">
+                <label id="TitreDescription/Comp">Description</label><br><br>
+                <label>Et licet quocumque oculos flexeris feminas adfatim multas spectare cirratas, quibus.</label>
+            </div>
+            <div class="compDemandes">
+                <label id="TitreDescription/Comp">Compétences requises:</label>
+                <label>maths</label>
+            </div>
+            <button class="boutonVision" type="button">Visionner</button>
+            
+        </div>
+        <div class="scroll-content">
+            <label class="TitreOffreEntreprise">Stage 3</label>
+            <div class="publier">
+                <label>Publié le 05/03/2022</label>
+            </div>
+            <div class="description">
+                <label id="TitreDescription/Comp">Description</label><br><br>
+                <label>Et licet quocumque oculos flexeris feminas adfatim multas spectare cirratas, quibus.</label>
+            </div>
+            <div class="compDemandes">
+                <label id="TitreDescription/Comp">Compétences requises:</label>
+                <label>maths</label>
+            </div>
+            <button class="boutonVision" type="button">Visionner</button>
+            
+        </div>
+        <div class="scroll-content">
+            <label class="TitreOffreEntreprise">Stage 4</label>
+            <div class="publier">
+                <label>Publié le 05/03/2022</label>
+            </div>
+            <div class="description">
+                <label id="TitreDescription/Comp">Description</label><br><br>
+                <label>Et licet quocumque oculos flexeris feminas adfatim multas spectare cirratas, quibus.</label>
+            </div>
+            <div class="compDemandes">
+                <label id="TitreDescription/Comp">Compétences requises:</label>
+                <label>maths</label>
+            </div>
+            <button class="boutonVision" type="button">Visionner</button>
+            
+        </div>
+    </div>
+    
+    <aside>
+        <label id="filtres">Filtrer</label>
+        <img class = "imgfiltrer" src="../Images/filtrer.jpg" alt="Logo Filtrer">
+        <section class="competences">
+            <label class="trait">Compétences</label>
+            <div>
+            <input type="checkbox" name="Informatique" value="Informatique">
+            <label for="Informatique">Informatique</label>
+            </div>
+            <div>
+            <input type="checkbox" name="maths" value="maths">
+            <label for="maths">Mathématiques</label>
+        </div>
+        <div>
+            <input type="checkbox" name="btp" value="btp">
+            <label for="btp">BTP</label>
+        </div>
+        <div>
+            <input type="checkbox" name="robotique" value="robotique">
+            <label for="robotique">Robotique</label>
+        </div>
+        <div>
+            <input type="checkbox" name="devW" value="devW">
+            <label for="devW">Développement web</label>
+        </div>
+        </section>
+
+        <section class="localite">
+            <label class="trait">Localités</label>
+            <div>
+            <input type="checkbox" name="pau" value="pau">
+            <label for="pau">Pau</label>
+            </div>
+            <div>
+            <input type="checkbox" name="tarbes" value="tarbes">
+            <label for="tarbes">Tarbes</label>
+        </div>
+        <div>
+            <input type="checkbox" name="lourdes" value="lourdes">
+            <label for="lourdes">Lourdes</label>
+        </div>
+        <div>
+            <input type="checkbox" name="paris" value="paris">
+            <label for="parsi">Paris</label>
+        </div>
+        <div>
+            <input type="checkbox" name="marseille" value="marseille">
+            <label for="marseille">Marseille</label>
+        </div>
+        <div>
+            <input type="checkbox" name="lyon" value="lyon">
+            <label for="lyon">Lyon</label>
+        </div>
+        </section>
+        <label class="trait" for="lDuree">Durée du stage</label>
+        <section class="duree">
+            
+            <div>
+                <label for="debut">Début</label>
+                <input type="date" id="debut" name="debut">
+            </div>
+            <div>
+                <label for="fin">Fin</label>
+                <input type="date" id="fin" name="fin">
+            </div>
+        </section>
+        <section class="promotions">
+            <label class="trait" for="promotion">Promotions</label>
+            <div>
+            <select name="promotion" id="promotion">
+                <option>Sélectionner</option>
+                <option value="1A">1ère année</option>
+                <option value="2A">2ème année</option>
+                <option value="3A">3ème année</option>
+                <option value="4A">4ème année</option>
+                <option value="5A">5ème année</option>
+            </select>
+        </div>
+        </section>
+        <section class="datePubli">
+            <label class="trait" for="datePubli">Date de publication</label>
+            <div>
+            <select name="datePubli" id="datePubli">
+                
+                <option>Sélectionner</option>
+                <option value="24h">24h</option>
+                <option value="semaineD">Semaine dernière</option>
+                <option value="moisD">Mois dernier</option>
+            
+            </select>
+        </div>
+        </section>
+    </aside>
+</div>
+
+    <div id="BLOC_ENTREPRISES" style="display: none;">
+    <div class="scroll-section">
+        <div class="scroll-content">
+            <label class="TitreOffreEntreprise">Entreprise 1</label>
+            <div class="description">
+                <label id="TitreDescription/Comp">Description</label><br><br>
+                <label>Et licet quocumque oculos flexeris feminas adfatim multas spectare cirratas, quibus.</label>
+            </div>
+            <div class="compDemandes">
+                <label id="TitreDescription/Comp">Nombre de stagiaires ayant postulés à une offre de cette entreprise:</label>
+                <label>95</label>
+            </div>
+            <a href="../PagesVisionSeuleVersionEtudiant/page_EntreSeule.html"><button class="boutonVision" type="button">Visionner</button></a>
+        </div>
+        <div class="scroll-content">
+            <label class="TitreOffreEntreprise">Entreprise 2</label>
+            <div class="description">
+                <label id="TitreDescription/Comp">Description</label><br><br>
+                <label>Et licet quocumque oculos flexeris feminas adfatim multas spectare cirratas, quibus.</label>
+            </div>
+            <div class="compDemandes">
+                <label id="TitreDescription/Comp">Nombre de stagiaires ayant postulés à une offre de cette entreprise:</label>
+                <label>65</label>
+            </div>
+            <button class="boutonVision" type="button">Visionner</button>
+        </div>
+        <div class="scroll-content">
+            <label class="TitreOffreEntreprise">Entreprise 3</label>
+            <div class="description">
+                <label id="TitreDescription/Comp">Description</label><br><br>
+                <label>Et licet quocumque oculos flexeris feminas adfatim multas spectare cirratas, quibus.</label>
+            </div>
+            <div class="compDemandes">
+                <label id="TitreDescription/Comp">Nombre de stagiaires ayant postulés à une offre de cette entreprise:</label>
+                <label>47</label>
+            </div>
+            <button class="boutonVision" type="button">Visionner</button>
+        </div>
+        <div class="scroll-content">
+            <label class="TitreOffreEntreprise">Entreprise 4</label>
+            <div class="description">
+                <label id="TitreDescription/Comp">Description</label><br><br>
+                <label>Et licet quocumque oculos flexeris feminas adfatim multas spectare cirratas, quibus.</label>
+            </div>
+            <div class="compDemandes">
+                <label id="TitreDescription/Comp">Nombre de stagiaires ayant postulés à une offre de cette entreprise:</label>
+                <label>24</label>
+            </div>
+            <button class="boutonVision" type="button">Visionner</button>
+        </div>
+    </div>
+    <aside>
+        <label id="filtres">Filtrer</label>
+        <img class = "imgfiltrer" src="../Images/filtrer.jpg" alt="Logo Filtrer">
+        <section class="competences">
+            <label class="trait">Compétences</label>
+            <div>
+            <input type="checkbox" name="Informatique" value="Informatique">
+            <label for="Informatique">Informatique</label>
+            </div>
+            <div>
+            <input type="checkbox" name="maths" value="maths">
+            <label for="maths">Mathématiques</label>
+        </div>
+        <div>
+            <input type="checkbox" name="btp" value="btp">
+            <label for="btp">BTP</label>
+        </div>
+        <div>
+            <input type="checkbox" name="robotique" value="robotique">
+            <label for="robotique">Robotique</label>
+        </div>
+        <div>
+            <input type="checkbox" name="devW" value="devW">
+            <label for="devW">Développement web</label>
+        </div>
+        </section>
+
+        <section class="localite">
+            <label class="trait">Localités</label>
+            <div>
+            <input type="checkbox" name="pau" value="pau">
+            <label for="pau">Pau</label>
+            </div>
+            <div>
+            <input type="checkbox" name="tarbes" value="tarbes">
+            <label for="tarbes">Tarbes</label>
+        </div>
+        <div>
+            <input type="checkbox" name="lourdes" value="lourdes">
+            <label for="lourdes">Lourdes</label>
+        </div>
+        <div>
+            <input type="checkbox" name="paris" value="paris">
+            <label for="parsi">Paris</label>
+        </div>
+        <div>
+            <input type="checkbox" name="marseille" value="marseille">
+            <label for="marseille">Marseille</label>
+        </div>
+        <div>
+            <input type="checkbox" name="lyon" value="lyon">
+            <label for="lyon">Lyon</label>
+        </div>
+        </section>
+        <label class="trait" id="MoyenEval">Moyenne évaluations</label>
+        <section class="moyenneEval">
+            <div>
+            <input type="checkbox" name="uneEtoile" value="uneEtoile">
+            <label for="uneEtoile">1</label>
+            </div>
+            <div>
+                <input type="checkbox" name="deuxEtoile" value="deuxEtoile">
+                <label for="deuxEtoile">2</label>
+            </div>
+            <div>
+                <input type="checkbox" name="troisEtoile" value="troisEtoile">
+                <label for="troisEtoile">3</label>
+            </div>
+            <div>
+                <input type="checkbox" name="quatreEtoile" value="quatreEtoile">
+                <label for="quatreEtoile">4</label>
+            </div>
+            <div>
+                <input type="checkbox" name="cinqEtoile" value="cinqEtoile">
+                <label for="cinqEtoile">5</label>
+                </div>
+        </section>
+        <label class="trait" id="nb">Nombre de stagiaires ayant postulés</label>
+        <section class="NbStagiairesFiltre">
+            <div>
+                <input type="radio" id="Moins30" name="NbStagiairesFiltre" value="Moins30" checked>
+                <label for="Moins30">Moins de 30</label>
+            </div>
+            <div>
+                <input type="radio" id="30et50" name="NbStagiairesFiltre" value="30et50">
+                <label for="30et50">Entre 30 et 50</label>
+            </div>
+            <div>
+                <input type="radio" id="50et100" name="NbStagiairesFiltre" value="50et100">
+                <label for="50et100">Entre 50 et 100</label>
+            </div>
+            <div>
+                <input type="radio" id="Plus100" name="NbStagiairesFiltre" value="Plus100">
+                <label for="Plus100">Plus de 100</label>
+            </div>
+        </section>
+    </aside>
+</div>
+
+
+
+</body>
+</html>
