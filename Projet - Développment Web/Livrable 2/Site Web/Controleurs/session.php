@@ -81,7 +81,7 @@ switch ($role) {
         break;
     default:
         // Redirection vers la page de connexion si le rôle n'est pas défini
-        header('Location: ../Vues/connection.php');
+        header('Location: /Site Web/Vues/Connection.php');
         exit(); // Assurez-vous de terminer le script après la redirection
 }
 ?>

@@ -49,7 +49,6 @@ body {
 
 /* Evalutation */
 .container {
-
     height: 450px;
     width: 700px;
     border-radius: 15px;
@@ -83,74 +82,88 @@ body {
 }
 
 .fleche-retour {
-    width: 50px;
+    width: 60px;
     height: 60px;
     margin-top: 7%;
+    margin-left: 30%;
 }
 
 .name {
     font-size: 30px;
 }
 
-/* Evaluation Partie 2 */
-.Bloc2Eval {
+.stage {
     position: absolute;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    top: 20%;
+    top: 15%;
     left: 25%;
     align-items: center;
 }
 
-.label-StageEval {
+.stage h1 {
     font-size: 30px;
 }
 
-.label-entrepriseEval {
-    margin-top: 50px;
+.stage p {
+    align-items: center;
+}
+
+.entreprise {
+    margin-top: 15px;
     font-size: 20px;
     font-weight: 600;
 }
 
-.ratingEval {
+.evaluation {
     color: rgba(28, 143, 166, 0.918);
     display: flex;
     gap: 110px;
 }
 
-.evalEval {
+.notation {
     unicode-bidi: bidi-override;
     direction: rtl;
     color: #000000;
 }
 
-.evalEval input {
+.notation input {
     display: none;
 }
 
-.evalEval label {
+.notation label {
     display: inline-block;
     font-size: 25px;
     padding: 0px;
     cursor: pointer;
 }
 
-.evalEval input:checked~label,
-.evalEval input:checked~label~label {
+.notation input:checked~label,
+.notation input:checked~label~label {
     color: orange;
 }
 
-.Bloc4Eval {
+.date {
     position: absolute;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    top: 10%;
-    left: 82%;
+    top: 20%;
+    left: 80%;
+    align-items: center;
+    font-size: 15px;
 }
 
-.bouton-confirmerEval {
+.date h1 {
+    font-size: 16px;
+    margin-top: -5px;
+}
+
+.date p {
+    align-items: center;
+    margin-top: -7px;
+}
+
+.confirmer {
     margin-top: 180px;
     border-radius: 7px;
     /* ajustez la valeur selon la forme souhaitée */

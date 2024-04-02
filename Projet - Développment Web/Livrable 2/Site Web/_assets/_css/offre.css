@@ -1,0 +1,470 @@
+/* OFFRE */
+
+body {
+    background-color: orange;
+    font-family: 'Khula', sans-serif;
+}
+
+.header {
+    display: flex;
+    /* Utiliser Flexbox */
+    align-items: center;
+    /*justify-content: flex-end;*/
+}
+
+.logo {
+    width: 10%;
+    margin-right: 85%;
+}
+
+.titre {
+    font-size: 20px;
+    text-align: center;
+    margin-top: -7%;
+    color: #ffffff;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 38vw;
+    width: 20vw;
+    color: white;
+    text-align: center;
+    padding-top: 20vh;
+    padding-bottom: 0.5vh;
+    font-size: 3vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2vw;
+}
+
+.footer a {
+    text-align: center;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 1);
+    font-size: 1vw;
+}
+
+/* Voir une Offre */
+.container {
+    height: 60%;
+    width: 45%;
+    border-radius: 15px;
+    position: absolute;
+    display: flex;
+    background-color: white;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bouton-retour {
+    border-radius: 7px;
+    /* ajustez la valeur selon la forme souhaitée */
+    background-color: #ffffff;
+    /* couleur de fond */
+    color: #000000;
+    /* couleur du texte */
+    border: #000000;
+    /* suppression de la bordure par défaut */
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.fleche-retour {
+    width: 60px;
+    height: 60px;
+    margin-top: 7%;
+    margin-left: 30%;
+}
+
+.nom {
+    position: absolute;
+    top: 5%;
+    font-size: 30px;
+    left: 40%;
+}
+
+.description {
+    height: 80px;
+    width: 400px;
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.description p {
+    font-size: 17px;
+    margin-top: 1%;
+}
+
+.competences {
+    height: 100px;
+    width: 400px;
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    gap: 10px;
+}
+
+.localisation {
+    height: 40px;
+    width: 400px;
+    position: absolute;
+    top: 60%;
+    left: 5%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.localisation p {
+    margin-top: 20px;
+    font-size: 17px;
+}
+
+.entreprise {
+    height: 40px;
+    width: 400px;
+    position: absolute;
+    top: 70%;
+    left: 5%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.entreprise p {
+    margin-top: 20px;
+    font-size: 17px;
+}
+
+.postulation {
+    height: 40px;
+    width: 400px;
+    position: absolute;
+    top: 85%;
+    left: 5%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.postulation p {
+    margin-top: 20px;
+    font-size: 17px;
+}
+
+.duree {
+    height: 40px;
+    width: 150px;
+    position: absolute;
+    top: 15%;
+    left: 75%;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+.duree p {
+    margin-top: 1px;
+}
+
+.debut {
+    height: 40px;
+    width: 150px;
+    position: absolute;
+    top: 30%;
+    left: 75%;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+.debut p {
+    margin-top: 2px;
+}
+
+.niveau {
+    height: 40px;
+    width: 150px;
+    position: absolute;
+    top: 45%;
+    left: 75%;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+.niveau p {
+    margin-top: 2px;
+}
+
+.remuneration {
+    height: 40px;
+    width: 150px;
+    position: absolute;
+    top: 60%;
+    left: 75%;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+.remuneration p {
+    margin-top: 2px;
+}
+
+.place {
+    height: 40px;
+    width: 150px;
+    position: absolute;
+    top: 75%;
+    left: 75%;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+.place p {
+    margin-top: 2px;
+}
+
+.favoris {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    color: #000000;
+    position: absolute;
+    top: 2%;
+    left: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.favoris input {
+    display: none;
+}
+
+.favoris label {
+    display: inline-block;
+    font-size: 50px;
+    padding: 0px;
+    cursor: pointer;
+}
+
+.favoris input[type="radio"]:checked+label {
+    color: orange;
+}
+
+.modifier {
+    position: absolute;
+    left: 66%;
+    top: 81%;
+    font-size: 13px;
+    cursor: pointer;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 8px;
+    border-color: black;
+    z-index: 10;
+    /* Ajout d'un z-index pour le mettre au premier*/
+}
+
+/* Postuler Offre */
+.SaisieLettreM {
+    position: absolute;
+    top: 30%;
+    left: 3%
+}
+
+.BlocPostulationOffre {
+    height: 500px;
+    width: 800px;
+    border-radius: 15px;
+    position: absolute;
+    display: flex;
+    background-color: white;
+    top: 55%;
+    left: 72%;
+    transform: translate(-50%, -50%);
+}
+
+.TStage {
+    position: absolute;
+    top: 10%;
+    font-size: 30px;
+    left: 5%;
+}
+
+p [for="titre"] {
+    font-weight: bold;
+}
+
+.DescriptionStage {
+
+    height: 80px;
+    width: 400px;
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    display: flex;
+    flex-direction: column;
+    font-family: URW Chancery L, cursive;
+    gap: 10px;
+}
+
+.CompRequises {
+    height: 40px;
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    font-family: URW Chancery L, cursive;
+    gap: 10px;
+}
+
+.Localisation {
+    height: 40px;
+    width: 400px;
+    position: absolute;
+    top: 60%;
+    left: 5%;
+    display: flex;
+    flex-direction: row;
+    font-family: URW Chancery L, cursive;
+    gap: 10px;
+}
+
+.EntrepriseStage {
+    height: 40px;
+    width: 400px;
+    position: absolute;
+    top: 70%;
+    left: 5%;
+    display: flex;
+    flex-direction: row;
+    font-family: URW Chancery L, cursive;
+    gap: 10px;
+}
+
+.NbPostulation {
+    height: 40px;
+    width: 400px;
+    position: absolute;
+    top: 90%;
+    left: 5%;
+    display: flex;
+    flex-direction: row;
+    font-family: URW Chancery L, cursive;
+    gap: 10px;
+}
+
+.Postuler {
+    font-size: 23px;
+    cursor: pointer;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 8px;
+    border-color: grey;
+    position: absolute;
+    top: 90%;
+    left: 88%;
+}
+
+.Postuler:hover {
+    background-color: rgba(28, 143, 166, 0.918);
+}
+
+/* Fin Offre */
+.partie {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    left: 30%;
+    top: 22%;
+    gap: 140px;
+}
+
+.bouton-retour2 {
+    border-radius: 7px;
+    background-color: rgba(37, 37, 37, 1);
+    color: #ffffff;
+    border: #ffffff;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.stage {
+    color: #ffffff;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    top: 20%;
+    left: 44.5%;
+    font-size: 40px;
+}
+
+.scroll-section {
+    position: fixed;
+    top: 35%;
+    left: 30%;
+    width: 40%;
+    height: 32%;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.scroll-content {
+    position: relative;
+    display: flex;
+    gap: 90px;
+    margin-bottom: 2%;
+    margin-left: 0%;
+    background-color: white;
+    box-shadow: rgb(255, 255, 255) 0px 1px 3px;
+    border-radius: 10px;
+    border-bottom: 5px solid rgb(255, 255, 255);
+    padding: 6%;
+}
+
+.scroll-content p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.bouton-evaluer {
+    margin-top: 20px;
+    margin-right: 1%;
+    border-radius: 7px;
+    /* ajustez la valeur selon la forme souhaitée */
+    background-color: #ffffff;
+    /* couleur de fond */
+    color: #000000;
+    /* couleur du texte */
+    cursor: pointer;
+    height: 20px;
+    width: 80px;
+    text-decoration: none;
+    box-shadow: rgb(70, 69, 69) 0px 1px 3px;
+    font-size: 15px;
+    text-align: center;
+    padding-top: 3px;
+
+}
+
+.scroll-content-vide {
+    position: relative;
+    display: flex;
+    gap: 90px;
+    margin-bottom: 2%;
+    margin-left: 0%;
+    background-color: rgb(66, 66, 66);
+    box-shadow: rgb(255, 255, 255) 0px 1px 3px;
+    border-radius: 10px;
+    padding: 7%;
+}

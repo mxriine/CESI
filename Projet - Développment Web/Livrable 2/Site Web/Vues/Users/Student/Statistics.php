@@ -1,29 +1,33 @@
+
+
+<!-- DASHBOARD ADMIN (EN HTML) -->
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Statistiques étudiant</title>
-    <link rel="icon" type="image/png" href="/_assets/img/logoWeb.png">
-    <link rel="stylesheet" href="/_assets/_css/styles.css"> 
-    <link rel="stylesheet" href="/_assets/_css/stateEtudiant.css"> 
 
+<head>
+    <title>Stage</title>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../../../_assets/img/logoWeb.png">
+    <link rel="stylesheet" href="../../../_assets/_css/statistics.css">
+    <script src="../../../_assets/_js/main.js"></script>
 </head>
 
 <body>
     <header>
-        <div class="alignement">
-            <img class = "imgprinc"src="/_assets/img/logoWeb.png" alt="Logo StagExplorer">
-               </div>
-               <div class="Titre1">
-                <h1>StagExplorer</h1>
-            </div> 
+        <div class="header">
+            <img class="logo" src="../../../_assets/img/logoWeb.png" alt="Logo StagExplorer">
+        </div>
+        <div class="titre">
+            <h1>StagExplorer</h1>
+        </div>
     </header>
 
     <section class="Bloc">
         <article class="Bloc1">
-            <button class="boutonretour">
-                <img class="flecheretour" src="/_assets/img/flecheRetour.png">
+            <button class="bouton-retour">
+                <img class="fleche-retour" src="../../../_assets/img/flecheRetour.png">
             </button>
             <div class="Bloc2">
                 <label class="label2">Etudiant 1</label>
@@ -31,9 +35,11 @@
             </div>
             <div class="Bloc2">
                 <a href=""><button class="boutonprofil" type="button">Voir le profil</button></a>
-                <a href="/Student/Wishlist.html"><button class="boutonwishlist" type="button">Consulter la wishlist</button></a>
+                <a href="/Student/Wishlist.html"><button class="boutonwishlist" type="button">Consulter la
+                        wishlist</button></a>
             </div>
         </article>
+
         <article class="Bloc3">
             <div class="Bloc4">
                 <label class="label1">Nombre d'offres postulé</label>
@@ -55,4 +61,9 @@
     </section>
 
 </body>
+
 </html>
+
+<style>
+
+</style>
