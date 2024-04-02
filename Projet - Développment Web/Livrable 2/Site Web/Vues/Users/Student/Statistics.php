@@ -1,4 +1,7 @@
-
+<!-- RECUPERATION DES DONNEES (EN PHP) -->
+<?php
+require_once('../../../Controleurs/session.php');
+?>
 
 <!-- DASHBOARD ADMIN (EN HTML) -->
 <!DOCTYPE html>
@@ -63,7 +66,3 @@
 </body>
 
 </html>
-
-<style>
-
-</style>
