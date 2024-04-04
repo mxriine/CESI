@@ -1,6 +1,6 @@
 <!-- FORMULAIRE DE CONNEXION (EN PHP) -->
 <?php
-    require_once('../Controleurs/connect.php');
+require_once ('../Controleurs/connect.php');
 ?>
 
 <!-- FORMULAIRE DE CONNEXION (EN HTML) -->
@@ -24,14 +24,18 @@
 
             <div class="parent">
                 <label for="mail">EMAIL</label>
-                <input type="email" id="mail" name="mail" placeholder="jean.bertrand@gmail.com">
-                <p id="messageErreurMail" class="error"><?php echo $error_message; ?></p>
+                <input type="email" id="mail" name="mail" placeholder="Adresse Email">
+                <p id="messageErreurMail" class="error">
+                    <?php echo $error_message; ?>
+                </p>
             </div>
 
             <div class="parent">
                 <label for="mdp">MOT DE PASSE</label>
-                <input type="password" id="mdp" name="mdp">
-                <p id="messageErreurMdp" class="error"><?php echo $error_message; ?></p>
+                <input type="password" id="mdp" name="mdp" placeholder="Mot de passe">
+                <p id="messageErreurMdp" class="error">
+                    <?php echo $error_message; ?>
+                </p>
             </div>
 
             <button type="submit" id="submit">VALIDER</button>

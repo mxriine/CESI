@@ -32,7 +32,7 @@ require_once '../../../Controleurs/Gérer/Créer/creer_etudiant.php';
                 <h1>CREER UN ETUDIANT</h1>
                 <p for="Etape1">Etape 1: Entrez les informations</p>
             </div>
-            <form method="POST" id="formulaire1" onsubmit="return validerFormulaire()">
+            <form method="POST" action="../../../Controleurs/Gérer/Créer/creer_etudiant.php" id="formulaire1" onsubmit="return validerFormulaire()">
                 <div class="BlocInscription">
                     <p class="messageErreurID" id="messageErreurID"></p>
                     <div class="Id">

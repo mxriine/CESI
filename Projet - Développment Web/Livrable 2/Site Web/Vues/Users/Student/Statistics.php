@@ -29,7 +29,7 @@ require_once('../../../Controleurs/session.php');
 
     <section class="bloc">
         <article class="partie1">
-            <button class="bouton-retour">
+            <button class="bouton-retour" onclick="history.back()">
                 <img class="fleche-retour" src="../../../_assets/img/flecheRetour.png">
             </button>
             <div class="information-etudiant">

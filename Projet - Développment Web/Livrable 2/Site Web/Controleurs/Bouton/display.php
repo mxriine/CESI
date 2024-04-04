@@ -13,25 +13,31 @@ switch ($role) {
         if ($current_page === 'Stage.php') {
             // Affichage de la navigation par défaut pour les administrateurs
             echo '<section>
-                    <div>
-                        <button id="boutonModif" class="modifier" type="button">Modifier</button>
-                        <a href="#"></a>
-                    </div>
-              </section>';
+                    <form action="/Site Web/Vues/Gérer/Modifier/Modifier_Offre.php" method="GET">
+                        <button id="boutonModif" class="modifier" type="submit">Modifier</button>
+                    </form>
+                </section>';
         }
         break;
     case 'pilote':
         if ($current_page === 'Stage.php') {
             // Affichage de la navigation par défaut pour les administrateurs
             echo '<section>
-                    <div>
-                        <button id="boutonModif" class="modifier" type="button">Modifier</button>
-                        <a href="#"></a>
-                    </div>
-              </section>';
+                    <form action="/Site Web/Vues/Gérer/Modifier/Modifier_Offre.php" method="GET">
+                        <button id="boutonModif" class="modifier" type="submit">Modifier</button>
+                    </form>
+                </section>';
         }
         break;
     case 'etudiant':
+        if ($current_page === 'Stage.php') {
+            // Affichage de la navigation par défaut pour les administrateurs
+            echo '<section>
+                    <form action="/Site Web/Vues/Users/Student/Offre/Stage_Candidature.php" method="GET">
+                        <button id="boutonModif" class="modifier" type="submit">Postuler</button>
+                    </form>
+                </section>';
+        }
         echo '';
         break;
     default:

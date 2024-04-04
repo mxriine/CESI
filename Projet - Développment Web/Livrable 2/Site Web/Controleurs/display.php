@@ -16,15 +16,15 @@ switch ($role) {
                             <label for="entreprise">Entreprises</label>
                         </div>
                         <div>
-                            <input type="radio" id="offre" name="navigation" value="offres" checked>
+                            <input type="radio" id="offre" name="navigation" value="offre" checked>
                             <label for="offres">Offres</label>
                         </div>
                         <div>
-                            <input type="radio" id="etudiants" name="navigation" value="etudiant">
+                            <input type="radio" id="etudiant" name="navigation" value="etudiant">
                             <label for="etudiants">Etudiants</label>
                         </div>
                         <div>
-                            <input type="radio" id="pilotes" name="navigation" value="pilote">
+                            <input type="radio" id="pilote" name="navigation" value="pilote">
                             <label for="pilotes">Pilotes</label>
                         </div>
                     </nav>
@@ -40,11 +40,11 @@ switch ($role) {
                             <label for="entreprise">Entreprises</label>
                         </div>
                         <div>
-                            <input type="radio" id="offre" name="navigation" value="offres" checked>
+                            <input type="radio" id="offre" name="navigation" value="offre" checked>
                             <label for="offres">Offres</label>
                         </div>
                         <div>
-                            <input type="radio" id="etudiants" name="navigation" value="etudiant">
+                            <input type="radio" id="etudiant" name="navigation" value="etudiant">
                             <label for="etudiants">Etudiants</label>
                         </div>
                     </nav>
@@ -60,7 +60,7 @@ switch ($role) {
                             <label for="entreprise">Entreprises</label>
                         </div>
                         <div>
-                            <input type="radio" id="offre" name="navigation" value="offres" checked>
+                            <input type="radio" id="offre" name="navigation" value="offre" checked>
                             <label for="offres">Offres</label>
                         </div>
                     </nav>

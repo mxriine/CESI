@@ -25,9 +25,12 @@ body {
 }
 
 .nav {
-    width: auto; /* Ajustez en fonction du contenu */
-    min-width: 80px; /* Gardez une largeur minimale si nécessaire */
-    padding: 0 10px; /* Ajoutez un peu de padding sur les côtés */
+    width: auto;
+    /* Ajustez en fonction du contenu */
+    min-width: 80px;
+    /* Gardez une largeur minimale si nécessaire */
+    padding: 0 10px;
+    /* Ajoutez un peu de padding sur les côtés */
     height: 25px;
     font-size: 15px;
     font-weight: 500;
@@ -151,17 +154,25 @@ body {
     padding: 20px;
 }
 
-#mail,
 #mdp {
     margin-left: 34px;
     margin-top: 10px;
     width: 170px;
     border: 0;
     border-radius: 10px;
-    padding: 8px 15px;
+    padding: 10px 15px;
     display: inline;
 }
 
+#mail {
+    margin-left: 135px;
+    margin-top: 10px;
+    width: 170px;
+    border: 0;
+    border-radius: 10px;
+    padding: 10px 15px;
+    display: inline;
+}
 #submit {
     background-color: white;
     font-size: 20px;
@@ -182,10 +193,34 @@ body {
 .error {
     color: red;
     font-size: 15px;
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
     position: absolute;
     top: 70%;
     left: 60%;
 }
 
 /* --- Main  --- */
+.text {
+    font-size: 2vh;
+    padding: 30px;
+    color: white;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 1000px;
+    text-align: center;
+}
+
+/* Style pour le lien "Consulter les offres de stages" */
+.stage {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.stage a {
+    font-size: 3vh;
+    display: inline-block;
+    padding: 60px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}

@@ -3,6 +3,15 @@
 // Inclure le fichier de connexion à la base de données
 require_once('../../../server.php');
 
+$mdp = "mdp1";
+function hacher($mdp)
+{
+    // Utilisez l'algorithme de hachage bcrypt
+    $hash = password_hash($mdp, PASSWORD_DEFAULT);
+
+    echo $hash;
+}
+
 // Requête SQL pour compter le nombre d'entreprises
 $sqlentreprise = "SELECT COUNT(*) AS totalEntreprises FROM Entreprise";
 

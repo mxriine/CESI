@@ -29,7 +29,7 @@ require_once ('../../../../Controleurs/offre/display.php');
     </header>
 
     <div class="partie">
-        <button class="bouton-retour2">
+        <button class="bouton-retour2" onclick="history.back()">
             <img class="fleche-retour" src="../../../../_assets/img/flecheRetour.png">
         </button>
     </div>

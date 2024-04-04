@@ -1,6 +1,7 @@
 <!-- FORMULAIRE DE SESSION (EN PHP) -->
 <?php
-    require_once '../../../Controleurs/session.php';
+require_once '../../../Controleurs/session.php';
+require_once '../../../Controleurs/Gérer/Créer/creer_pilote.php';
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +13,7 @@
     <title>Créer un pilote</title>
     <link rel="icon" type="image/png" href="../../../_assets/img/logoWeb.png">
     <link rel="stylesheet" href="../../../_assets/_css/creation.css">
-    <script src="../../../_assets/_java/student.js"></script>
+    <script src="../../../_assets/_java/gerer.js"></script>
 </head>
 
 <body>

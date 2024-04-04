@@ -403,7 +403,7 @@ require_once('../../Controleurs/main.php');
                     BLOC_PILOTES.style.display = 'none';
                     BLOC_ETUDIANTS.style.display = 'none';
                 }
-                if (this.checked && this.value == 'offres') {
+                if (this.checked && this.value == 'offre') {
                     BLOC_ENTREPRISES.style.display = 'none';
                     BLOC_OFFRES.style.display = 'block';
                     BLOC_PILOTES.style.display = 'none';

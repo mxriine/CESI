@@ -1,7 +1,7 @@
 <!-- FORMULAIRE DE SESSION (EN PHP) -->
 <?php
 require_once '../../../Controleurs/session.php';
-require_once '../../../Controleurs/Gérer/Créer/creer_etudiant.php';
+require_once '../../../Controleurs/Gérer/Créer/creer_pilote.php';
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +10,7 @@ require_once '../../../Controleurs/Gérer/Créer/creer_etudiant.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Créer un étudiant</title>
+    <title>Créer un pilote</title>
     <link rel="icon" type="image/png" href="../../../_assets/img/logoWeb.png">
     <link rel="stylesheet" href="../../../_assets/_css/creation.css">
     <script src="../../../_assets/_java/gerer.js"></script>
@@ -26,43 +26,45 @@ require_once '../../../Controleurs/Gérer/Créer/creer_etudiant.php';
         </div>
     </header>
 
-    <div class="TitreInscription">
-        <h1>Création compte Etudiant</h1>
-
-        <form method="POST" action="../../../Controleurs/Gérer/Créer/creer_etudiant.php" id="formulaire2" onsubmit="return validerFormulaire2()">
+    <div id="BLOC_INSCRIPTION2" class="blocInscr2">
+        <div class="TitreInscription">
+            <h1>CCREER UN PILOTE</h1>
+        </div>
+        <form method="POST" id="formulaire2" onsubmit="return validerFormulaire2()">
             <p class="Etape1">Etape 2: Informations personnelles</p>
-
-            <div class="BlocNomPrenom">
+            <p id="messageErreurNom" class="messageErreurNom"></p>
+            <p id="messageErreurPrenom" class="messageErreurPrenom"></p>
+            <section class="BlocNomPrenom">
                 <div class="Nom">
                     <label for="nom">Nom</label>
                     <input type="text" id="nom" name="nom" placeholder="MARTIN" required>
                 </div>
                 <div class="prenom">
-                    <label for="Prenom">Prenom</label>
+                    <label for="Prenom">Prénom</label>
                     <input type="text" id="Prenom" name="prenom" placeholder="Luc" required>
                 </div>
-            </div>
+            </section>
             <section class="Promo" id="promo">
-                <label>Promotion assignée</label>
+                <p>Promotions assignées</p>
                 <div>
-                    <input type="radio" id="A1" name="promo" value="A1">
-                    <label for="A1">1ère année</label>
+                    <input type="checkbox" id="1A" name="promo" value="A1">
+                    <label for="1A">1ère année</label>
                 </div>
                 <div>
-                    <input type="radio" id="A2" name="promo" value="A2">
-                    <label for="A2">2ème année</label>
+                    <input type="checkbox" id="2A" name="promo" value="A2">
+                    <label for="2A">2ème année</label>
                 </div>
                 <div>
-                    <input type="radio" id="A3" name="promo" value="A3">
-                    <label for="A3">3ème année</label>
+                    <input type="checkbox" id="3A" name="promo" value="A3">
+                    <label for="3A">3ème année</label>
                 </div>
                 <div>
-                    <input type="radio" id="A4" name="promo" value="A4">
-                    <label for="A4">4ème année</label>
+                    <input type="checkbox" id="4A" name="promo" value="A4">
+                    <label for="4A">4ème année</label>
                 </div>
                 <div>
-                    <input type="radio" id="A5" name="promo" value="A5">
-                    <label for="A5">5ème année</label>
+                    <input type="checkbox" id="5A" name="promo" value="A5">
+                    <label for="5A">5ème année</label>
                 </div>
             </section>
             <section class="centre" id="centre">
@@ -84,7 +86,7 @@ require_once '../../../Controleurs/Gérer/Créer/creer_etudiant.php';
 
             <button class="boutonValidationInscription2" id="boutonValidationInscriptionPilote2"
                 type="submit">VALIDER</button>
-
+            <p class="messageErreurChamps3">Tous les champs ne sont pas correctement remplis !</p>
         </form>
     </div>
 

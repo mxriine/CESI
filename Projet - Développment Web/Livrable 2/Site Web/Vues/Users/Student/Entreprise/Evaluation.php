@@ -29,7 +29,7 @@ require_once ('../../../../Controleurs/session.php');
 
     <section class="container">
         <div class="entete">
-            <button class="bouton-retour">
+            <button class="bouton-retour" onclick="history.back()">
                 <img class="fleche-retour" src="../../../../_assets/img/flecheRetour.png">
             </button>
             <h1 class="name">Evaluation de l'entreprise</h1>

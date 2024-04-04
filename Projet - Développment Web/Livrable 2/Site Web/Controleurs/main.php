@@ -36,7 +36,7 @@ if ($nbroffre > 0) {
         echo '<input type="hidden" name="id_offre" value="' . $rowOffre["ID_Offre"] . '">';
         echo '<button type="submit" class="boutonModif">Modifier</button>';
         echo '</form>';
-        echo '<form action="#" method="post">';
+        echo '<form action="/Site Web/Vues/Users/Student/Offre/Stage.php" method="post">';
         echo '<input type="hidden" name="id_offre" value="' . $rowOffre["ID_Offre"] . '">';
         echo '<button type="submit" class="boutonVision">Visualiser</button>';
         echo '</form>';

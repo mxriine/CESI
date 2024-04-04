@@ -3,7 +3,8 @@
 session_start();
 
 // Inclure le fichier de connexion à la base de données
-require_once('../server.php');
+require_once ('../server.php');
+require_once ('hachage.php');
 
 // Initialiser les variables
 $error_message = "";
@@ -34,8 +35,9 @@ if (isset($_POST['mail']) && isset($_POST['mdp'])) {
     $stmt->execute();
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($row) {
+    if ($row ) {
         // Stocker les informations d'identification et le prénom dans des variables de session
+        $_SESSION['id'] = $row['ID_Pers'];
         $_SESSION['mail'] = $row['Mail_Pers'];
         $_SESSION['mdp'] = $row['Mdp_Pers'];
         $_SESSION['role'] = $row['role'];
