@@ -61,7 +61,7 @@ require_once('../../Controleurs/main.php');
         </section>
 
         <section class="localite">
-            <label class="trait">Localités</label>
+            <label class="trait">Localisation</label>
             <div>
                 <input type="checkbox" name="pau" value="pau">
                 <label for="pau">Pau</label>
@@ -162,7 +162,7 @@ require_once('../../Controleurs/main.php');
         </section>
 
         <section class="localite">
-            <label class="trait">Localités</label>
+            <label class="trait">Localisation</label>
             <div>
                 <input type="checkbox" name="pau" value="pau">
                 <label for="pau">Pau</label>
@@ -267,7 +267,7 @@ require_once('../../Controleurs/main.php');
         </section>
 
         <section class="localitePiloteEtudiant">
-            <label class="trait">Localités</label>
+            <label class="trait">Localisation</label>
             <div>
                 <input type="checkbox" name="pau" value="pau">
                 <label for="pau">Pau</label>
@@ -345,7 +345,7 @@ require_once('../../Controleurs/main.php');
         </section>
 
         <section class="localitePiloteEtudiant">
-            <label class="trait">Localités</label>
+            <label class="trait">Localisation</label>
             <div>
                 <input type="checkbox" name="pau" value="pau">
                 <label for="pau">Pau</label>

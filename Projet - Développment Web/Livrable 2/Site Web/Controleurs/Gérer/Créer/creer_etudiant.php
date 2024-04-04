@@ -1,6 +1,6 @@
 <?php
 // Inclure le fichier de connexion à la base de données
-require_once('/www/Site Web/server.php');
+require_once ('/www/Site Web/server.php');
 
 try {
     // Vérification de l'existence des données POST
@@ -10,7 +10,6 @@ try {
         $id = $_POST['identifiant'];
         $mdp = $_POST['motdepasse'];
 
-        session_start(); //doit être appelé avant toute sortie
         $_SESSION['identifiant'] = $id;
 
         function createEtudiant($conn, $mail, $mdp)
@@ -65,7 +64,7 @@ try {
                 echo "Erreur lors de l'ajout de l'étudiant : " . $e->getMessage();
             }
 
-            header('Location: Inscription2Etudiant.php');
+            header('Location: /Site Web/Vues/Gérer/Créer/Creation_Etudiant2.php');
         }
 
         $stmt->closeCursor();
@@ -164,8 +163,6 @@ try {
         $stmt->execute();
     }
 
-    // Fermeture de la connexion à la base de données
-    $dbh = null;
 } catch (Exception $e) {
     echo "Erreur avec l'ajout de l'étudiant: " . $e->getMessage();
 }

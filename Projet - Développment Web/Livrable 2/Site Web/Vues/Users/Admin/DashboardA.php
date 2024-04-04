@@ -75,7 +75,7 @@
         <div class="fonction-pilote">
             <p>Pilote</p>
             <div class="button-fonction">
-                <a href="../../Gérer/Créer/Creation_Pilote.php">
+                <a href="../../Gérer/Créer/Creation_Pilote1.php">
                     <button class="creer-pilote" type="button">Créer un pilote</button></a>
                 <a href="../Liste/Vision_Pilote.php">
                     <button class="gerer-pilote" type="button">Gérer un pilote</button></a>
@@ -85,7 +85,7 @@
         <div class="fonction-etudiant">
             <p>Etudiant</p>
             <div class="button-fonction">
-                <a href="../../Gérer/Créer/Creation_Etudiant.php">
+                <a href="../../Gérer/Créer/Creation_Etudiant1.php">
                     <button class="creer-etudiant" type="button">Créer un étudiant</button></a>
                 <a href="../Liste/Vision_Etudiant.php">
                     <button class="gerer-etudiant" type="button">Gérer un étudiant</button></a>

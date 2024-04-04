@@ -13,8 +13,7 @@ require_once '../../../Controleurs/Gérer/Créer/creer_etudiant.php';
     <title>Créer un étudiant</title>
     <link rel="icon" type="image/png" href="../../../_assets/img/logoWeb.png">
     <link rel="stylesheet" href="../../../_assets/_css/creation.css">
-    <script src="../../../_assets/_java/etudiant.js"></script>
-    <script src="../../../_assets/_java/pilote.js"></script>
+    <script src="../../../_assets/_java/gerer.js"></script>
 </head>
 
 <body>
@@ -38,20 +37,21 @@ require_once '../../../Controleurs/Gérer/Créer/creer_etudiant.php';
                     <p class="messageErreurID" id="messageErreurID"></p>
                     <div class="Id">
                         <label for="identifiant">Identifiant</label>
-                        <input type="text" id="identifiant" name="identifiant" placeholder="Luc64" required>
+                        <input type="text" id="identifiant" name="identifiant" placeholder="Adresse e-mail" required>
                     </div>
                     <p class="messageErreurMDP" id="messageErreurMDP"></p>
                     <div class="mdp">
                         <label for="motdp">Mot de passe</label>
-                        <input type="password" id="motdp" name="motdepasse" required>
+                        <input type="password" id="motdp" name="motdepasse" placeholder="Mot de passe" required>
                     </div>
                     <p class="messageErreurConfirmation" id="messageErreurConfirmation"></p>
 
                     <div class="confirmdp">
                         <label for="confmdp">Confirmation</label>
-                        <input type="password" id="confmdp" name="confmotdp" required>
+                        <input type="password" id="confmdp" name="confmotdp" placeholder="Confirmation du mot de passe" required>
                     </div>
-                    <button class="boutonValidationInscription" id="boutonValidationInscription1" type="submit">VALIDER</button>
+                    <button class="boutonValidationInscription" id="boutonValidationInscription1"
+                        type="submit">VALIDER</button>
 
                 </div>
             </form>
