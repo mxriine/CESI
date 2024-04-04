@@ -1,6 +1,7 @@
 <!-- FORMULAIRE DE SESSION (EN PHP) -->
 <?php
-    require_once '../../../Controleurs/session.php';
+require_once '../../../Controleurs/session.php';
+require_once '../../../Controleurs/Gérer/Supprimer/supprimer_entreprise.php';
 ?>
 
 <!DOCTYPE html>
@@ -23,16 +24,18 @@
             <h1>StagExplorer</h1>
         </div>
     </header>
-    
-    <section class="supprimer">
-        <label for="labelSup1">Souhaitez-vous supprimer l'entreprise ?</label>
-        <label for="labelSup2">Attention ! Cette entreprise sera supprimée définitivement.</label>
-        <div class="boutonSuppAnn">
-            <button class="boutonSupprimer" type="submit">Supprimer l'entreprise</button>
-            <button class="boutonAnnuler" type="button"  onClick="history.back()">Annuler</button>
-        </div>
-    </section>
-    
+
+    <form method="POST">
+        <section class="supprimer">
+            <label for="labelSup1">Souhaitez-vous supprimer l'entreprise ?</label>
+            <label for="labelSup2">Attention ! Cette entreprise sera supprimée définitivement.</label>
+            <div class="boutonSuppAnn">
+                <button class="boutonSupprimer" type="submit">Supprimer l'entreprise</button>
+                <button class="boutonAnnuler" type="button" onClick="history.back()">Annuler</button>
+            </div>
+        </section>
+    </form>
+
 </body>
 
 </html>

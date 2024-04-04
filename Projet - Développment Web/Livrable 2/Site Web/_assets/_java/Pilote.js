@@ -1,85 +1,134 @@
 // INSCRIPTION ET MODIFICATION DES PILOTES
 
 // --- Inscription Pilote Part 1 --- //
-function ValidationInscription1Pilote() {
-    document.addEventListener('DOMContentLoaded', function () {
-        var boutonValider3 = document.getElementById('boutonValidationInscriptionPilote');
 
-        boutonValider3.addEventListener('click', function () {
-            var id = document.getElementById('identifiant').value;
-            var mdp = document.getElementById('motdp').value;
-            var confmdp = document.getElementById('confmdp').value;
+const messageErreurMDP1 = document.getElementById('messageErreurMDP');
+const messageErreurConfirmation1 = document.getElementById('messageErreurConfirmation');
+const messageErreurID1 = document.getElementById('messageErreurID');
 
-            if ((id == '' || mdp == '' || confmdp == '') || a == false || !validerID(id)) {
-                messageErreur.style.display = 'block';
-            } else {
-                messageErreur.style.display = 'none';
-                BLOC_INSCRIPTION2.style.display = 'block';
-                BLOC_INSCRIPTION1.style.display = 'none';
-            }
-        });
-    });
+function validerID(ID) {
+    const IDRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return IDRegex.test(ID);
+
+
 }
+
+function validerMDP(MotDePasse) {
+    const MotDePasseRegex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    return MotDePasseRegex.test(MotDePasse);
+}
+
+
+
+function afficherMessagesErreur() {
+    const MailInput = document.getElementById('identifiant');
+    const MdpInput = document.getElementById('motdp');
+    const ConfMailInput = document.getElementById('confmdp');
+
+    //affiche les erreurs en temps réel 
+    MailInput.addEventListener('input', function () {
+        const mail = this.value;
+        if (!validerID(mail)) {
+            messageErreurID.textContent = 'Format incorrect !';
+
+        } else {
+            messageErreurID.textContent = '';
+        }
+    });
+
+    //affiche les erreurs en temps réel
+    MdpInput.addEventListener('input', function () {
+        const mdp = this.value;
+        if (!validerMDP(mdp)) {
+            messageErreurMDP.textContent = 'Format incorrect !';
+
+        } else {
+            messageErreurMDP.textContent = '';
+        }
+    });
+
+    ConfMailInput.addEventListener('input', function () {
+        const ConfirmationMotDePasse = this.value;
+        const MotDePasse = MdpInput.value;
+        if (ConfirmationMotDePasse !== MotDePasse) {
+            messageErreurConfirmation.textContent = 'La confirmation du mot de passe ne correspond pas !';
+        } else {
+            messageErreurConfirmation.textContent = '';
+        }
+    });
+
+}
+
+afficherMessagesErreur();
+
+
+function validerFormulaire() {
+    var identifiant = document.getElementById('identifiant').value;
+    var motdepasse = document.getElementById('motdp').value;
+    var confmotdepasse = document.getElementById('confmdp').value;
+    // Validation côté client
+    if (!validerID(identifiant)) {
+        return false; // Arrête la soumission du formulaire
+    }
+    if (!validerMDP(motdepasse)) {
+        return false;
+    }
+    if (motdepasse !== confmotdepasse) {
+        return false;
+    }
+    return true;
+}
+
 
 // --- Inscription Pilote Part 2 --- //
 
 // Déclaration des variables
-const messageErreur3 = document.getElementById('messageErreurChamps3');
+const messageErreurMDP2 = document.getElementById('messageErreurMDP');
+const messageErreurConfirmation2 = document.getElementById('messageErreurConfirmation');
+const messageErreurID2 = document.getElementById('messageErreurId');
 
-function ValidationInscription2Pilote() {
-    document.addEventListener('DOMContentLoaded', function () {
+function validerNom(Nom) {
+    const NomRegex = /^[^\d!@#$%^&*]+$/;
+    return NomRegex.test(Nom);
+}
 
-        var boutonValider4 = document.getElementById('boutonValidationInscriptionPilote2');
+function validerPrenom(Prenom) {
+    const PrenomRegex = /^[^\d!@#$%^&*]+$/;
+    return PrenomRegex.test(Prenom);
+}
 
-        boutonValider4.addEventListener('click', function () {
-            var Nom = document.getElementById('nom').value;
-            var prenom = document.getElementById('Prenom').value;
-            var checkboxe = document.querySelector('#promo').checked;
-            var liste = document.getElementById('centre').value;
-            if (Nom == '' || prenom == '' || checkboxe == null || liste == '' || !validerNom(Nom) || !validerPrenom(prenom)) {
-                messageErreur3.style.display = 'block';
-            } else {
-                messageErreur3.style.display = 'none';
-            }
-        });
+function validerPromo(Promo) {
+    return Array.from(Promo).some(function (checkbox) {
+        return checkbox.checked;
     });
+
 }
 
-ValidationInscription2Pilote();
-ValidationInscription1Pilote();
-
-
-// --- Validation de la modification du pilote ---//
-function validerNomPilote(NomP) {
-    const NomPRegex = /^[^\d!@#$%^&*]+$/;
-    return NomPRegex.test(NomP);
+function validerCentre(selectCentre) {
+    return selectCentre.value !== '';
 }
 
-function validerPrenomPilote(PrenomP) {
-    const PrenomPRegex = /^[^\d!@#$%^&*]+$/;
-    return PrenomPRegex.test(PrenomP);
+function validerFormulaire2() {
+    var nom = document.getElementById('nom').value;
+    var prenom = document.getElementById('Prenom').value;
+    var promotion = document.getElementById('promo').value;
+    // var centre = document.getElementById('centre').value;
+    // Validation côté client
+    if (!validerNom(nom)) {
+        return false; // Arrête la soumission du formulaire
+    }
+    if (!validerPrenom(prenom)) {
+        return false;
+    }
+    if (!validerCentre(centre)) {
+        console.log("no");
+        return false;
+    }
+    if (!validerPromo(promotion)) {
+        console.log("non");
+        return false;
+    }
+
+    return true;
+
 }
-
-// Déclaration des variables
-const messageErreurP = document.getElementById('messageErreurPiloteModif');
-
-function ValidationModifPilote() {
-    document.addEventListener('DOMContentLoaded', function () {
-
-        var boutonValiderP = document.getElementById('but1');
-
-        boutonValiderP.addEventListener('click', function () {
-            var NomP = document.getElementById('nomP').value;
-            var PrenomP = document.getElementById('prenomP').value;
-            var checkboxeP = document.querySelector('#promosP').checked;
-            var listeP = document.getElementById('centreP').value;
-            if (NomP == '' || PrenomP == '' || checkboxeP == null || listeP == '' || !validerNomPilote(NomP) || !validerPrenomPilote(PrenomP)) {
-                messageErreurP.style.display = 'block';
-            } else {
-                messageErreurP.style.display = 'none';
-            }
-        });
-    });
-}
-
-ValidationModifPilote();

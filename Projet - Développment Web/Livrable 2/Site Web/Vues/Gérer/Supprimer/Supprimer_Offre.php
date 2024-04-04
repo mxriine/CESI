@@ -1,6 +1,7 @@
 <!-- FORMULAIRE DE SESSION (EN PHP) -->
 <?php
-    require_once '../../../Controleurs/session.php';
+require_once '../../../Controleurs/session.php';
+require_once '../../../Controleurs/Gérer/Supprimer/supprimer_offre.php';
 ?>
 
 <!DOCTYPE html>
@@ -24,15 +25,17 @@
         </div>
     </header>
 
-    <section class="supprimer">
-        <label for="labelSup1">Souhaitez-vous supprimer l'annonce ?</label>
-        <label for="labelSup2">Attention ! Votre annonce sera supprimée définitivement.</label>
-        <div class="boutonSuppAnn">
-            <button class="boutonSupprimer" type="submit">Supprimer l'annonce</button>
-            <button class="boutonAnnuler" type="button"  onClick="history.back()">Annuler</button>
-        </div>
-    </section>
-    
+    <form method="POST">
+        <section class="supprimer">
+            <label for="labelSup1">Souhaitez-vous supprimer l'annonce ?</label>
+            <label for="labelSup2">Attention ! Votre annonce sera supprimée définitivement.</label>
+            <div class="boutonSuppAnn">
+                <button class="boutonSupprimer" type="submit">Supprimer l'annonce</button>
+                <button class="boutonAnnuler" type="button" onClick="history.back()">Annuler</button>
+            </div>
+        </section>
+    </form>
+
 </body>
 
 </html>

@@ -29,22 +29,22 @@
 
     <section class="statistics">
         <div class="partie-entreprise" href="#">
-            <a href="../../../Statistics/Statistics_Admin.html">
+            <a href="../../Statistics/Statistics_Entreprise.php">
                 <?php echo $totalEntreprises; ?> entreprises
             </a>
         </div>
         <div class="partie-offre">
-            <a href="../../../Statistics/Statistics_Admin.html">
+            <a href="../../../Statistics/Statistics_Offre.php">
                 <?php echo $totalOffres; ?> offres
             </a>
         </div>
         <div class="partie-pilote" href="#">
-            <a href="../../../Statistics/Statistics_Admin.html">
+            <a href="../../../Statistics/Statistics_Pilote.php">
                 <?php echo $totalPilotes; ?> pilotes
             </a>
         </div>
         <div class="partie-etudiant" href="#">
-            <a href="../../../Statistics/Statistics_Admin.html">
+            <a href="../../../Statistics/Statistics_Etudiant.php">
                 <?php echo $totalEtudiants; ?> étudiants
             </a>
         </div>
@@ -55,9 +55,9 @@
         <div class="fonction-entreprise">
             <p>Entreprise</p>
             <div class="button-fonction">
-                <a href="../../Gérer/Créer/Creation_Entreprise.html">
+                <a href="../../Gérer/Créer/Creation_Entreprise.php">
                     <button class="creer-entreprise" type="button">Créer une entreprise</button></a>
-                <a href="PagesVisionAdmin/page_VisionEntre - VErsionPA.html">
+                <a href="../Liste/Vision_Entreprise.php">
                     <button class="gerer-entreprise" type="button">Gérer une entreprise</button></a>
             </div>
         </div>
@@ -65,9 +65,9 @@
         <div class="fonction-offre">
             <p>Offres de stage</p>
             <div class="button-fonction">
-                <a href="../../Gérer/Créer/Creation_Offre.html">
+                <a href="../../Gérer/Créer/Creation_Offre.php">
                     <button class="creer-offre" type="button">Créer une offre</button></a>
-                <a href="PagesVisionAdmin/page_VisionOffre - VErsionPA.html">
+                <a href="../Liste/Vision_Offre.php">
                     <button class="gerer-offre" type="button">Gérer une offre</button></a>
             </div>
         </div>
@@ -75,9 +75,9 @@
         <div class="fonction-pilote">
             <p>Pilote</p>
             <div class="button-fonction">
-                <a href="../../Gérer/Créer/Creation_Pilote.html">
+                <a href="../../Gérer/Créer/Creation_Pilote.php">
                     <button class="creer-pilote" type="button">Créer un pilote</button></a>
-                <a href="PagesVisionAdmin/page_VisionPilote - VErsionPA.html">
+                <a href="../Liste/Vision_Pilote.php">
                     <button class="gerer-pilote" type="button">Gérer un pilote</button></a>
             </div>
         </div>
@@ -85,9 +85,9 @@
         <div class="fonction-etudiant">
             <p>Etudiant</p>
             <div class="button-fonction">
-                <a href="../../Gérer/Créer/Creation_Etudiant.html">
+                <a href="../../Gérer/Créer/Creation_Etudiant.php">
                     <button class="creer-etudiant" type="button">Créer un étudiant</button></a>
-                <a href="PagesVisionAdmin/page_VisionEtudiant - VErsionPA.html">
+                <a href="../Liste/Vision_Etudiant.php">
                     <button class="gerer-etudiant" type="button">Gérer un étudiant</button></a>
             </div>
         </div>

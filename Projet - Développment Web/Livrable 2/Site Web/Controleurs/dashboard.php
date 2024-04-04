@@ -7,7 +7,8 @@ require_once('../../../server.php');
 $sqlentreprise = "SELECT COUNT(*) AS totalEntreprises FROM Entreprise";
 
 // Exécution de la requête
-$resultentreprise = $conn->query($sqlentreprise);
+$resultentreprise = $conn->prepare($sqlentreprise);
+$resultentreprise->execute();
 
 if ($resultentreprise) {
     // Récupération du résultat
@@ -22,14 +23,15 @@ if ($resultentreprise) {
 }
 
 // Requête SQL pour compter le nombre d'offres
-$sqloffres = "SELECT COUNT(*) AS totalOffres FROM Offre";
+$sqloffre = "SELECT COUNT(*) AS totalOffres FROM Offre";
 
 // Exécution de la requête
-$resultoffres = $conn->query($sqloffres);
+$resultoffre = $conn->prepare($sqloffre);
+$resultoffre->execute();
 
-if ($resultoffres) {
+if ($resultoffre) {
     // Récupération du résultat
-    $offres = $resultoffres->fetch(PDO::FETCH_ASSOC);
+    $offres = $resultoffre->fetch(PDO::FETCH_ASSOC);
 
     // Affichage du total d'offres
     if ($offres) {
@@ -40,14 +42,15 @@ if ($resultoffres) {
 }
 
 // Requête SQL pour compter le nombre de pilotes
-$sqlpilotes = "SELECT COUNT(*) AS totalPilotes FROM Pilote";
+$sqlpilote = "SELECT COUNT(*) AS totalPilotes FROM Pilote";
 
 // Exécution de la requête
-$resultpilotes = $conn->query($sqlpilotes);
+$resultpilote = $conn->prepare($sqlpilote);
+$resultpilote->execute();
 
-if ($resultpilotes) {
+if ($resultpilote) {
     // Récupération du résultat
-    $pilotes = $resultpilotes->fetch(PDO::FETCH_ASSOC);
+    $pilotes = $resultpilote->fetch(PDO::FETCH_ASSOC);
 
     // Affichage du total de pilotes
     if ($pilotes) {
@@ -58,14 +61,15 @@ if ($resultpilotes) {
 }
 
 // Requête SQL pour compter le nombre d'étudiants
-$sqletudiants = "SELECT COUNT(*) AS totalEtudiants FROM Etudiant";
+$sqletudiant = "SELECT COUNT(*) AS totalEtudiants FROM Etudiant";
 
 // Exécution de la requête
-$resultetudiants = $conn->query($sqletudiants);
+$resultetudiant = $conn->prepare($sqletudiant);
+$resultetudiant->execute();
 
-if ($resultetudiants) {
+if ($resultetudiant) {
     // Récupération du résultat
-    $etudiants = $resultetudiants->fetch(PDO::FETCH_ASSOC);
+    $etudiants = $resultetudiant->fetch(PDO::FETCH_ASSOC);
 
     // Affichage du total d'étudiants
     if ($etudiants) {

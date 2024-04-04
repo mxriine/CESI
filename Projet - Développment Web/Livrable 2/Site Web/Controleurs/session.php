@@ -18,7 +18,7 @@ switch ($role) {
             <ul>
                 <li><a href="#">' . $prenom . ' (ADMIN)</a>
                     <ul class="drop">
-                        <li><a href="/Site Web/Main.php">Accueil</a></li>
+                        <li><a href="/Site Web/Accueil.tpl">Accueil</a></li>
                         <li><a href="/Site Web/Controleurs/logout.php">Déconnexion</a></li>
                     </ul>
                 </li>
@@ -46,7 +46,7 @@ switch ($role) {
             <ul>
                 <li><a href="#">' . $prenom . ' (PILOTE)</a>
                     <ul class="drop">
-                        <li><a href="/Site Web/Main.php">Accueil</a></li>
+                        <li><a href="/Site Web/Accueil.tpl">Accueil</a></li>
                         <li><a href="/Site Web/Controleurs/logout.php">Déconnexion</a></li>
                     </ul>
                 </li>

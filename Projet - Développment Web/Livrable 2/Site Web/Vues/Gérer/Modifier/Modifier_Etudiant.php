@@ -1,6 +1,7 @@
 <!-- FORMULAIRE DE SESSION (EN PHP) -->
 <?php
     require_once '../../../Controleurs/session.php';
+    require_once '../../../Controleurs/Gérer/modifier_etudiant.php';
 ?>
 
 <!DOCTYPE html>
@@ -29,14 +30,15 @@
             <h1>MODIFIER UN ETUDIANT</h1>
         </div>
         <article class="contenu">
-            <div class="name">
+            <div class="entree">
                 <label>Nom</label>
-                <input type="text" id="nom" name="nom" value="Durant">
+                <input type="text" id="nom" name="nom" value="<?php echo $nom; ?>">
             </div>
-            <div class="prenom">
+            <div class="entree">
                 <label>Prénom</label>
-                <input type="text" id="prenom" name="prenom" value="Richard">
+                <input type="text" id="prenom" name="prenom" value="<?php echo $prenom; ?>">
             </div>
+            
             <div class="centres">
             <label>Centre</label>
             <select id="centre" name="centre">
@@ -65,7 +67,7 @@
             <button type="button" id="but2" onclick="history.back()">Retour</button>
         </article>
         <article class="boutons-G">
-            <a href="/Gérer/Supprimer/Supprimer_Etudiant.html"><button type="button" id="but3">Supprimer l'étudiant</button></a>
+            <a href="../Supprimer/Supprimer_Etudiant.php"><button type="button" id="but3">Supprimer l'étudiant</button></a>
         </article>
    </section>
     

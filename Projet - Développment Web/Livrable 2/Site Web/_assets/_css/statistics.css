@@ -143,7 +143,7 @@ aside {
 }
 
 /* --- Statistics Etudiant  --- */
-.Bloc {
+.bloc {
     height: 530px;
     width: 850px;
     border-radius: 15px;
@@ -155,7 +155,7 @@ aside {
     transform: translate(-50%, -50%);
 }
 
-.Bloc1 {
+.partie1 {
     position: relative;
     display: flex;
     flex-direction: row;
@@ -166,7 +166,7 @@ aside {
 
 .bouton-retour {
     position: absolute;
-    top : 20%;
+    top: 20%;
     border-radius: 7px;
     /* ajustez la valeur selon la forme souhaitée */
     background-color: #ffffff;
@@ -186,40 +186,19 @@ aside {
     margin-left: 30%;
 }
 
-.Bloc2 {
+.information-etudiant {
     display: flex;
     position: relative;
     flex-direction: column;
-    top: -6%;
+    top: -3%;
     left: 6%;
-    gap: 25px;
+    gap: 2px;
 }
 
-.label2 {
-    font-weight: 600;
-    font-size: 20px;
-}
-
-.boutonprofil {
-    width: 140px;
-    height: 30px;
-    font-size: 90%;
-    font-weight: 600;
-    border-radius: 7px;
-    /* ajustez la valeur selon la forme souhaitée */
-    background-color: #ffffff;
-    /* couleur de fond */
-    color: #000000;
-    /* couleur du texte */
-    cursor: pointer;
-    text-decoration: none;
-    padding-left: 40px;
-    box-shadow: rgb(70, 69, 69) 0px 1px 3px;
-}
-
-.boutonwishlist {
+.bouton-wishlist {
     width: 200px;
     height: 30px;
+    top: 20%;
     font-size: 90%;
     /* Taille de la police */
     font-weight: 700;
@@ -231,12 +210,12 @@ aside {
     /* couleur du texte */
     cursor: pointer;
     text-decoration: none;
-    padding-left: 40px;
+    text-align: center;
     box-shadow: rgb(70, 69, 69) 0px 1px 3px;
     transform: translateX(-30%);
 }
 
-.Bloc3 {
+.partie2 {
     background-color: rgba(220, 220, 220, 1);
     display: flex;
     position: absolute;
@@ -246,27 +225,41 @@ aside {
     height: 240px;
     border-radius: 15px;
     border: 1px solid black;
-
 }
 
-.Bloc4 {
+.partie2 h1 {
+    font-size: 15px;
+}
+
+.information {
     display: flex;
     position: absolute;
     flex-direction: column;
-    top: 10%;
+    top: 5%;
     left: 5%;
-    gap: 5px;
+    gap: -5px;
 }
 
-.label1 {
-    font-weight: 600;
+.information h1 {
+    margin-bottom: -5%;
 }
 
-.Bloc5 {
+.information p {
+    margin-bottom: -3%;
+}
+
+.date {
     display: flex;
     position: absolute;
     flex-direction: column;
     top: 10%;
     left: 65%;
-    gap: 20px;
+}
+
+.date h1 {
+    margin-bottom: -5%;
+}
+
+.date p {
+    margin-bottom: -3%;
 }

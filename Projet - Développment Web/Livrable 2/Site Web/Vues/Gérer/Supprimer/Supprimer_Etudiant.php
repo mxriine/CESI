@@ -1,6 +1,7 @@
 <!-- FORMULAIRE DE SESSION (EN PHP) -->
 <?php
-    require_once '../../../Controleurs/session.php';
+require_once '../../../Controleurs/session.php';
+require_once '../../../Controleurs/Gérer/Supprimer/supprimer_etudiant.php';
 ?>
 
 <!DOCTYPE html>
@@ -24,15 +25,17 @@
         </div>
     </header>
 
-    <section class="supprimer">
-        <label for="labelSup1">Souhaitez-vous supprimer l'étudiant ?</label>
-        <label for="labelSup2">Attention ! Cet étudiant sera supprimé définitivement.</label>
-        <div class="boutonSuppAnn">
-            <button class="boutonSupprimer" type="submit">Supprimer l'étudiant</button>
-            <button class="boutonAnnuler"  onClick="history.back()" type="button">Annuler</button>
-        </div>
-    </section>
-    
+    <form method="POST">
+        <section class="supprimer">
+            <label for="labelSup1">Souhaitez-vous supprimer l'étudiant ?</label>
+            <label for="labelSup2">Attention ! Cet étudiant sera supprimé définitivement.</label>
+            <div class="boutonSuppAnn">
+                <button class="boutonSupprimer" type="submit">Supprimer l'étudiant</button>
+                <button class="boutonAnnuler" onClick="history.back()" type="button">Annuler</button>
+            </div>
+        </section>
+    </form>
+
 </body>
 
 </html>

@@ -27,40 +27,36 @@ require_once('../../../Controleurs/session.php');
         </div>
     </header>
 
-    <section class="Bloc">
-        <article class="Bloc1">
+    <section class="bloc">
+        <article class="partie1">
             <button class="bouton-retour">
                 <img class="fleche-retour" src="../../../_assets/img/flecheRetour.png">
             </button>
-            <div class="Bloc2">
-                <label class="label2">Etudiant 1</label>
-                <label>Promotion: 1ère année Informatique </br> Centre: Pau</label>
+            <div class="information-etudiant">
+                <h1>Etudiant 1</h1>
+                <p>Promotion: 1ère année Informatique </br> Centre: Pau</p>
             </div>
-            <div class="Bloc2">
-                <a href=""><button class="boutonprofil" type="button">Voir le profil</button></a>
-                <a href="/Student/Wishlist.html"><button class="boutonwishlist" type="button">Consulter la
-                        wishlist</button></a>
+            <div>
+                <a href="Wishlist.php"><button class="bouton-wishlist" type="button">Consulter la wishlist</button></a>
             </div>
         </article>
 
-        <article class="Bloc3">
-            <div class="Bloc4">
-                <label class="label1">Nombre d'offres postulé</label>
-                <label>9</label>
-                <label class="label1">Nombre d'offres visionné</label>
-                <label>32</label>
-                <label class="label1">Nombre d'offres refusé</label>
-                <label>5</label>
-                <label class="label1">Nombre de connexion</label>
-                <label>10</label>
+        <article class="partie2">
+            <div class="information">
+                <h1>Nombre d'offres postulé</h1>
+                <p>9</p>
+                <h1>Nombre d'offres visionné</h1>
+                <p>32</p>
+                <h1>Nombre d'offres refusé</h1>
+                <p>5</p>
+                <h1>Nombre de connexion</h1>
+                <p>10</p>
             </div>
-            <div class="Bloc5">
-                <label class="label1">Date création de compte</label>
-                <label>19/01/2024</label>
+            <div class="date">
+                <h1>Date création de compte</h1>
+                <p>19/01/2024</p>
             </div>
         </article>
-
-
     </section>
 
 </body>

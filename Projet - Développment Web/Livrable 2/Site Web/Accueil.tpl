@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="icon" type="image/png" href="_assets/img/logoWeb.png">
+    <link href="{$css}" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <img class="logo" src="_assets/img/logoWeb.png" alt="Logo StagExplorer">
+        </div>
+        <div class="titre">
+            <h1>StagExplorer</h1>
+        </div>
+    </header>
+
+    <div class="bouton">
+        <a href="../Site Web/Vues/Users/MainSearch.php">STAGE</a>
+    </div>
+
+    <footer>
+        <div class="footer">
+            <a href="#">Confidentialité</a>
+            <a href="#">A propos</a>
+            <a href="#">F.A.Q</a>
+        </div>
+    </footer>
+
+</body>
+
+</html>

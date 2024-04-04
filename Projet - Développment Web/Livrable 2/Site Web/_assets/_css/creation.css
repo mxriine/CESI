@@ -389,3 +389,35 @@ textarea {
 .bouton:hover {
     background-color: rgba(28, 143, 166, 0.918);
 }
+
+/* --- Erreur --- */
+#messageErreurMDP {
+    color: red;
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: URW Chancery L, cursive;
+
+}
+
+#messageErreurID {
+    color: red;
+    position: absolute;
+    top: 34%;
+    left: 60%;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: URW Chancery L, cursive;
+
+}
+
+#messageErreurConfirmation {
+    color: red;
+    font-family: URW Chancery L, cursive;
+    position: absolute;
+    top: 79%;
+    left: 39%;
+    font-size: 15px;
+}

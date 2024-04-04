@@ -25,9 +25,12 @@ body {
 }
 
 .nav {
-    width: auto; /* Ajustez en fonction du contenu */
-    min-width: 80px; /* Gardez une largeur minimale si nécessaire */
-    padding: 0 10px; /* Ajoutez un peu de padding sur les côtés */
+    width: auto;
+    /* Ajustez en fonction du contenu */
+    min-width: 80px;
+    /* Gardez une largeur minimale si nécessaire */
+    padding: 0 10px;
+    /* Ajoutez un peu de padding sur les côtés */
     height: 25px;
     font-size: 15px;
     font-weight: 500;
@@ -152,9 +155,8 @@ body {
 .TitreOffreEntreprise {
     position: absolute;
     left: 5%;
-    top: 5%;
-    font-size: 30px;
-    font-weight: bold;
+    top: 1%;
+    font-size: 25px;
 }
 
 .publier {
@@ -165,7 +167,7 @@ body {
 
 .description {
     position: absolute;
-    top: 30%;
+    top: 25%;
     height: 85px;
     width: 700px;
     left: 5%;
@@ -173,7 +175,7 @@ body {
 
 .compDemandes {
     position: absolute;
-    top: 71%;
+    top: 62%;
     height: 30px;
     width: 700px;
     left: 5%;
@@ -189,7 +191,6 @@ body {
     font-weight: bold;
     border-radius: 8px;
     border-color: black;
-
 }
 
 .boutonVision:hover {

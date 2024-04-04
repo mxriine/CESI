@@ -37,14 +37,13 @@ require_once('../../../Controleurs/session.php');
         </div>
 
         <article class="Bloc3">
-
             <div class="Bloc2">
-                <a href="../PagesVisionSeuleVersionEtudiant/page_OffreSeule.html">
+                <a href="Offre/Stage.php">
                     <button class="boutonStage" type="button">
                         <img class="imgcoeur" src="../../../_assets/img/coeur.png" alt="Like">Stage 1
                     </button>
                 </a>
-                <a href="/Student/Stage_Posted.html">
+                <a href="Offre/Stage_Postule.php">
                     <button class="boutonPostuler" type="button">Postuler</button>
                 </a>
                 <button class="boutoncroix" type="delete">

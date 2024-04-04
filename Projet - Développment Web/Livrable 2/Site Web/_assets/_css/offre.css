@@ -1,7 +1,7 @@
 /* OFFRE */
 
 body {
-    background-color: orange;
+    background-color: rgba(37, 37, 37, 1);
     font-family: 'Khula', sans-serif;
 }
 
@@ -313,7 +313,6 @@ p [for="titre"] {
     left: 5%;
     display: flex;
     flex-direction: column;
-    font-family: URW Chancery L, cursive;
     gap: 10px;
 }
 
@@ -323,7 +322,6 @@ p [for="titre"] {
     position: absolute;
     top: 50%;
     left: 5%;
-    font-family: URW Chancery L, cursive;
     gap: 10px;
 }
 
@@ -335,7 +333,6 @@ p [for="titre"] {
     left: 5%;
     display: flex;
     flex-direction: row;
-    font-family: URW Chancery L, cursive;
     gap: 10px;
 }
 
@@ -347,7 +344,6 @@ p [for="titre"] {
     left: 5%;
     display: flex;
     flex-direction: row;
-    font-family: URW Chancery L, cursive;
     gap: 10px;
 }
 
@@ -359,7 +355,6 @@ p [for="titre"] {
     left: 5%;
     display: flex;
     flex-direction: row;
-    font-family: URW Chancery L, cursive;
     gap: 10px;
 }
 
