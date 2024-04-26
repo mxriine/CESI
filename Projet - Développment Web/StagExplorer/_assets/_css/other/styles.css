@@ -1,0 +1,713 @@
+/* CSS BY 3W SCHOOL*/
+
+/* -- CSS Global -- */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Raleway", sans-serif
+}
+
+body,
+html {
+    height: 100%;
+    line-height: 1.8;
+}
+
+/* Full height image header */
+.bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(37, 37, 37, 1);
+    min-height: 100%;
+}
+
+.bar .button {
+    padding: 16px;
+}
+
+/* -------------------- */
+
+html {
+    box-sizing: border-box
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit
+}
+
+/* -- CSS Default -- */
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+
+body {
+    margin: 0
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section {
+    display: block
+}
+
+summary {
+    display: list-item
+}
+
+audio,
+canvas,
+progress,
+video {
+    display: inline-block
+}
+
+progress {
+    vertical-align: baseline
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0
+}
+
+[hidden],
+template {
+    display: none
+}
+
+a {
+    background-color: transparent
+}
+
+a:active,
+a:hover {
+    outline-width: 0
+}
+
+abbr[title] {
+    border-bottom: none;
+    text-decoration: underline;
+    text-decoration: underline dotted
+}
+
+b,
+strong {
+    font-weight: bolder
+}
+
+dfn {
+    font-style: italic
+}
+
+mark {
+    background: #ff0;
+    color: #000
+}
+
+small {
+    font-size: 80%
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+
+sub {
+    bottom: -0.25em
+}
+
+sup {
+    top: -0.5em
+}
+
+figure {
+    margin: 1em 40px
+}
+
+img {
+    border-style: none
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, monospace;
+    font-size: 1em
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible
+}
+
+button,
+input,
+select,
+textarea,
+optgroup {
+    font: inherit;
+    margin: 0
+}
+
+optgroup {
+    font-weight: bold
+}
+
+button,
+input {
+    overflow: visible
+}
+
+button,
+select {
+    text-transform: none
+}
+
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+    -webkit-appearance: button;
+    appearance: button;
+}
+
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+    border-style: none;
+    padding: 0
+}
+
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+    outline: 1px dotted ButtonText
+}
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: .35em .625em .75em
+}
+
+legend {
+    color: inherit;
+    display: table;
+    max-width: 100%;
+    padding: 0;
+    white-space: normal
+}
+
+textarea {
+    overflow: auto
+}
+
+[type=checkbox],
+[type=radio] {
+    padding: 0
+}
+
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+    height: auto
+}
+
+[type=search] {
+    -webkit-appearance: textfield;
+    appearance: textfield;
+    outline-offset: -2px
+}
+
+[type=search]::-webkit-search-decoration {
+    -webkit-appearance: none
+}
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit
+}
+
+/* -- CSS extract -- */
+html,
+body {
+    font-family: Verdana, sans-serif;
+    font-size: 15px;
+    line-height: 1.5
+}
+
+html {
+    overflow-x: hidden
+}
+
+h1 {
+    font-size: 36px
+}
+
+h2 {
+    font-size: 30px
+}
+
+h3 {
+    font-size: 24px
+}
+
+h4 {
+    font-size: 20px
+}
+
+h5 {
+    font-size: 18px
+}
+
+h6 {
+    font-size: 16px
+}
+
+.serif {
+    font-family: serif
+}
+
+.sans-serif {
+    font-family: sans-serif
+}
+
+.cursive {
+    font-family: cursive
+}
+
+.monospace {
+    font-family: monospace
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-weight: 400;
+    margin: 10px 0
+}
+
+.wide {
+    letter-spacing: 4px
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 20px 0
+}
+
+.image {
+    max-width: 100%;
+    height: auto
+}
+
+img {
+    vertical-align: middle
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+/* -- CSS Class -- */
+
+.top,
+.bottom {
+    position: fixed;
+    width: 100%;
+    z-index: 1
+}
+
+.top {
+    top: 0
+}
+
+.bottom {
+    bottom: 0
+}
+
+.card {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)
+}
+
+.bar {
+    width: 100%;
+    overflow: hidden
+}
+
+.center .bar {
+    display: inline-block;
+    width: auto
+}
+
+.bar .bar-item {
+    padding: 8px 12px;
+    float: left;
+    width: auto;
+    border: none;
+    display: block;
+    outline: 0
+}
+
+.bar {
+    position: static;
+    float: left
+}
+
+.bar .button {
+    white-space: normal
+}
+
+.button {
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap
+}
+
+.button {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.button:disabled {
+    cursor: not-allowed;
+    opacity: 0.3
+}
+
+.bar-block .bar-item {
+    width: 100%;
+    display: block;
+    padding: 8px 16px;
+    text-align: left;
+    border: none;
+    white-space: normal;
+    float: none;
+    outline: 0
+}
+
+.bar-block .center .bar-item {
+    text-align: center
+}
+
+
+.wide {
+    letter-spacing: 4px
+}
+
+.right {
+    float: right !important
+}
+
+.animate-left {
+    position: relative;
+    animation: animateleft 0.4s
+}
+
+.display-container {
+    position: relative
+}
+
+.grayscale-min {
+    filter: grayscale(50%)
+}
+
+.opacity,
+.hover-opacity:hover {
+    opacity: 0.60
+}
+
+.opacity-off,
+.hover-opacity-off:hover {
+    opacity: 1
+}
+
+.opacity-max {
+    opacity: 0.25
+}
+
+.opacity-min {
+    opacity: 0.75
+}
+
+@media (max-width:992px) and (min-width:601px) {
+    .hide-medium {
+        display: none !important
+    }
+}
+
+@media (max-width:992px) {
+    .sidebar {
+        display: none
+    }
+}
+
+@media (min-width:993px) {
+    .sidebar {
+        display: block !important
+    }
+
+    .hide-large {
+        display: none !important
+    }
+}
+
+@media (max-width:600px) {
+
+    .hide-small {
+        display: none !important
+    }
+}
+
+
+/* -- CSS Color -- */
+.white,
+.hover-white:hover {
+    color: #000 !important;
+    background-color: #fff !important;
+}
+
+.text-white,
+.hover-text-white:hover {
+    color: #fff !important
+}
+
+.black,
+.hover-black:hover {
+    color: #fff !important;
+    background-color: #000 !important
+}
+
+.text-grey,
+.hover-text-grey:hover,
+.text-gray,
+.hover-text-gray:hover {
+    color: #757575 !important
+}
+
+/* -- CSS Font Size -- */
+.tiny {
+    font-size: 10px !important
+}
+
+.small {
+    font-size: 12px !important
+}
+
+.medium {
+    font-size: 15px !important
+}
+
+.large {
+    font-size: 18px !important
+}
+
+.xlarge {
+    font-size: 24px !important
+}
+
+.xxlarge {
+    font-size: 36px !important
+}
+
+.xxxlarge {
+    font-size: 48px !important
+}
+
+.jumbo {
+    font-size: 64px !important
+}
+
+/* -- CSS Padding & Marging -- */
+.margin {
+    margin: 16px !important
+}
+
+.margin-top {
+    margin-top: 16px !important
+}
+
+.margin-bottom {
+    margin-bottom: 16px !important
+}
+
+.margin-left {
+    margin-left: 16px !important
+}
+
+.margin-right {
+    margin-right: 16px !important
+}
+
+.padding-small {
+    padding: 4px 8px !important
+}
+
+.padding {
+    padding: 8px 16px !important
+}
+
+.padding-large {
+    padding: 12px 24px !important
+}
+
+.padding-16 {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important
+}
+
+.padding-24 {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important
+}
+
+.padding-32 {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important
+}
+
+.padding-48 {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important
+}
+
+.padding-64 {
+    padding-top: 64px !important;
+    padding-bottom: 64px !important
+}
+
+.padding-top-64 {
+    padding-top: 64px !important
+}
+
+.padding-top-48 {
+    padding-top: 48px !important
+}
+
+.padding-top-32 {
+    padding-top: 32px !important
+}
+
+.padding-top-24 {
+    padding-top: 24px !important
+}
+
+/* -- CSS Dsiplay -- */
+.display-topleft {
+    position: absolute;
+    left: 0;
+    top: 0
+}
+
+.display-topright {
+    position: absolute;
+    right: 0;
+    top: 0
+}
+
+.display-bottomleft {
+    position: absolute;
+    left: 0;
+    bottom: 0
+}
+
+.display-bottomright {
+    position: absolute;
+    right: 0;
+    bottom: 0
+}
+
+.display-middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%)
+}
+
+.display-left {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(0%, -50%);
+    -ms-transform: translate(-0%, -50%)
+}
+
+.display-right {
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translate(0%, -50%);
+    -ms-transform: translate(0%, -50%)
+}
+
+.display-topmiddle {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0%);
+    -ms-transform: translate(-50%, 0%)
+}
+
+.display-bottommiddle {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 0%);
+    -ms-transform: translate(-50%, 0%)
+}
+
+.display-container:hover .display-hover {
+    display: block
+}
+
+.display-container:hover span.display-hover {
+    display: inline-block
+}
+
+.display-hover {
+    display: none
+}
+
+.display-position {
+    position: absolute
+}
