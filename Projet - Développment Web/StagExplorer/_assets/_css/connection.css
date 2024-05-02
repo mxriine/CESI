@@ -2,8 +2,8 @@
 
 #identifier {
     color: white;
-    margin-top: 200px;
-    margin-left: 900px;
+    margin-top: 100px;
+    margin-left: 600px;
     font-size: 45px;
 }
 
@@ -52,6 +52,7 @@
     padding: 10px 15px;
     display: inline;
 }
+
 #submit {
     background-color: white;
     font-size: 20px;
@@ -75,4 +76,16 @@
     position: absolute;
     top: 70%;
     left: 55%;
+}
+/* --- CSS Media Queries --- */
+@media (max-width: 2560px) and (min-width: 1440px) {
+    #identifier {
+        margin-top: 200px;
+        margin-left: 900px;
+        font-size: 50px;
+    }
+
+    .parent {
+        margin-right: 200px;
+    }
 }

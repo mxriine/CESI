@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>StagExplorer</title>
     <!-- LOGO -->
-    <link rel="icon" type="image/png" href="../_assets/img/logo.png">
+    <link rel="icon" type="image/png" href="_assets/img/logo.png">
     <!-- CSS -->
-    <link rel="stylesheet" href="../_assets/_css/other/styles.css">
+    <link rel="stylesheet" href="_assets/_css/other/styles.css">
     <!-- CSS police -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <!-- CSS icones -->
@@ -84,7 +84,7 @@
             <span class="jumbo hide-small">StagExplorer</span><br>
             <span class="xxlarge hide-large hide-medium">StagExplorer</span><br>
             <span class="large">Ne perdez plus de temps précieux avec des stages qui ne vous conviennent pas.</span>
-            <p><a href="Search.php"
+            <p><a href="Vues/Search.php"
                     class="button white padding-large large margin-top opacity hover-opacity-off">En
                     savoir plus et chercher dès aujourd'hui</a></p>
         </div>
