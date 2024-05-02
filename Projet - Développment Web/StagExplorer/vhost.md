@@ -1,8 +1,8 @@
 ## Configuration d'un virtual host
 
 La création d’un virtual host se fait en deux étapes :
-> Définition des virtual hosts sur le serveur Apache
-> Ajout d’un nouveau domaine dans le fichier hosts de l’ordinateur
+- Définition des virtual hosts sur le serveur Apache
+- Ajout d’un nouveau domaine dans le fichier hosts de l’ordinateur
 
 ### Première Etape | Configuration du serveur Apache
 
