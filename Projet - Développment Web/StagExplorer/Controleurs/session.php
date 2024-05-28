@@ -18,8 +18,8 @@ switch ($role) {
             <ul>
                 <li><a href="#">' . $prenom . ' | PILOTE</a>
                     <ul class="drop">
-                        <li><a href="/StagExplorer/Vues/Main.html">Accueil</a></li>
-                        <li><a href="/StagExplorer/Controleurs/logout.php">Déconnexion</a></li>
+                        <li><a href="/Home.php">Accueil</a></li>
+                        <li><a href="/Controleurs/logout.php">Déconnexion</a></li>
                     </ul>
                 </li>
             </ul>
@@ -30,8 +30,8 @@ switch ($role) {
                 <ul>
                     <li><a href="#">' . $prenom . ' | PILOTE</a>
                         <ul class="drop">
-                            <li><a href="/StagExplorer/Vues/Pilote/Dashboard.php">Voir le dashboard</a></li>
-                            <li><a href="/StagExplorer/Controleurs/logout.php">Déconnexion</a></li>
+                            <li><a href="/Vues/Pilote/Dashboard.php">Voir le dashboard</a></li>
+                            <li><a href="/Controleurs/logout.php">Déconnexion</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -45,7 +45,7 @@ switch ($role) {
                     <li><a href="#">' . $prenom . ' | ETUDIANT</a>
                         <ul class="drop">
                             <li><a href="#">Ma WishList</a></li>
-                            <li><a href="/StagExplorer/Controleurs/logout.php">Déconnexion</a></li>
+                            <li><a href="../Controleurs/logout.php">Déconnexion</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -53,7 +53,7 @@ switch ($role) {
         break;
     default:
         // Redirection vers la page de connexion si le rôle n'est pas défini
-        header('Location: /StagExplorer/Vues/Connection.php');
+        header('Location: /Vues/Connection.php');
         exit(); // Assurez-vous de terminer le script après la redirection
 }
 ?>
@@ -62,7 +62,7 @@ switch ($role) {
 <html lang="fr">
 
 <head>
-    <link rel="stylesheet" href="/StagExplorer/_assets/_css/styles.css">
+    <link rel="stylesheet" href="_assets/_css/styles.css">
 </head>
 
 </html>

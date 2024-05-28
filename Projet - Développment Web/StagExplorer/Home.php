@@ -84,7 +84,7 @@
             <span class="jumbo hide-small">StagExplorer</span><br>
             <span class="xxlarge hide-large hide-medium">StagExplorer</span><br>
             <span class="large">Ne perdez plus de temps précieux avec des stages qui ne vous conviennent pas.</span>
-            <p><a href="Vues/Search.php"
+            <p><a href="/Vues/Search.php"
                     class="button white padding-large large margin-top opacity hover-opacity-off">En
                     savoir plus et chercher dès aujourd'hui</a></p>
         </div>
