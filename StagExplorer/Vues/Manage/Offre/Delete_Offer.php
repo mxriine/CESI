@@ -1,7 +1,7 @@
 <!-- FORMULAIRE DE SESSION (EN PHP) -->
 <?php
-require_once('../../../Controleurs/session.php');
-require_once('../../../Controleurs/offre.php');
+require_once ('../../../Controleurs/session.php');
+require_once ('../../../Controleurs/Manage/delete.php');
 ?>
 
 <!-- PAGE DELETE OFFRE | Valider au validateur  -->
@@ -30,9 +30,11 @@ require_once('../../../Controleurs/offre.php');
         </div>
     </header>
 
-    <form method="POST">
+    <form action="/Vues/delete_offer.php" method="POST">
         <section class="supprimer">
-            <label for="labelSup1">Souhaitez-vous supprimer l'annonce ? <?php echo $titre; ?> </label>
+            <label for="labelSup1">Souhaitez-vous supprimer l'annonce ? </label>
+            <p><?php echo $Name_Offer; ?></p>
+            <input type="hidden" name="id_offer" value="<?php echo $ID_Offer; ?>">
             <label for="labelSup2">Attention ! Votre annonce sera supprimée définitivement.</label>
             <div class="boutonSuppAnn">
                 <button class="boutonSupprimer" type="submit">Supprimer l'annonce</button>
@@ -40,6 +42,7 @@ require_once('../../../Controleurs/offre.php');
             </div>
         </section>
     </form>
+
 
 </body>
 

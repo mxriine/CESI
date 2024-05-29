@@ -1,19 +1,20 @@
 <?php
 // Inclure le fichier de connexion à la base de données
 require_once('/www/StagExplorer/Controleurs/server.php');
+require_once('/www/StagExplorer/Models/Offer.php');
 
 // Vérifier si l'ID de l'offre a été soumis via POST
-if(isset($_POST['id_offre'])) {
+if(isset($_POST['id_offer'])) {
     // Récupérer l'ID de l'offre depuis les données POST
-    $id_offre = $_POST['id_offre'];
+    $id_offer = $_POST['id_offer'];
     
     // Utiliser l'ID de l'offre pour récupérer ses autres informations depuis la base de données
     // Vous pouvez exécuter une requête SQL pour cela
     
     // Exemple de requête pour récupérer les informations de l'offre
-    $sql = "SELECT * FROM offre WHERE Id_Offre = :id_offre";
+    $sql = "SELECT * FROM offer WHERE ID_Offer = :id_offer";
     $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':id_offre', $id_offre);
+    $stmt->bindParam(':id_offer', $id_offer);
     $stmt->execute();
     
     // Vérifier si des données ont été trouvées
@@ -22,24 +23,24 @@ if(isset($_POST['id_offre'])) {
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         
         // Maintenant vous pouvez utiliser les données récupérées comme vous le souhaitez
-        $titre = $row['Nom_Offre'];
-        $description = $row['Description_Offre'];
-        $competences = $row['Competences_Offre'];
-        $date = $row['Date_Offre'];
-        $remuneration = $row['Remuneration_Offre'];
-        $duree = $row['Durée_Offre'];
-        $place = $row['Place_Offre'];
-        $niveau = $row['Niveau_Offre'];
-        $postulation = $row['Postulation_Offre'];
+        $Name_Offer = $row['Name_Offer'];
+        $Description_Offer = $row['Description_Offer'];
+        $Domain_Offer = $row['Domain_Offer'];
+        $Skills_Offer = $row['Skills_Offer'];
+        $Level_Offer = $row['Level_Offer'];
+        $Duration_Offer = $row['Duration_Offer'];
+        $Pay_Offer = $row['Pay_Offer'];
+        $Date_Offer = $row['Date_Offer'];
+        $Place_Offer = $row['Place_Offer'];
 
-        $id_entreprise = $row['ID_Entreprise'];
+        $id_company = $row['ID_Company'];
         
     }
 
     // Utiliser l'ID de l'entreprise pour récupérer ses autres informations depuis la base de données
-    $sql = "SELECT * FROM entreprise WHERE Id_Entreprise = :id_entreprise";
+    $sql = "SELECT * FROM company WHERE ID_Company = :id_company";
     $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':id_entreprise', $id_entreprise);
+    $stmt->bindParam(':id_company', $id_company);
     $stmt->execute();
 
     // Vérifier si des données ont été trouvées
@@ -48,7 +49,8 @@ if(isset($_POST['id_offre'])) {
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         
         // Maintenant vous pouvez utiliser les données récupérées comme vous le souhaitez
-        $nom_Ent = $row['Nom_Entreprise'];
+        $Name_Company = $row['Name_Company'];
     }
 }
-?>
+
+

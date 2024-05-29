@@ -1,17 +1,22 @@
 <!-- FORMULAIRE DE SESSION (EN PHP) -->
 <?php
-require_once '../../../Controleurs/session.php';
+require_once ('../../../Controleurs/session.php');
 ?>
 
+<!-- PAGE DELETE OFFRE | Valider au validateur  -->
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
     <title>Créer une offre</title>
-    <link rel="icon" type="image/png" href="../../../_assets/img/logoWeb.png">
+    <!-- LOGO -->
+    <link rel="icon" type="image/png" href="../_assets/img/logo.png">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../../_assets/_css/styles.css">
     <link rel="stylesheet" href="../../../_assets/_css/creation.css">
+    <!-- CSS police -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 </head>
 
 <body>
@@ -24,7 +29,7 @@ require_once '../../../Controleurs/session.php';
         </div>
     </header>
 
-    <form method="POST" action="../../../Controleurs/Gérer/Créer/creer_offre.php">
+    <form method="POST" action="../../../Controleurs/Manage/creation.php">
         <section class="BlocCreerO">
             <div class="titre3">
                 <h1>CREER UNE OFFRE</h1>
