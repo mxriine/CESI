@@ -107,25 +107,18 @@ body {
 
 .footer {
     position: fixed;
+    left: 2;
     bottom: 0;
-    left: 38vw;
-    width: 20vw;
-    color: white;
-    text-align: center;
-    padding-top: 20vh;
-    padding-bottom: 0.5vh;
-    font-size: 3vw;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 2vw;
+    color: #757575 !important;
+    font-size: 18px !important
 }
 
 .footer a {
-    text-align: center;
+    color: #757575 !important;
+    font-size: 18px !important;
     text-decoration: none;
-    color: rgba(255, 255, 255, 1);
-    font-size: 1vw;
+    margin-left: 10px;
+    gap: 10px;
 }
 
 .en-cours {

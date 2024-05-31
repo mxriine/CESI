@@ -1,8 +1,8 @@
 <?php
 // Inclure le fichier de connexion à la base de données
 require_once('/www/StagExplorer/Controleurs/server.php');
+require_once('/www/StagExplorer/Controleurs/offer.php');
 require_once('/www/StagExplorer/Models/Offer.php');
-require_once('/www/StagExplorer/Controleurs/Manage/edit.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['id_offer'])) {

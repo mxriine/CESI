@@ -19,11 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'level_offer' => $_POST['level_offer']
         ];
 
-        // Afficher les données pour débogage
-        echo '<pre>';
-        print_r($data);
-        echo '</pre>';
-
         try {
             Offer::update($data);
             header('Location: /Vues/Search.php');  // Rediriger vers la page de recherche ou toute autre page

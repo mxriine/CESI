@@ -38,11 +38,11 @@ switch ($role) {
               </nav>';
         }
         break;
-    case 'etudiant':
+    case 'student':
         // Affichage de la navigation par défaut pour les pilotes et étudiants
         echo '<nav id="nav" class="nav">
                 <ul>
-                    <li><a href="#">' . $prenom . ' | ETUDIANT</a>
+                    <li><a href="#">' . $prenom . ' | STUDENT</a>
                         <ul class="drop">
                             <li><a href="#">Ma WishList</a></li>
                             <li><a href="../Controleurs/logout.php">Déconnexion</a></li>

@@ -1,6 +1,7 @@
 <!-- FORMULAIRE DE SESSION (EN PHP) -->
 <?php
-require_once ('../../../Controleurs/session.php');
+require_once('../../../Controleurs/session.php');
+require_once('../../../Controleurs/Manage/creation.php');
 ?>
 
 <!-- PAGE DELETE OFFRE | Valider au validateur  -->
@@ -14,7 +15,7 @@ require_once ('../../../Controleurs/session.php');
     <link rel="icon" type="image/png" href="../_assets/img/logo.png">
     <!-- CSS -->
     <link rel="stylesheet" href="../../../_assets/_css/styles.css">
-    <link rel="stylesheet" href="../../../_assets/_css/creation.css">
+    <link rel="stylesheet" href="../../../_assets/_css/manage/creation.css">
     <!-- CSS police -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 </head>
@@ -41,18 +42,15 @@ require_once ('../../../Controleurs/session.php');
                 </div>
                 <div class="Bloc3CreerO">
                     <label>Description</label>
-                    <textarea id="DescriptionCO" rows=3 name="Description"
-                        placeholder="Décrivez votre annonce"></textarea>
+                    <textarea id="DescriptionCO" rows=3 name="Description" placeholder="Décrivez votre annonce"></textarea>
                 </div>
                 <div class="Bloc3CreerO">
                     <label>Compétences</label>
-                    <textarea id="CompétencesCO" rows=3 name="Compétences"
-                        placeholder="Entrez les compétences requises"></textarea>
+                    <textarea id="CompétencesCO" rows=3 name="Compétences" placeholder="Entrez les compétences requises"></textarea>
                 </div>
                 <div class="Bloc3CreerO">
                     <label>Entreprise</label>
-                    <input class="input1" type="text" id="EntrepriseCO" name="Entreprise"
-                        placeholder="Entrez le nom d'une entreprise" required>
+                    <input class="input1" type="text" id="EntrepriseCO" name="Entreprise" placeholder="Entrez le nom d'une entreprise" required>
                 </div>
                 <div class="Bloc3CreerO">
                     <label>Localité</label>
@@ -122,21 +120,22 @@ require_once ('../../../Controleurs/session.php');
 </html>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
         const entrepriseInput = document.getElementById('EntrepriseCO');
         const localiteSelect = document.getElementById('LocaliteSelect');
 
-        entrepriseInput.addEventListener('input', function () {
+        entrepriseInput.addEventListener('input', function() {
             const nomEntreprise = entrepriseInput.value;
             const villes = entreprisesVilles.filter(ev => ev.Nom_Ent === nomEntreprise).map(ev => ev.Nom_Ville);
 
             localiteSelect.innerHTML = '<option value="">Sélectionnez</option>';
 
-            villes.forEach(function (ville) {
+            villes.forEach(function(ville) {
                 const option = document.createElement('option');
                 option.value = ville;
                 option.textContent = ville;
                 localiteSelect.appendChild(option);
             });
         });
-    });</script>
+    });
+</script>

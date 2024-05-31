@@ -18,6 +18,10 @@ require_once('../Controleurs/search.php');
     <link rel="stylesheet" href="../_assets/_css/search.css">
     <!-- CSS police -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <!-- CSS icones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- JS -->
+    <script src="../_assets/_js/script.js" defer></script>
 </head>
 
 <body>
@@ -29,6 +33,11 @@ require_once('../Controleurs/search.php');
             <h1>StagExplorer</h1>
         </div>
     </header>
+
+    <!-- Masquer les liens affichés à droite sur les petits écrans et les remplacer par une icône de menu -->
+    <a href="javascript:void(0)" class="bar-item button right hide-large hide-medium" onclick="openSidebar()">
+        <i class="fa fa-bars"></i>
+    </a>
 
     <!-- BLOC -->
 
@@ -180,60 +189,11 @@ require_once('../Controleurs/search.php');
         </section>
 
     </aside>
-
-    <!-- JavaScript -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var options = document.getElementsByName('navigation');
-            var boutonCache = document.getElementById('cacher')
-            for (var i = 0; i < options.length; i++) {
-                options[i].addEventListener('change', function() {
-                    if (this.checked && this.value == 'entreprise') {
-                        BLOC_ENTREPRISES.style.display = 'block';
-                        BLOC_OFFRES.style.display = 'none';
-                        BLOC_PILOTES.style.display = 'none';
-                        BLOC_ETUDIANTS.style.display = 'none';
-                    }
-                    if (this.checked && this.value == 'offre') {
-                        BLOC_ENTREPRISES.style.display = 'none';
-                        BLOC_OFFRES.style.display = 'block';
-                        BLOC_PILOTES.style.display = 'none';
-                        BLOC_ETUDIANTS.style.display = 'none';
-                    }
-                    if (this.checked && this.value == 'pilote') {
-                        BLOC_ENTREPRISES.style.display = 'none';
-                        BLOC_OFFRES.style.display = 'none';
-                        BLOC_PILOTES.style.display = 'block';
-                        BLOC_ETUDIANTS.style.display = 'none';
-                    }
-                    if (this.checked && this.value == 'etudiant') {
-                        BLOC_ENTREPRISES.style.display = 'none';
-                        BLOC_OFFRES.style.display = 'none';
-                        BLOC_PILOTES.style.display = 'none';
-                        BLOC_ETUDIANTS.style.display = 'block';
-                    }
-                });
-            }
-        });
-
-        // Récupération du rôle de l'utilisateur depuis PHP (peut être stocké dans une variable JavaScript)
-        var role = "<?php echo $role; ?>";
-
-        // Sélection de tous les boutons "Modifier" avec la classe boutonModif
-        var boutonsModifier = document.querySelectorAll('.boutonModif');
-
-        // Vérification si des boutons ont été trouvés
-        if (boutonsModifier.length > 0) {
-            boutonsModifier.forEach(function(bouton) {
-                // Si l'utilisateur est un admin ou un pilote, afficher les boutons "Modifier"
-                if (role === 'admin' || role === 'pilote') {
-                    bouton.style.display = 'inline-block'; // Afficher le bouton
-                } else {
-                    bouton.style.display = 'none'; // Cacher le bouton
-                }
-            });
-        }
-    </script>
+    <footer>
+        <div class="footer" style="padding:24px 48p">
+            <p>© 2024 StagExplorer - Tous droits réservés</p>
+        </div>
+    </footer>
 </body>
 
 </html>

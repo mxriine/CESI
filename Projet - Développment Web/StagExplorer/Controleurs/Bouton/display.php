@@ -21,7 +21,7 @@ switch ($role) {
                 </section>';
         }
         break;
-    case 'etudiant':
+    case 'student':
         if ($current_page === 'One_Offre.php') {
             // Affichage de la navigation par défaut pour les administrateurs
             echo '<section>

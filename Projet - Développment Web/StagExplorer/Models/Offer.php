@@ -45,22 +45,7 @@ class Offer
     }
 
     public static function add($data)
-    {
-        try {
-            require_once ('/www/StagExplorer/Controleurs/server.php');
-            // Requête pour ajouter une nouvelle offre
-            $sqlOffre = "INSERT INTO Offre (Nom_Offre, Description_Offre, Skills_Offre, Date_Offre) VALUES (:nom_offre, :description_offre, :Skills_offre, :date_offre)";
-            $stmtOffre = $conn->prepare($sqlOffre);
-            $stmtOffre->bindParam(':nom_offre', $data['nom_offre']);
-            $stmtOffre->bindParam(':description_offre', $data['description_offre']);
-            $stmtOffre->bindParam(':Skills_offre', $data['Skills_offre']);
-            $stmtOffre->bindParam(':date_offre', $data['date_offre']);
-            $stmtOffre->execute();
-        } catch (Exception $e) {
-            echo "Problème de connexion à la base de donnée ...";
-            die();
-        }
-    }
+    {}
 
     public static function update($data)
     {

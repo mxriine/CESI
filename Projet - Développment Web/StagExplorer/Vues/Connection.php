@@ -38,7 +38,8 @@ require_once ('../Controleurs/connect.php');
             </div>
 
             <button type="submit" id="submit">VALIDER</button>
-            <p class="error"> <?php echo $error_message; ?> </p>
+           
+            <p class="error"> <?php echo $error_message ?> </p>
         </div>
     </form>
 </body>

@@ -15,9 +15,11 @@ require_once ('../../../Controleurs/offer.php');
     <link rel="icon" type="image/png" href="../_assets/img/logo.png">
     <!-- CSS -->
     <link rel="stylesheet" href="../../../_assets/_css/styles.css">
-    <link rel="stylesheet" href="../../../_assets/_css/edit.css">
+    <link rel="stylesheet" href="../../../_assets/_css/manage/edit.css">
     <!-- CSS police -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <!-- JS -->
+    <script src="../../../_assets/_js/script.js" defer></script>
 </head>
 
 <body>
@@ -30,30 +32,30 @@ require_once ('../../../Controleurs/offer.php');
         </div>
     </header>
 
-    <section class="bloc">
-        <div class="titre1">
+    <section class="container">
+        <div class="label">
             <h1>MODIFIER UNE OFFRE</h1>
         </div>
         <form action="/Controleurs/Manage/edit.php" method="POST">
-            <input type="hidden" name="id_offer" value="<?php echo $ID_Offer; ?>">
-            <article class="BlocOffre1">
-                <div class="BlocOffre2">
+            <input type="hidden" name="id_offer" value="<?php echo htmlspecialchars($ID_Offer); ?>">
+            <article class="form">
+                <div class="info">
                     <label>Titre</label>
-                    <input class="input1" type="text" name="name_offer" value="<?php echo $Name_Offer; ?>">
+                    <input type="text" name="name_offer" value="<?php echo htmlspecialchars($Name_Offer); ?>">
                 </div>
-                <div class="BlocOffre2">
+                <div class="info">
                     <label>Description</label>
-                    <textarea rows="3" name="description_offer"><?php echo $Description_Offer; ?></textarea>
+                    <textarea rows="3" name="description_offer"><?php echo htmlspecialchars($Description_Offer); ?></textarea>
                 </div>
-                <div class="BlocOffre2">
+                <div class="info">
                     <label>Compétences</label>
-                    <textarea rows="3" name="skills_offer"><?php echo $Skills_Offer; ?></textarea>
+                    <textarea rows="3" name="skills_offer"><?php echo htmlspecialchars($Skills_Offer); ?></textarea>
                 </div>
-                <div class="BlocOffre2">
+                <div class="info">
                     <label>Entreprise</label>
-                    <input class="input1" type="text" name="name_company" value="<?php echo $Name_Company; ?>">
+                    <input type="text" name="name_company" value="<?php echo htmlspecialchars($Name_Company); ?>">
                 </div>
-                <div class="BlocOffre2">
+                <div class="info">
                     <label>Localité</label>
                     <select name="locality">
                         <option value="Pau">Pau</option>
@@ -62,47 +64,52 @@ require_once ('../../../Controleurs/offer.php');
                 </div>
             </article>
 
-            <article class="BlocOffre3">
-                <div class="BlocOffre4">
+            <article class="form_">
+                <div class="infosup">
                     <label>Durée de stage</label>
-                    <input class="input1" type="text" name="duration_offer" value="<?php echo $Duration_Offer; ?>">
+                    <input type="text" name="duration_offer" value="<?php echo htmlspecialchars($Duration_Offer); ?>">
                 </div>
-                <div class="BlocOffre4">
+                <div class="infosup">
                     <label>Date début</label>
-                    <input class="input1" type="date" name="date_offer" value="<?php echo $Date_Offer; ?>">
+                    <input type="date" name="date_offer" value="<?php echo htmlspecialchars($Date_Offer); ?>">
                 </div>
-                <div class="BlocOffre4">
+                <div class="infosup">
                     <label>Rémunération</label>
-                    <input class="input1" type="number" name="pay_offer" value="<?php echo $Pay_Offer; ?>">
+                    <input type="number" name="pay_offer" value="<?php echo htmlspecialchars($Pay_Offer); ?>">
                 </div>
-                <div class="BlocOffre4">
-                    <label>Nombre de place</label>
-                    <input class="input1" type="number" name="place_offer" value="<?php echo $Place_Offer; ?>">
+                <div class="infosup">
+                    <label>Nombre de places</label>
+                    <input type="number" name="place_offer" value="<?php echo htmlspecialchars($Place_Offer); ?>">
                 </div>
-                <div class="BlocOffre4">
+                <div class="infosup">
                     <label>Niveau requis</label>
-                    <select class="input1" name="level_offer">
-                        <option value="Sélectionnez"><?php echo $Level_Offer; ?></option>
-                        <option value="Bac">Bac</option>
-                        <option value="Bac +1">Bac +1</option>
-                        <option value="Bac +2">Bac +2</option>
-                        <option value="Bac +3">Bac +3</option>
-                        <option value="Bac +4">Bac +4</option>
-                        <option value="Bac +5">Bac +5</option>
+                    <select name="level_offer">
+                        <option value="Sélectionnez"><?php echo htmlspecialchars($Level_Offer); ?></option>
+                        <option value="Bac" <?php if ($Level_Offer == 'Bac') echo 'selected'; ?>>Bac</option>
+                        <option value="Bac +1" <?php if ($Level_Offer == 'Bac +1') echo 'selected'; ?>>Bac +1</option>
+                        <option value="Bac +2" <?php if ($Level_Offer == 'Bac +2') echo 'selected'; ?>>Bac +2</option>
+                        <option value="Bac +3" <?php if ($Level_Offer == 'Bac +3') echo 'selected'; ?>>Bac +3</option>
+                        <option value="Bac +4" <?php if ($Level_Offer == 'Bac +4') echo 'selected'; ?>>Bac +4</option>
+                        <option value="Bac +5" <?php if ($Level_Offer == 'Bac +5') echo 'selected'; ?>>Bac +5</option>
                     </select>
                 </div>
             </article>
-            <article class="boutons-D">
-                <button type="submit" name="submit" id="but1">Sauvegarder</button>
-                <button type="button" id="but2" onclick="history.back()">Retour</button>
+            <article class="bouton-left">
+                <button type="submit" name="submit" id="save">Sauvegarder</button>
+                <button type="button" id="cancel" onclick="history.back()">Retour</button>
             </article>
         </form>
 
-        <form class="boutons-G" action="/Vues/Manage/Offre/Delete_Offer.php" method="post">
-            <input name="id_offer" type="hidden" value="<?php echo $ID_Offer; ?>">
-            <button type="submit" id="but3">Supprimer l'offre</button>
+        <form class="bouton-right" action="/Vues/Manage/Offre/Delete_Offer.php" method="post">
+            <input name="id_offer" type="hidden" value="<?php echo htmlspecialchars($ID_Offer); ?>">
+            <button type="submit" id="delete">Supprimer l'offre</button>
         </form>
     </section>
+    <footer>
+        <div class="footer" style="padding:24px 48p">
+            <p>© 2024 StagExplorer - Tous droits réservés</p>
+        </div>
+    </footer>
 </body>
 
 </html>

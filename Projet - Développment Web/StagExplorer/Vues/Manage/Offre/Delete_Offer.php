@@ -15,7 +15,7 @@ require_once ('../../../Controleurs/Manage/delete.php');
     <link rel="icon" type="image/png" href="../_assets/img/logo.png">
     <!-- CSS -->
     <link rel="stylesheet" href="../../../_assets/_css/styles.css">
-    <link rel="stylesheet" href="../../../_assets/_css/delete.css">
+    <link rel="stylesheet" href="../../../_assets/_css/manage/delete.css">
     <!-- CSS police -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 </head>
