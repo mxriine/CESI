@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 28 mai 2024 à 09:21
+-- Généré le : lun. 03 juin 2024 à 16:47
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -30,19 +30,9 @@ SET time_zone = "+00:00";
 CREATE TABLE `apply` (
   `ID_Offer` int(11) NOT NULL,
   `ID_Student` int(11) NOT NULL,
-  `letter` varchar(100) DEFAULT NULL
+  `LetterMotivation` varchar(100) DEFAULT NULL,
+  `CV` varchar(25) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Déchargement des données de la table `apply`
---
-
-INSERT INTO `apply` (`ID_Offer`, `ID_Student`, `letter`) VALUES
-(1, 1, 'Lettre de motivation pour le stage de développeur web'),
-(2, 2, 'Lettre de motivation pour le CDI ingénieur en électronique'),
-(3, 3, 'Lettre de motivation pour l\'alternance chef de projet'),
-(4, 4, 'Lettre de motivation pour le CDD analyste financier'),
-(5, 5, 'Lettre de motivation pour le stage assistant marketing');
 
 -- --------------------------------------------------------
 
@@ -97,7 +87,7 @@ INSERT INTO `city` (`ID_City`, `Name_City`, `ID_Region`) VALUES
 
 CREATE TABLE `company` (
   `ID_Company` int(11) NOT NULL,
-  `name_company` varchar(50) DEFAULT NULL,
+  `Name_Company` varchar(50) DEFAULT NULL,
   `ID_City` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -105,7 +95,7 @@ CREATE TABLE `company` (
 -- Déchargement des données de la table `company`
 --
 
-INSERT INTO `company` (`ID_Company`, `name_company`, `ID_City`) VALUES
+INSERT INTO `company` (`ID_Company`, `Name_Company`, `ID_City`) VALUES
 (1, 'Entreprise 1', 1),
 (2, 'Entreprise 2', 2),
 (3, 'Entreprise 3', 3),
@@ -138,16 +128,16 @@ INSERT INTO `country` (`ID_Country`, `Name_Country`) VALUES
 
 CREATE TABLE `offer` (
   `ID_Offer` int(11) NOT NULL,
-  `name_offer` varchar(50) DEFAULT NULL,
-  `description_offer` varchar(50) DEFAULT NULL,
-  `domaine_offer` varchar(50) DEFAULT NULL,
-  `competences_offer` varchar(50) DEFAULT NULL,
-  `niveau_offer` varchar(50) DEFAULT NULL,
-  `postulation_offer` int(11) DEFAULT NULL,
-  `duree_offer` int(11) DEFAULT NULL,
-  `remuneration_offer` int(11) DEFAULT NULL,
-  `date_offer` date DEFAULT NULL,
-  `place_offer` int(11) DEFAULT NULL,
+  `Name_Offer` varchar(50) DEFAULT NULL,
+  `Description_Offer` varchar(50) DEFAULT NULL,
+  `Domain_Offer` varchar(50) DEFAULT NULL,
+  `Skills_Offer` varchar(50) DEFAULT NULL,
+  `Level_Offer` varchar(50) DEFAULT NULL,
+  `Postulation_Offer` int(11) DEFAULT NULL,
+  `Duration_Offer` int(11) DEFAULT NULL,
+  `Pay_Offer` int(11) DEFAULT NULL,
+  `Date_Offer` date DEFAULT NULL,
+  `Place_Offer` int(11) DEFAULT NULL,
   `ID_Company` int(11) NOT NULL,
   `ID_Pilote` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -156,11 +146,7 @@ CREATE TABLE `offer` (
 -- Déchargement des données de la table `offer`
 --
 
-INSERT INTO `offer` (`ID_Offer`, `name_offer`, `description_offer`, `domaine_offer`, `competences_offer`, `niveau_offer`, `postulation_offer`, `duree_offer`, `remuneration_offer`, `date_offer`, `place_offer`, `ID_Company`, `ID_Pilote`) VALUES
-(1, 'Stage Développeur Web', 'Stage de développement web', 'Informatique', 'HTML, CSS, JavaScript', 'Bac+2', 5, 6, 1000, '2024-05-01', 5, 1, 1),
-(2, 'CDI Ingénieur en Électronique', 'Ingénieur électronique pour conception de circuits', 'Électronique', 'Connaissances en circuits intégrés', 'Bac+5', 10, 36, 3000, '2024-06-01', 3, 2, 2),
-(3, 'Alternance Chef de Projet', 'Chef de projet junior', 'Gestion de projet', 'Management, Communication', 'Bac+3', 3, 12, 1500, '2024-09-01', 2, 3, 3),
-(4, 'CDD Analyste Financier', 'Analyste financier pour une durée de 6 mois', 'Finance', 'Analyse de données, Excel', 'Bac+4', 2, 6, 2000, '2024-07-01', 1, 4, 4),
+INSERT INTO `offer` (`ID_Offer`, `Name_Offer`, `Description_Offer`, `Domain_Offer`, `Skills_Offer`, `Level_Offer`, `Postulation_Offer`, `Duration_Offer`, `Pay_Offer`, `Date_Offer`, `Place_Offer`, `ID_Company`, `ID_Pilote`) VALUES
 (5, 'Stage Assistant Marketing', 'Assistant marketing pour une durée de 3 mois', 'Marketing', 'Communication, Réseaux Sociaux', 'Bac+3', 4, 3, 800, '2024-08-01', 2, 5, 1);
 
 -- --------------------------------------------------------
@@ -171,14 +157,14 @@ INSERT INTO `offer` (`ID_Offer`, `name_offer`, `description_offer`, `domaine_off
 
 CREATE TABLE `pilote` (
   `ID_Pilote` int(11) NOT NULL,
-  `id_user` int(11) NOT NULL
+  `ID_User` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `pilote`
 --
 
-INSERT INTO `pilote` (`ID_Pilote`, `id_user`) VALUES
+INSERT INTO `pilote` (`ID_Pilote`, `ID_User`) VALUES
 (1, 1),
 (2, 2),
 (3, 3),
@@ -192,8 +178,8 @@ INSERT INTO `pilote` (`ID_Pilote`, `id_user`) VALUES
 
 CREATE TABLE `promotion` (
   `ID_Promotion` int(11) NOT NULL,
-  `name_promotion` varchar(50) DEFAULT NULL,
-  `domaine_promotion` varchar(50) DEFAULT NULL,
+  `Name_Promotion` varchar(50) DEFAULT NULL,
+  `Domain_Promotion` varchar(50) DEFAULT NULL,
   `ID_Campus` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -201,7 +187,7 @@ CREATE TABLE `promotion` (
 -- Déchargement des données de la table `promotion`
 --
 
-INSERT INTO `promotion` (`ID_Promotion`, `name_promotion`, `domaine_promotion`, `ID_Campus`) VALUES
+INSERT INTO `promotion` (`ID_Promotion`, `Name_Promotion`, `Domain_Promotion`, `ID_Campus`) VALUES
 (1, 'Promotion 2024', 'Informatique', 1),
 (2, 'Promotion 2023', 'Ingénierie', 2),
 (3, 'Promotion 2022', 'Gestion', 3),
@@ -241,14 +227,14 @@ CREATE TABLE `student` (
   `ID_Student` int(11) NOT NULL,
   `ID_Promotion` int(11) NOT NULL,
   `ID_Pilote` int(11) NOT NULL,
-  `id_user` int(11) NOT NULL
+  `ID_User` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `student`
 --
 
-INSERT INTO `student` (`ID_Student`, `ID_Promotion`, `ID_Pilote`, `id_user`) VALUES
+INSERT INTO `student` (`ID_Student`, `ID_Promotion`, `ID_Pilote`, `ID_User`) VALUES
 (1, 1, 1, 5),
 (2, 2, 2, 6),
 (3, 3, 3, 7),
@@ -273,11 +259,11 @@ INSERT INTO `student` (`ID_Student`, `ID_Promotion`, `ID_Pilote`, `id_user`) VAL
 --
 
 CREATE TABLE `users` (
-  `id_user` int(11) NOT NULL,
-  `name_user` varchar(50) DEFAULT NULL,
-  `surname_user` varchar(50) DEFAULT NULL,
-  `password_user` varchar(50) DEFAULT NULL,
-  `email_user` varchar(50) DEFAULT NULL,
+  `ID_User` int(11) NOT NULL,
+  `Name_User` varchar(50) DEFAULT NULL,
+  `Surname_User` varchar(50) DEFAULT NULL,
+  `Password_User` varchar(50) DEFAULT NULL,
+  `Email_User` varchar(50) DEFAULT NULL,
   `ID_City` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -285,7 +271,7 @@ CREATE TABLE `users` (
 -- Déchargement des données de la table `users`
 --
 
-INSERT INTO `users` (`id_user`, `name_user`, `surname_user`, `password_user`, `email_user`, `ID_City`) VALUES
+INSERT INTO `users` (`ID_User`, `Name_User`, `Surname_User`, `Password_User`, `Email_User`, `ID_City`) VALUES
 (1, 'Marine', 'Mazou', 'mdp1', 'marine.mazou@example.com', 1),
 (2, 'Estelle', 'Laulhe', 'mdp2', 'laulhe.estelle@example.com', 2),
 (3, 'Pauline', 'Clausse', 'mdp3', 'clausse.pauline@example.com', 3),
@@ -306,6 +292,25 @@ INSERT INTO `users` (`id_user`, `name_user`, `surname_user`, `password_user`, `e
 (18, 'Elise', 'Garnier', 'abcdef123', 'elise.garnier@example.com', 3),
 (19, 'Maxime', 'Chevalier', 'qwerty123', 'maxime.chevalier@example.com', 4),
 (20, 'Margot', 'Lopez', 'password1234', 'margot.lopez@example.com', 5);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `wishlist`
+--
+
+CREATE TABLE `wishlist` (
+  `ID_Wish` int(11) NOT NULL,
+  `ID_User` int(11) DEFAULT NULL,
+  `ID_Offer` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `wishlist`
+--
+
+INSERT INTO `wishlist` (`ID_Wish`, `ID_User`, `ID_Offer`) VALUES
+(19, 6, 5);
 
 --
 -- Index pour les tables déchargées
@@ -358,7 +363,7 @@ ALTER TABLE `offer`
 --
 ALTER TABLE `pilote`
   ADD PRIMARY KEY (`ID_Pilote`),
-  ADD UNIQUE KEY `id_user` (`id_user`);
+  ADD UNIQUE KEY `id_user` (`ID_User`);
 
 --
 -- Index pour la table `promotion`
@@ -379,7 +384,7 @@ ALTER TABLE `region`
 --
 ALTER TABLE `student`
   ADD PRIMARY KEY (`ID_Student`),
-  ADD UNIQUE KEY `id_user` (`id_user`),
+  ADD UNIQUE KEY `id_user` (`ID_User`),
   ADD KEY `ID_Promotion` (`ID_Promotion`),
   ADD KEY `ID_Pilote` (`ID_Pilote`);
 
@@ -387,8 +392,30 @@ ALTER TABLE `student`
 -- Index pour la table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id_user`),
+  ADD PRIMARY KEY (`ID_User`),
   ADD KEY `ID_City` (`ID_City`);
+
+--
+-- Index pour la table `wishlist`
+--
+ALTER TABLE `wishlist`
+  ADD PRIMARY KEY (`ID_Wish`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `users`
+--
+ALTER TABLE `users`
+  MODIFY `ID_User` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT pour la table `wishlist`
+--
+ALTER TABLE `wishlist`
+  MODIFY `ID_Wish` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Contraintes pour les tables déchargées
