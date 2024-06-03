@@ -413,3 +413,26 @@
     border-radius: 10px;
     padding: 7%;
 }
+
+.bouton-right {
+    position: absolute;
+    top: 92%;
+    right: 5%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.bouton-right #apply {
+    display: flex;
+    height: 25px;
+    border-radius: 10px;
+    align-items: center;
+    cursor: pointer;
+    border-color: rgba(28, 143, 166, 0.918);
+}
+
+.bouton-right #apply:hover {
+    background-color: rgba(28, 143, 166, 0.918);
+}

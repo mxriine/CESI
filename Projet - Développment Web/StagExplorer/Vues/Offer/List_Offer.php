@@ -4,7 +4,7 @@ require_once('../../Controleurs/session.php');
 require_once('../../Controleurs/Liste/offre.php');
 ?>
 
-<!-- LISTE OFFRE | Valider au validateur -->
+<!-- LISTE OFFER | Valider au validateur -->
 <!DOCTYPE html>
 <html lang="fr">
 

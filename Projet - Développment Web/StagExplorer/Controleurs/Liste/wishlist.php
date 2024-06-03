@@ -1,44 +1,43 @@
 <?php
-// Vérifiez que la requête est de type POST
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Récupérez les données JSON envoyées par JavaScript
-    $data = file_get_contents('php://input');
-    file_put_contents('debug.log', "Contenu brut des données reçues : " . $data . "\n", FILE_APPEND);
+require_once('/www/StagExplorer/Controleurs/server.php');
+require_once('/www/StagExplorer/Models/Wishlist.php');
 
-    $data = json_decode($data, true);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['ID_Offer']) && isset($_POST['ID_User'])) {
+        $data = [
+            'id_offer' => $_POST['ID_Offer'],
+            'id_user' => $_POST['ID_User']
+        ];
 
-    // Journal de débogage pour vérifier les données reçues
-    file_put_contents('debug.log', "Données décodées : " . print_r($data, true) . "\n", FILE_APPEND);
-
-    // Vérifiez que les données ne sont pas nulles et contiennent les clés attendues
-    if ($data && isset($data['ID_Offer']) && isset($data['ID_User'])) {
-        // Chemin du fichier JSON
-        $file = 'wishlist.json';
-
-        // Lire le contenu existant du fichier JSON ou initialiser un array vide
-        if (file_exists($file)) {
-            $json_data = file_get_contents($file);
-            $json_arr = json_decode($json_data, true);
+        if (isset($_POST['action'])) {
+            switch ($_POST['action']) {
+                case 'add':
+                    Wishlist::add($data);
+                    echo "Offre ajoutée à la liste de souhaits";
+                    break;
+                case 'delete':
+                    Wishlist::delete($data);
+                    echo "Offre retirée de la liste de souhaits";
+                    break;
+                case 'check':
+                    if (Wishlist::check($data)) {
+                        echo "true";
+                    } else {
+                        echo "false";
+                    }
+                    break;
+                default:
+                    http_response_code(400);
+                    echo "Action non reconnue";
+                    break;
+            }
         } else {
-            $json_arr = [];
-        }
-
-        // Ajouter les nouvelles données à l'array JSON
-        $json_arr[] = $data;
-
-        // Encodez l'array en JSON et enregistrez-le dans le fichier
-        if (file_put_contents($file, json_encode($json_arr, JSON_PRETTY_PRINT))) {
-            echo json_encode(['success' => true, 'message' => 'Données enregistrées avec succès']);
-        } else {
-            echo json_encode(['success' => false, 'message' => 'Erreur lors de l\'enregistrement des données']);
+            http_response_code(400);
+            echo "Paramètre action manquant";
         }
     } else {
-        // Données invalides, journal de débogage
-        file_put_contents('debug.log', "Données invalides : " . print_r($data, true) . "\n", FILE_APPEND);
-        echo json_encode(['success' => false, 'message' => 'Données invalides']);
+        http_response_code(400);
+        echo "Les paramètres ID_Offer et ID_User sont requis.";
     }
-} else {
-    // Requête invalide, journal de débogage
-    file_put_contents('debug.log', "Requête invalide\n", FILE_APPEND);
-    echo json_encode(['success' => false, 'message' => 'Requête invalide']);
 }
+?>

@@ -34,19 +34,13 @@ if (isset($_POST['mail']) && isset($_POST['mdp'])) {
 
     if ($row) {
         // Stocker les informations d'identification et le prénom dans des variables de session
-        $ID_User = $row['ID_User'];
-
         $_SESSION['id'] = $row['ID_User'];
         $_SESSION['prenom'] = $row['Name_User'];
         $_SESSION['mail'] = $row['Email_User'];
         $_SESSION['mdp'] = $row['Password_User'];
         $_SESSION['role'] = $row['role'];
 
-        // Debugging: Afficher les valeurs de session
-        echo "ID: " . $_SESSION['id'] . "<br>";
-        echo "Prénom: " . $_SESSION['prenom'] . "<br>";
-        echo "Mail: " . $_SESSION['mail'] . "<br>";
-        echo "Role: " . $_SESSION['role'] . "<br>";
+
 
         // Redirection en fonction du rôle
         switch ($_SESSION['role']) {

@@ -1,10 +1,10 @@
 <!-- FORMULAIRE DE SESSION (EN PHP) -->
 <?php
 require_once('../../Controleurs/session.php');
-require_once('../../Controleurs/Données/offre.php');
+require_once('../../Controleurs/offer.php');
 ?>
 
-<!-- POSTULER OFFRE | Valider au validateur -->
+<!-- APPLY OFFER | Valider au validateur -->
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -33,15 +33,15 @@ require_once('../../Controleurs/Données/offre.php');
     <section class="info-offre">
         <article>
             <div class="nom">
-                <p> t</p>
+                <p> <?php echo $Name_Offer; ?> </p>
             </div>
             <div class="description">
                 <h1>Description : </h1>
-                <p>t</p>
+                <p> <?php echo $Description_Offer; ?> </p>
             </div>
             <div class="competences">
                 <h1>Compétences requises :</h1>
-                <p>t</p>
+                <p> <?php echo $Skills_Offer; ?> </p>
             </div>
             <div class="localisation">
                 <h1>Localité : </h1>
@@ -49,34 +49,34 @@ require_once('../../Controleurs/Données/offre.php');
             </div>
             <div class="entreprise">
                 <h1>Entreprise : </h1>
-                <p>t</p>
+                <p> <?php echo $Name_Company; ?> </p>
             </div>
             <div class="postulation">
                 <h1>Nombre d'élèves ayant postulés : </h1>
-                <p>t</p>
+                <p> x </p>
             </div>
         </article>
 
         <article>
             <div class="duree">
                 <h1>Durée du stage : </h1>
-                <p>15</p>
+                <p> <?php echo $Duration_Offer; ?> </p>
             </div>
             <div class="debut">
                 <h1>Date début : </h1>
-                <p>15 avril</p>
+                <p> <?php echo $Date_Offer; ?> </p>
             </div>
             <div class="niveau">
                 <h1>Niveau requis : </h1>
-                <p>BAC +2</p>
+                <p> <?php echo $Level_Offer; ?> </p>
             </div>
             <div class="remuneration">
                 <h1>Rémunération : </h1>
-                <p>Non renseigné</p>
+                <p> <?php echo $Pay_Offer; ?> € /mois</p>
             </div>
             <div class="place">
                 <h1>Nombre de places : </h1>
-                <p>10</p>
+                <p> <?php echo $Place_Offer; ?> </p>
             </div>
         </article>
 
@@ -87,7 +87,7 @@ require_once('../../Controleurs/Données/offre.php');
             <div class="titre-motivation">
                 <h1>Postuler à l'offre</h1>
             </div>
-            <form action="../Etudiant/Liste_Postulation.php" method="post">
+            <form action="/Controleurs/Manage/apply.php" method="post" enctype="multipart/form-data">
                 <div class="motivation">
                     <label for="motivation">Votre lettre de motivation :</label>
                     <textarea id="motivation" name="motivation" rows="20" cols="50"></textarea>

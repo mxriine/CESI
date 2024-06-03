@@ -1,4 +1,4 @@
-/* --- CSS Edit --- */
+/* --- CSS Original --- */
 
 .container {
     height: 60%;
@@ -15,8 +15,8 @@
 .label {
     color: rgba(28, 143, 166, 0.918);
     position: absolute;
+    text-align: center !important;
     top: 3%;
-    left: 30%;
 }
 
 .form {
@@ -29,7 +29,6 @@
     flex-direction: column;
     font-weight: bold;
     gap: 50px;
-
 }
 
 .info {
@@ -52,7 +51,6 @@ textarea {
     left: 90%;
     display: flex;
     flex-direction: row;
-
 }
 
 .form_ {
@@ -62,7 +60,6 @@ textarea {
     left: 65%;
     top: 25%;
     width: 15%;
-    ;
 }
 
 .infosup {
@@ -116,7 +113,6 @@ textarea {
     flex-direction: row;
     gap: 10px;
     text-decoration: none;
-
 }
 
 .bouton-right #delete {
@@ -130,4 +126,113 @@ textarea {
 
 .bouton-right #delete:hover {
     background-color: rgba(28, 143, 166, 0.918);
+}
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 1200px) {
+    .container {
+        width: 60%;
+        height: 100%;
+        margin-top: 20%;
+    }
+
+    .label {
+        left: 20%;
+    }
+
+    .form {
+        left: 10%;
+        width: 35%;
+    }
+
+    .form_ {
+        left: 55%;
+        width: 30%;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 60%;
+        height: 100%;
+        margin-top: 20%;
+    }
+
+    .label {
+        left: 10%;
+        top: 5%;
+    }
+
+    .form {
+        left: 5%;
+        width: 90%;
+        top: 15%;
+    }
+
+    .info {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .form_ {
+        display: none;
+        left: 5%;
+        width: 90%;
+        top: auto;
+        margin-top: 20px;
+    }
+
+    .bouton-left,
+    .bouton-right {
+        top: 85%;
+        left: 5%;
+        width: 90%;
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 80%;
+        height: 100%;
+        margin-top: 30%;
+    }
+
+    .form {
+        left: 5%;
+        width: 90%;
+        top: 15%;
+    }
+
+
+    .form_ {
+        display: none;
+        left: 5%;
+        width: 90%;
+        top: auto;
+        margin-top: 20px;
+    }
+
+    .info {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .bouton-left,
+    .bouton-right {
+        top: 90%;
+        left: 5%;
+        width: 90%;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .bouton-left {
+        order: 2;
+    }
+
+    .bouton-right {
+        order: 1;
+    }
 }

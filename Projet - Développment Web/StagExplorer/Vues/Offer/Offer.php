@@ -6,7 +6,7 @@ require_once('../../Controleurs/Bouton/display.php');
 require_once('../../Controleurs/Liste/wishlist.php');
 ?>
 
-<!-- INFO OFFRE | Valider au validateur -->
+<!-- INFO OFFER | Valider au validateur -->
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -86,12 +86,16 @@ require_once('../../Controleurs/Liste/wishlist.php');
         </article>
 
         <div class="favoris">
-            <input type="hidden" id="ID_Offer" value="123"> <!-- Exemple de valeur pour ID_Offer -->
-            <input type="hidden" id="ID_User" value="456"> <!-- Exemple de valeur pour ID_User -->
+            <input type="hidden" id="ID_Offer" value=" <?php echo $ID_Offer ?> ">
+            <input type="hidden" id="ID_User" value=" <?php echo $ID_User ?> ">
             <input type="radio" id="favoris" name="favoris">
-            <label for="favoris">☆</label>
-            <button onclick="ajouterALaListeDeSouhaits()">Ajouter aux Favoris</button>
+            <label for="favoris" id="star" class="star" onclick="toggleWishlist()">☆</label>
         </div>
+
+        <form class="bouton-right" action="/Vues/Offer/Apply_Offer.php" method="post">
+            <input name="id_offer" type="hidden" value="<?php echo htmlspecialchars($ID_Offer); ?>">
+            <button type="submit" id="apply">Postuler à l'offre</button>
+        </form>
     </section>
 
     <footer>
@@ -101,56 +105,46 @@ require_once('../../Controleurs/Liste/wishlist.php');
     </footer>
 
     <script>
-        function ajouterALaListeDeSouhaits() {
-            // Vérifie si l'étoile est cochée
-            const favorisChecked = document.getElementById('favoris').checked;
-            if (!favorisChecked) {
-                console.log('L\'étoile n\'est pas cochée');
-                return; // Ne rien faire si l'étoile n'est pas cochée
+        function updateWishlist(action) {
+            var ID_Offer = document.getElementById("ID_Offer").value.trim();
+            var ID_User = document.getElementById("ID_User").value.trim();
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "../../Controleurs/Liste/wishlist.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.send("ID_Offer=" + ID_Offer + "&ID_User=" + ID_User + "&action=" + action);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    if (action === 'check') {
+                        var star = document.getElementById("star");
+                        if (xhr.responseText === "true") {
+                            star.classList.add("orange");
+                        } else {
+                            star.classList.remove("orange");
+                        }
+                    } else {
+                        alert(xhr.responseText);
+                    }
+                }
             }
-
-            // Récupère la valeur de l'ID de l'offre à partir de l'élément HTML avec l'ID 'ID_Offer'
-            const ID_Offer = document.getElementById('ID_Offer').value;
-
-            // Récupère la valeur de l'ID de l'utilisateur à partir de l'élément HTML avec l'ID 'ID_User'
-            const ID_User = document.getElementById('ID_User').value;
-
-            // Vérifie que les IDs ne sont pas vides
-            if (!ID_Offer || !ID_User) {
-                console.error('ID_Offer ou ID_User est manquant');
-                return;
-            }
-
-            // Journaliser les IDs pour le débogage
-            console.log('ID_Offer:', ID_Offer, 'ID_User:', ID_User);
-
-            // Crée un objet contenant les données à envoyer au serveur
-            const data = {
-                ID_Offer: ID_Offer,
-                ID_User: ID_User
-            };
-
-            // Journaliser les données envoyées pour le débogage
-            console.log('Données envoyées :', JSON.stringify(data));
-
-            // Utilise l'API Fetch pour envoyer une requête POST au fichier PHP 'save_to_json.php'
-            fetch('save_to_json.php', {
-                    method: 'POST', // Spécifie que la méthode de la requête est POST
-                    headers: {
-                        'Content-Type': 'application/json' // Spécifie le type de contenu comme JSON
-                    },
-                    body: JSON.stringify(data) // Convertit l'objet data en une chaîne JSON pour l'envoyer dans le corps de la requête
-                })
-                .then(response => response.json()) // Convertit la réponse en JSON
-                .then(result => {
-                    // Affiche un message de succès et les résultats de la requête dans la console
-                    console.log('Success:', result);
-                })
-                .catch(error => {
-                    // Affiche un message d'erreur dans la console en cas de problème
-                    console.error('Error:', error);
-                });
         }
+
+        function toggleWishlist() {
+            var star = document.getElementById("star");
+            if (star.classList.contains("orange")) {
+                updateWishlist('delete');
+            } else {
+                updateWishlist('add');
+            }
+            setTimeout(function() {
+                updateWishlist('check');
+            }, 500); // Ajout d'un délai pour garantir la mise à jour correcte
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            updateWishlist('check'); // Vérifier l'état de la wishlist lors du chargement de la page
+        });
     </script>
 
 </body>

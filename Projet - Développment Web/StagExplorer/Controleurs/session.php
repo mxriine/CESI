@@ -4,6 +4,7 @@ session_start();
 
 $role = isset($_SESSION['role']) ? $_SESSION['role'] : 'inconnu';
 $prenom = isset($_SESSION['prenom']) ? $_SESSION['prenom'] : '';
+$ID_User = isset($_SESSION['id']) ? $_SESSION['id'] : '';;
 
 // Vérifier la page actuelle
 $current_page = basename($_SERVER['PHP_SELF']);
