@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 03 juin 2024 à 16:47
+-- Généré le : ven. 07 juin 2024 à 09:20
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -28,11 +28,19 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `apply` (
+  `ID_Apply` int(11) NOT NULL,
   `ID_Offer` int(11) NOT NULL,
   `ID_Student` int(11) NOT NULL,
   `LetterMotivation` varchar(100) DEFAULT NULL,
   `CV` varchar(25) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `apply`
+--
+
+INSERT INTO `apply` (`ID_Apply`, `ID_Offer`, `ID_Student`, `LetterMotivation`, `CV`) VALUES
+(5, 1, 6, 'test', '/www/StagExplorer/_assets');
 
 -- --------------------------------------------------------
 
@@ -147,6 +155,10 @@ CREATE TABLE `offer` (
 --
 
 INSERT INTO `offer` (`ID_Offer`, `Name_Offer`, `Description_Offer`, `Domain_Offer`, `Skills_Offer`, `Level_Offer`, `Postulation_Offer`, `Duration_Offer`, `Pay_Offer`, `Date_Offer`, `Place_Offer`, `ID_Company`, `ID_Pilote`) VALUES
+(1, 'bljljhku', 'Assistant marketing pour une durée de 3 mois', 'Marketing', 'Communication, Réseaux Sociaux', 'Sélectionnez', 4, 3, 800, '2024-08-01', 2, 5, 1),
+(2, 'Stage Assistant Marketing', 'Assistant marketing pour une durée de 3 mois', 'Marketing', 'Communication, Réseaux Sociaux', 'Bac+3', 4, 3, 800, '2024-08-01', 2, 5, 1),
+(3, 'Stage Assistant Marketing', 'Assistant marketing pour une durée de 3 mois', 'Marketing', 'Communication, Réseaux Sociaux', 'Bac+3', 4, 3, 800, '2024-08-01', 2, 5, 1),
+(4, 'Stage Assistant Marketing', 'Assistant marketing pour une durée de 3 mois', 'Marketing', 'Communication, Réseaux Sociaux', 'Bac+3', 4, 3, 800, '2024-08-01', 2, 5, 1),
 (5, 'Stage Assistant Marketing', 'Assistant marketing pour une durée de 3 mois', 'Marketing', 'Communication, Réseaux Sociaux', 'Bac+3', 4, 3, 800, '2024-08-01', 2, 5, 1);
 
 -- --------------------------------------------------------
@@ -320,7 +332,8 @@ INSERT INTO `wishlist` (`ID_Wish`, `ID_User`, `ID_Offer`) VALUES
 -- Index pour la table `apply`
 --
 ALTER TABLE `apply`
-  ADD PRIMARY KEY (`ID_Offer`,`ID_Student`),
+  ADD PRIMARY KEY (`ID_Apply`),
+  ADD KEY `ID_Offer` (`ID_Offer`,`ID_Student`),
   ADD KEY `ID_Student` (`ID_Student`);
 
 --
@@ -404,6 +417,12 @@ ALTER TABLE `wishlist`
 --
 -- AUTO_INCREMENT pour les tables déchargées
 --
+
+--
+-- AUTO_INCREMENT pour la table `apply`
+--
+ALTER TABLE `apply`
+  MODIFY `ID_Apply` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `users`

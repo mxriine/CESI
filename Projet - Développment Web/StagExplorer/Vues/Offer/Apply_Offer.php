@@ -87,7 +87,7 @@ require_once('../../Controleurs/offer.php');
             <div class="titre-motivation">
                 <h1>Postuler à l'offre</h1>
             </div>
-            <form action="/Controleurs/Manage/apply.php" method="post" enctype="multipart/form-data">
+            <form action="/Controleurs/Manage/Apply/apply.php" method="post" enctype="multipart/form-data">
                 <div class="motivation">
                     <label for="motivation">Votre lettre de motivation :</label>
                     <textarea id="motivation" name="motivation" rows="20" cols="50"></textarea>
@@ -97,6 +97,8 @@ require_once('../../Controleurs/offer.php');
                     <input type="file" id="cv" name="cv">
                 </div>
                 <div class="bouton-postuler">
+                    <input name="id_offer" type="hidden" value="<?php echo htmlspecialchars($ID_Offer); ?>">
+                    <input name="id_user" type="hidden" value="<?php echo htmlspecialchars($ID_User); ?>">
                     <button type="submit">Envoyer</button>
                 </div>
             </form>

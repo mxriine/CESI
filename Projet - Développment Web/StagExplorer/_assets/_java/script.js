@@ -6,21 +6,18 @@ function onClick(element) {
     captionText.innerHTML = element.alt;
 }
 
-
 // Toggle between showing and hiding the sidebar when clicking the menu icon
 var mySidebar = document.getElementById("mySidebar");
 
 function openSidebar() {
-    if (mySidebar.style.display === 'block') {
-        mySidebar.style.display = 'none';
-    } else {
-        mySidebar.style.display = 'block';
-    }
+    var mySidebar = document.getElementById("mySidebar");
+    mySidebar.style.display = mySidebar.style.display === 'block' ? 'none' : 'block';
 }
 
 // Close the sidebar with the close button
 function closeSidebar() {
-    mySidebar.style.display = "none";
+    var mySidebar = document.getElementById("mySidebar");
+    mySidebar.style.display = 'none';
 }
 
 
@@ -33,22 +30,22 @@ const messageErreurMDP = document.getElementById('messageErreurMDP');
 const messageErreurConfirmation = document.getElementById('messageErreurConfirmation');
 const messageErreurID = document.getElementById('messageErreurId');
 
-function validerNom(Nom){
-    const NomRegex = /^[^\d!@#$%^&*]+$/ ;
+function validerNom(Nom) {
+    const NomRegex = /^[^\d!@#$%^&*]+$/;
     return NomRegex.test(Nom);
 }
 
-function validerPrenom(Prenom){
-    const PrenomRegex = /^[^\d!@#$%^&*]+$/ ;
+function validerPrenom(Prenom) {
+    const PrenomRegex = /^[^\d!@#$%^&*]+$/;
     return PrenomRegex.test(Prenom);
 }
 
-function validerPromo(){
+function validerPromo() {
     var boutonSelectionne = document.querySelector('input[name="promo"]:checked');
-    return boutonSelectionne!==null;
+    return boutonSelectionne !== null;
 }
 
-function validerCentre(selectCentre){
+function validerCentre(selectCentre) {
     return selectCentre.value !== '';
 }
 
@@ -61,20 +58,20 @@ function validerFormulaire2() {
     if (!validerNom(nom)) {
         return false; // Arrête la soumission du formulaire
     }
-    if (!validerPrenom(prenom)){
+    if (!validerPrenom(prenom)) {
         return false;
     }
-    if(!validerCentre(centre)){
+    if (!validerCentre(centre)) {
 
         return false;
     }
-    if(!validerPromo()){
+    if (!validerPromo()) {
 
         return false;
     }
 
     return true;
-    
+
 }
 
 // INSCRIPTION ET MODIFICATION DES PILOTES

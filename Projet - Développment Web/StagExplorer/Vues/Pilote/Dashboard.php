@@ -59,7 +59,7 @@ require_once('../../Controleurs/dashboard.php');
             <div class="button-fonction">
                 <a href="../Manage/Offre/Creation_Offer.php">
                     <button class="creer-offre" type="button">Créer une offre</button></a>
-                <a href="../Offre/Liste_Offre.php">
+                <a href="../Offer/List_Offer.php">
                     <button class="gerer-offre" type="button">Voir les offre</button></a>
             </div>
         </div>

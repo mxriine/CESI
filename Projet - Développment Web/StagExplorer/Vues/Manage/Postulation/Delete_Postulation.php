@@ -1,7 +1,7 @@
 <!-- FORMULAIRE DE SESSION (EN PHP) -->
 <?php
 require_once ('../../../Controleurs/session.php');
-require_once ('../../../Controleurs/Manage/delete.php');
+require_once ('../../../Controleurs/Manage/Apply/delete.php');
 ?>
 
 <!-- PAGE DELETE OFFRE | Valider au validateur  -->
@@ -30,12 +30,12 @@ require_once ('../../../Controleurs/Manage/delete.php');
         </div>
     </header>
 
-    <form action="/Controleurs/Manage/Offer/delete.php" method="POST">
+    <form action="/Controleurs/Manage/delete" method="POST">
         <section class="supprimer">
-            <label for="labelSup1">Souhaitez-vous supprimer l'annonce ? </label>
+            <label for="labelSup1">Souhaitez-vous supprimer votre candidature ? </label>
             <p><?php echo $Name_Offer; ?></p>
-            <input type="hidden" name="id_offer" value="<?php echo $ID_Offer; ?>">
-            <label for="labelSup2">Attention ! Votre annonce sera supprimée définitivement.</label>
+            <input type="hidden" name="id_apply" value="<?php echo $ID_Offer; ?>">
+            <label for="labelSup2">Attention ! Votre candidature sera supprimée définitivement.</label>
             <div class="boutonSuppAnn">
                 <button class="boutonSupprimer" type="submit">Supprimer l'annonce</button>
                 <button class="boutonAnnuler" type="button" onClick="history.back()">Annuler</button>

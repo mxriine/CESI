@@ -85,7 +85,7 @@ body {
 
 .drop {
     display: none;
-    background-color: rgba(37, 37, 37, 1);
+    background-color: rgba(37, 37, 37, 0);
     position: absolute;
     width: 100%;
     z-index: 1000;
@@ -141,6 +141,80 @@ body {
     animation: spin 2s linear infinite;
 }
 
+.mininav {
+    display: none;
+    width: 50px;
+    /* Ajustez en fonction du contenu */
+    min-width: 100px;
+    /* Gardez une largeur minimale si nécessaire */
+    padding: 0 10px;
+    /* Ajoutez un peu de padding sur les côtés */
+    height: 50px;
+    font-size: 20px;
+    font-weight: 500;
+    position: absolute;
+    border-radius: 7px;
+    top: 1.5px;
+    right: 15%; /* Déplace la mininav vers la gauche */
+}
+
+.mininav ul {
+    list-style-type: none;
+}
+
+.mininav ul li {
+    width: 150px;
+    float: left;
+    text-align: right;
+    position: relative;
+}
+
+.mininav ul::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.mininav a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    border-bottom: 2px solid transparent;
+    padding: 10px 0px;
+}
+
+.mininav a:hover {
+    color: rgba(28, 143, 166, 0.918);
+    border-bottom: 2px solid rgba(28, 143, 166, 0.918);
+}
+
+.mininav ul li:hover .minidrop {
+    display: block;
+}
+
+.minidrop {
+    font-size: 14px;
+    display: none;
+    background-color: rgba(37, 37, 37, 0);
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+}
+
+.minidrop li {
+    right: 20%;
+    width: 100%;
+    text-align: center;
+}
+
+.minidrop a {
+    border-bottom: none;
+}
+
+.minidrop a:hover {
+    border-bottom: none;
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -148,5 +222,57 @@ body {
 
     100% {
         transform: rotate(360deg);
+    }
+}
+
+/* Format tablette */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .titre {
+        font-size: 20px;
+        text-align: center;
+        margin-top: -12%;
+        color: #ffffff;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .logo {
+        width: 20%;
+        margin-right: 80%;
+    }
+
+    .mininav {
+        display: block;
+    }
+
+}
+
+/*Format telephone*/
+@media (max-width: 600px) {
+    .titre {
+        font-size: 20px;
+        margin-top: 10%;
+        margin-right: 20%;
+        color: #ffffff;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .mininav {
+        display: block;
+        width: 50px;
+    }
+
+    .mininav ul li {
+        right: 30px;
+        font-size: 15px;
     }
 }

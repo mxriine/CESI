@@ -7,16 +7,18 @@
     position: absolute;
     display: flex;
     background-color: white;
-    top: 55%;
+    top: 45%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -40%);
 }
 
 .label {
-    color: rgba(28, 143, 166, 0.918);
-    position: absolute;
-    text-align: center !important;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
     top: 3%;
+    color: rgba(28, 143, 166, 0.918);
 }
 
 .form {
@@ -27,7 +29,6 @@
     width: 25%;
     display: flex;
     flex-direction: column;
-    font-weight: bold;
     gap: 50px;
 }
 
@@ -35,7 +36,6 @@
     display: flex;
     flex-direction: row;
     gap: 40px;
-    font-weight: bold;
 }
 
 .info select {
@@ -72,7 +72,7 @@ textarea {
 
 .bouton-left {
     position: absolute;
-    top: 92%;
+    top: 90%;
     left: 75%;
     display: flex;
     flex-direction: row;
@@ -107,7 +107,7 @@ textarea {
 
 .bouton-right {
     position: absolute;
-    top: 92%;
+    top: 90%;
     left: 5%;
     display: flex;
     flex-direction: row;
@@ -128,111 +128,119 @@ textarea {
     background-color: rgba(28, 143, 166, 0.918);
 }
 
-/* --- Responsive Adjustments --- */
+/* --- Media Queries pour Responsive Design --- */
 
-@media (max-width: 1200px) {
-    .container {
-        width: 60%;
-        height: 100%;
-        margin-top: 20%;
-    }
-
-    .label {
-        left: 20%;
-    }
-
-    .form {
-        left: 10%;
-        width: 35%;
-    }
-
-    .form_ {
-        left: 55%;
-        width: 30%;
-    }
-}
-
-@media (max-width: 768px) {
-    .container {
-        width: 60%;
-        height: 100%;
-        margin-top: 20%;
-    }
-
-    .label {
-        left: 10%;
-        top: 5%;
-    }
-
-    .form {
-        left: 5%;
-        width: 90%;
-        top: 15%;
-    }
-
-    .info {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .form_ {
-        display: none;
-        left: 5%;
-        width: 90%;
-        top: auto;
-        margin-top: 20px;
-    }
-
-    .bouton-left,
-    .bouton-right {
-        top: 85%;
-        left: 5%;
-        width: 90%;
-        justify-content: space-around;
-    }
-}
-
-@media (max-width: 480px) {
+/* Écran mobile */
+@media (max-width: 600px) {
     .container {
         width: 80%;
-        height: 100%;
-        margin-top: 30%;
+        height: 110%;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -35%);
+        flex-direction: column;
     }
 
     .form {
-        left: 5%;
-        width: 90%;
-        top: 15%;
+        width: 70%;
+        left: 15%;
+        top: 13%;
+        gap: 20px
     }
 
-
     .form_ {
-        display: none;
-        left: 5%;
-        width: 90%;
-        top: auto;
+        width: 70%;
+        left: 15%;
+        top: 52%;
         margin-top: 20px;
     }
 
     .info {
         flex-direction: column;
-        gap: 20px;
+        position: relative;
+        gap: 0px
     }
 
-    .bouton-left,
-    .bouton-right {
-        top: 90%;
-        left: 5%;
-        width: 90%;
-        flex-direction: column;
-        gap: 10px;
+    .info select, 
+    .info input, 
+    textarea {
+        position: relative;
+        left: 0%;
     }
+    
 
     .bouton-left {
-        order: 2;
+        top: 88%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 20px;
+    }
+    .bouton-right {
+        top: 92%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 20px;
     }
 
-    .bouton-right {
-        order: 1;
+    .footer {
+        display: none;
     }
 }
+
+/* Écran tablette */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .container {
+        width: 80%;
+        height: 110%;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -35%);
+        flex-direction: column;
+    }
+
+    .form {
+        width: 70%;
+        left: 15%;
+        top: 13%;
+        gap: 20px
+    }
+
+    .form_ {
+        width: 70%;
+        left: 15%;
+        top: 52%;
+        margin-top: 20px;
+    }
+
+    .info {
+        flex-direction: column;
+        position: relative;
+        gap: 0px
+    }
+
+    .info select, 
+    .info input, 
+    textarea {
+        position: relative;
+        left: 0%;
+    }
+    
+
+    .bouton-left {
+        top: 88%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 20px;
+    }
+    .bouton-right {
+        top: 92%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 20px;
+    }
+
+    .footer {
+        display: none;
+    }
+}
+

@@ -2,10 +2,10 @@
 <?php
 require_once('../../Controleurs/session.php');
 require_once('../../Controleurs/offer.php');
-require_once('../../Controleurs/List/offer.php');
+require_once('../../Controleurs/List/postulation.php');
 ?>
 
-<!-- INFO OFFER | Valider au validateur -->
+<!-- LIST POSTULATION | Valider au validateur -->
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -52,6 +52,8 @@ require_once('../../Controleurs/List/offer.php');
             </form>
         </div>
     </aside>
+
+ <!--<p class="error"> <?php echo $error_message ?> </p>-->
 
 </body>
 

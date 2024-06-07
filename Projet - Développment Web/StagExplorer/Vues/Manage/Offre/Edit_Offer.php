@@ -1,10 +1,9 @@
 <!-- FORMULAIRE DE SESSION (EN PHP) -->
 <?php
-require_once ('../../../Controleurs/session.php');
-require_once ('../../../Controleurs/offer.php');
+require_once('../../../Controleurs/session.php');
+require_once('../../../Controleurs/offer.php');
 ?>
 
-<!-- PAGE DELETE OFFRE | Valider au validateur  -->
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -36,7 +35,7 @@ require_once ('../../../Controleurs/offer.php');
         <div class="label">
             <h1>MODIFIER UNE OFFRE</h1>
         </div>
-        <form action="/Controleurs/Manage/edit.php" method="POST">
+        <form action="/Controleurs/Manage/Offer/edit.php" method="POST">
             <input type="hidden" name="id_offer" value="<?php echo htmlspecialchars($ID_Offer); ?>">
             <article class="form">
                 <div class="info">
@@ -63,7 +62,6 @@ require_once ('../../../Controleurs/offer.php');
                     </select>
                 </div>
             </article>
-
             <article class="form_">
                 <div class="infosup">
                     <label>Durée de stage</label>
@@ -106,7 +104,7 @@ require_once ('../../../Controleurs/offer.php');
         </form>
     </section>
     <footer>
-        <div class="footer" style="padding:24px 48p">
+        <div class="footer" style="padding:24px 48px;">
             <p>© 2024 StagExplorer - Tous droits réservés</p>
         </div>
     </footer>

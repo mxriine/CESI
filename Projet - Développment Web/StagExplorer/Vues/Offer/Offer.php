@@ -3,7 +3,7 @@
 require_once('../../Controleurs/session.php');
 require_once('../../Controleurs/offer.php');
 require_once('../../Controleurs/Bouton/display.php');
-require_once('../../Controleurs/Liste/wishlist.php');
+require_once('../../Controleurs/List/wishlist.php');
 ?>
 
 <!-- INFO OFFER | Valider au validateur -->
@@ -91,11 +91,6 @@ require_once('../../Controleurs/Liste/wishlist.php');
             <input type="radio" id="favoris" name="favoris">
             <label for="favoris" id="star" class="star" onclick="toggleWishlist()">☆</label>
         </div>
-
-        <form class="bouton-right" action="/Vues/Offer/Apply_Offer.php" method="post">
-            <input name="id_offer" type="hidden" value="<?php echo htmlspecialchars($ID_Offer); ?>">
-            <button type="submit" id="apply">Postuler à l'offre</button>
-        </form>
     </section>
 
     <footer>

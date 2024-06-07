@@ -30,6 +30,13 @@ switch ($role) {
                     </form>
                 </section>';
         }
+        if ($current_page === 'Offer.php') {
+            // Affichage de la navigation par défaut pour les administrateurs
+            echo '<form class="bouton-right" action="/Vues/Offer/Apply_Offer.php" method="post">
+                        <input name="id_offer" type="hidden" value="' . htmlspecialchars($ID_Offer) . '">
+                        <button type="submit" id="apply">Postuler à l\'offre</button>
+                  </form>';
+        }
         echo '';
         break;
     default:
@@ -37,4 +44,3 @@ switch ($role) {
         header('Location: ../Vues/connection.php');
         exit(); // Assurez-vous de terminer le script après la redirection
 }
-

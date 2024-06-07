@@ -34,11 +34,6 @@ require_once('../Controleurs/search.php');
         </div>
     </header>
 
-    <!-- Masquer les liens affichés à droite sur les petits écrans et les remplacer par une icône de menu -->
-    <a href="javascript:void(0)" class="bar-item button right hide-large hide-medium" onclick="openSidebar()">
-        <i class="fa fa-bars"></i>
-    </a>
-
     <!-- BLOC -->
 
     <!-- Filtre -->

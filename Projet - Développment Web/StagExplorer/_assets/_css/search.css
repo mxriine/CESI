@@ -1,15 +1,5 @@
 /* --- CSS Search --- */
 
-.barreR {
-    position: absolute;
-    left: 38%;
-    color: white;
-    display: flex;
-    flex-direction: row;
-    font-size: large;
-    top: 15%;
-}
-
 .scroll-section {
     margin-left: 0%;
     position: fixed;
@@ -326,4 +316,30 @@ input[type="checkbox"] {
     display: flex;
     flex-direction: column;
     gap: 7px;
+}
+
+@media (max-width: 768px) {
+    aside {
+        display: none;
+    }
+
+    .scroll-section {
+        margin-left: 0%;
+        position: fixed;
+        top: 30%;
+        left: 8%;
+        width: 80%;
+        height: 70%;
+        overflow-y: auto;
+        padding: 15px;
+    }
+
+    .boutonVision {
+        left: 82%;
+    }
+
+    .boutonModif {
+        left: 68%;
+    }
+    
 }

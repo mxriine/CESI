@@ -139,13 +139,11 @@
     font-size: 20px;
 }
 
+
 .place {
-    position: absolute;
     display: flex;
     flex-direction: row;
-    top: 37%;
-    left: 70%;
-    gap: 5px;
+    position: relative;
 }
 
 /* Filtre */
@@ -205,4 +203,52 @@ label[for="filtres"] {
     top: 63%;
     left: 8%;
     gap: 10px
+}
+
+/* Bouton */
+.btn {
+    flex-direction: row !important;
+    display: flex;
+    margin-left: 20px;
+    align-items: center;
+    height: 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    border-color: rgba(28, 143, 166, 0.918);
+}
+
+#edit,
+#delete {
+    display: flex;
+    align-items: center;
+    height: 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    border-color: rgba(28, 143, 166, 0.918);
+}
+
+#edit:hover,
+#delete:hover {
+    background-color: rgba(28, 143, 166, 0.918);
+}
+
+/* Nouvelles règles CSS pour positionner les boutons */
+#edit {
+    position: relative;
+    top: 2;
+    left: 40vh;
+}
+
+#delete {
+    position: relative;
+    top: 2;
+    left: 41vh;
+}
+
+.error {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 30%;
+    left: 42.5%;
 }
