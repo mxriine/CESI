@@ -1,0 +1,101 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\mazou\\Desktop\\Cours\\_CESI\\23-24\\Devoir - ProgrammeClasse\\ProgrammeClasse\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mazou\\Desktop\\Cours\\_CESI\\23-24\\Devoir - ProgrammeClasse\\ProgrammeClasse\\ProgrammeClasse\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ProgrammeClasse\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mazou\\Desktop\\Cours\\_CESI\\23-24\\Devoir - ProgrammeClasse\\ProgrammeClasse\\ProgrammeClasse\\Student.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ProgrammeClasse\\Student.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mazou\\Desktop\\Cours\\_CESI\\23-24\\Devoir - ProgrammeClasse\\ProgrammeClasse\\ProgrammeClasse\\Promotion.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ProgrammeClasse\\Promotion.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mazou\\Desktop\\Cours\\_CESI\\23-24\\Devoir - ProgrammeClasse\\ProgrammeClasse\\ProgrammeClasse\\Promotion.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ProgrammeClasse\\Promotion.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mazou\\Desktop\\Cours\\_CESI\\23-24\\Devoir - ProgrammeClasse\\ProgrammeClasse\\ProgrammeClasse\\Student.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ProgrammeClasse\\Student.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Main.cpp",
+              "DocumentMoniker": "C:\\Users\\mazou\\Desktop\\Cours\\_CESI\\23-24\\Devoir - ProgrammeClasse\\ProgrammeClasse\\ProgrammeClasse\\Main.cpp",
+              "RelativeDocumentMoniker": "ProgrammeClasse\\Main.cpp",
+              "ToolTip": "C:\\Users\\mazou\\Desktop\\Cours\\_CESI\\23-24\\Devoir - ProgrammeClasse\\ProgrammeClasse\\ProgrammeClasse\\Main.cpp",
+              "RelativeToolTip": "ProgrammeClasse\\Main.cpp",
+              "ViewState": "AQIAAH4AAAAAAAAAAAAAAJAAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-03T08:00:15.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Student.cpp",
+              "DocumentMoniker": "C:\\Users\\mazou\\Desktop\\Cours\\_CESI\\23-24\\Devoir - ProgrammeClasse\\ProgrammeClasse\\ProgrammeClasse\\Student.cpp",
+              "RelativeDocumentMoniker": "ProgrammeClasse\\Student.cpp",
+              "ToolTip": "C:\\Users\\mazou\\Desktop\\Cours\\_CESI\\23-24\\Devoir - ProgrammeClasse\\ProgrammeClasse\\ProgrammeClasse\\Student.cpp",
+              "RelativeToolTip": "ProgrammeClasse\\Student.cpp",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAACwAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-03T08:00:15.137Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Promotion.cpp",
+              "DocumentMoniker": "C:\\Users\\mazou\\Desktop\\Cours\\_CESI\\23-24\\Devoir - ProgrammeClasse\\ProgrammeClasse\\ProgrammeClasse\\Promotion.cpp",
+              "RelativeDocumentMoniker": "ProgrammeClasse\\Promotion.cpp",
+              "ToolTip": "C:\\Users\\mazou\\Desktop\\Cours\\_CESI\\23-24\\Devoir - ProgrammeClasse\\ProgrammeClasse\\ProgrammeClasse\\Promotion.cpp",
+              "RelativeToolTip": "ProgrammeClasse\\Promotion.cpp",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAADYAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-03T08:00:15.137Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Promotion.h",
+              "DocumentMoniker": "C:\\Users\\mazou\\Desktop\\Cours\\_CESI\\23-24\\Devoir - ProgrammeClasse\\ProgrammeClasse\\ProgrammeClasse\\Promotion.h",
+              "RelativeDocumentMoniker": "ProgrammeClasse\\Promotion.h",
+              "ToolTip": "C:\\Users\\mazou\\Desktop\\Cours\\_CESI\\23-24\\Devoir - ProgrammeClasse\\ProgrammeClasse\\ProgrammeClasse\\Promotion.h",
+              "RelativeToolTip": "ProgrammeClasse\\Promotion.h",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAACAAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-03T08:00:15.141Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Student.h",
+              "DocumentMoniker": "C:\\Users\\mazou\\Desktop\\Cours\\_CESI\\23-24\\Devoir - ProgrammeClasse\\ProgrammeClasse\\ProgrammeClasse\\Student.h",
+              "RelativeDocumentMoniker": "ProgrammeClasse\\Student.h",
+              "ToolTip": "C:\\Users\\mazou\\Desktop\\Cours\\_CESI\\23-24\\Devoir - ProgrammeClasse\\ProgrammeClasse\\ProgrammeClasse\\Student.h",
+              "RelativeToolTip": "ProgrammeClasse\\Student.h",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAUwBwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-03T08:00:15.141Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
