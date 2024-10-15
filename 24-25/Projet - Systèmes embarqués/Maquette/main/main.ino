@@ -31,6 +31,8 @@ BME280I2C bme; // Capteur de température
 
 ChainableLED leds(7, 8, NUM_LEDS); // Led RGB
 
+volatile int logInterval = 10000;
+
 /*----------- Fonctions -------------*/
 
 // Fonction pour changer de mode
@@ -221,10 +223,6 @@ void setup()
     ChangeMode(MODE_STANDARD, &Serial);
   }
 
-  /*------------------------------------------------------*/
-  //           INITIALISATION DIVERS CAPTEURS             //
-  /*------------------------------------------------------*/
-
   // Vérification BME280
   while (!Serial)
   {
@@ -254,15 +252,101 @@ void setup()
 
 void loop()
 {
-  // if (1 == 2) // test ram
-  // {
-  //   printBME280Data(&Serial);
-  // }
   error();
   DefineMode();
 
-  if (mode == MODE_CONFIG)
+  switch (mode)
   {
+  case MODE_STANDARD:
+    standard();
+    break;
+  case MODE_MAINT:
+    maintenance();
+    break;
+  case MODE_CONFIG:
     configuration(&Serial);
+    break;
+  case MODE_ECO:
+    eco();
+    break;
+  default:
+    break;
+  }
+}
+
+/*------------------------------------------------------*/
+//                     MODE STANDARD                    //
+/*------------------------------------------------------*/
+void standard()
+{
+  readData(&Serial);
+  // writeData(SD, &Serial);
+  delay(logInterval);
+}
+
+/*------------------------------------------------------*/
+//                   MODE MAINTENANCE                   //
+/*------------------------------------------------------*/
+void maintenance()
+{
+  displayData(&Serial);
+  delay(logInterval);
+}
+
+/*------------------------------------------------------*/
+//                   MODE MAINTENANCE                   //
+/*------------------------------------------------------*/
+void eco()
+{
+
+}
+
+/*------------------------------------------------------*/
+//                 MODE DE CONFIGURATION                //
+/*------------------------------------------------------*/
+
+void configuration(Stream *client)
+{
+  if (Serial.available() > 0)
+  {
+    String command = Serial.readStringUntil('\n');
+    command.trim();
+
+    if (command == "VERSION" || command == "version") // Version du système
+    {
+      client->println(F("Informations du système"));
+      client->println(F("==========================="));
+      client->print(F("Version du système : "));
+      client->println(F("1.0"));
+      client->print(F("Version de la carte SD : "));
+      client->println(F("x.0"));
+      client->print(F("Version du capteur BME280 : "));
+      client->println(F("x.0"));
+      client->print(F("Version de l'horloge DS1307 : "));
+      client->println(F("x.0"));
+      client->println(F("==========================="));
+    }
+    else if (command == "REBOOT" || command == "reboot") // Redémarrage du système
+    {
+      client->println(F("Redémarrage du système"));
+      client->println(F("==========================="));
+      client->println(F("Le système redémarre..."));
+      client->println(F("==========================="));
+      delay(1000);
+      asm volatile("jmp 0x00");
+    }
+    else if (command == "LOG_INTERVAL") // Interval de log
+    {
+      client->println(F("Interval de log"));
+      client->println(F("==========================="));
+      client->print(F("Interval actuel : "));
+      client->print(logInterval);
+      client->println(F(" ms"));
+      client->print(F("Nouvel interval : "));
+      logInterval = Serial.parseInt();
+      client->print(logInterval);
+      client->println(F(" ms"));
+      client->println(F("==========================="));
+    }
   }
 }

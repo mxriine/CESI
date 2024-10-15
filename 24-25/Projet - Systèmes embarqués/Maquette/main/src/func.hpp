@@ -17,24 +17,30 @@
 
 extern SdFat SD;
 extern DS1307 clock;
-extern BME280I2C bme; 
+extern BME280I2C bme;
 extern const int NUM_LEDS;
 extern ChainableLED leds;
 
-// extern const int logInterval;
-// extern const int filemaxsize;
-// extern const int version;
-// extern const int timeout;
+extern volatile int logInterval;
+// extern volatile int filemaxsize;
+// extern volatile int version;
+// extern volatile int timeout;
 
+struct Sensor
+{
+    char id;
+    String name;
+    float value;
+};
 
 /*----------- Fonctions -------------*/
 
-void printBME280Data(Stream* client);
+void readData(Stream *client);
 
-void configuration(Stream *client);
+void displayData(Stream *client);
 
+void writeData(bool SD, Stream *client);
 
 // Variables
-
 
 #endif
