@@ -60,18 +60,6 @@ public:
    BME280Spi(
       const Settings& settings);
 
-/*****************************************************************/
-/* ACCESSOR FUNCTIONS                                            */
-/*****************************************************************/
-
-   /////////////////////////////////////////////////////////////////
-   virtual void setSettings(
-      const Settings& settings);
-
-   /////////////////////////////////////////////////////////////////
-   const Settings& getSettings() const;
-
-
 protected:
 
    ////////////////////////////////////////////////////////////////
@@ -84,7 +72,7 @@ private:
    static const uint8_t BME280_SPI_WRITE   = 0x7F;
    static const uint8_t BME280_SPI_READ    = 0x80;
 
-   Settings m_settings;
+   uint8_t csPin;
 
    ////////////////////////////////////////////////////////////////
    /// Read the data from the BME280 addr into an array and

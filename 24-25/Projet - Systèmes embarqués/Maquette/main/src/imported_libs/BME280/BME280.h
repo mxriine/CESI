@@ -48,104 +48,90 @@ public:
 /* ENUMERATIONS                                                  */
 /*****************************************************************/
 
-   enum TempUnit
-   {
-      TempUnit_Celsius,
-      TempUnit_Fahrenheit
-   };
+enum TempUnit {
+   TempUnit_Celsius,
+   TempUnit_Fahrenheit
+};
 
-   enum PresUnit
-   {
-      PresUnit_Pa,
-      PresUnit_hPa,
-      PresUnit_inHg,
-      PresUnit_atm,
-      PresUnit_bar,
-      PresUnit_torr,
-      PresUnit_psi
-   };
+enum PresUnit {
+   PresUnit_Pa,
+   PresUnit_hPa,
+   PresUnit_inHg,
+   PresUnit_atm,
+   PresUnit_bar,
+   PresUnit_torr,
+   PresUnit_psi
+};
 
-   enum OSR
-   {
-      OSR_Off =  0,
-      OSR_X1  =  1,
-      OSR_X2  =  2,
-      OSR_X4  =  3,
-      OSR_X8  =  4,
-      OSR_X16 =  5
-   };
+enum OSR {
+   OSR_X1 =  1,
+   OSR_X2 =  2,
+   OSR_X4 =  3,
+   OSR_X8 =  4,
+   OSR_X16 = 5
+};
 
-   enum Mode
-   {
-      Mode_Sleep  = 0,
-      Mode_Forced = 1,
-      Mode_Normal = 3
-   };
+enum Mode {
+   Mode_Sleep  = 0,
+   Mode_Forced = 1,
+   Mode_Normal = 3
+};
 
-   enum StandbyTime
-   {
-      StandbyTime_500us   = 0,
-      StandbyTime_62500us = 1,
-      StandbyTime_125ms   = 2,
-      StandbyTime_250ms   = 3,
-      StandbyTime_50ms    = 4,
-      StandbyTime_1000ms  = 5,
-      StandbyTime_10ms    = 6,
-      StandbyTime_20ms    = 7
-   };
+enum StandbyTime {
+   StandbyTime_500us   = 0,
+   StandbyTime_62500us = 1,
+   StandbyTime_125ms   = 2,
+   StandbyTime_250ms   = 3,
+   StandbyTime_50ms    = 4,
+   StandbyTime_1000ms  = 5,
+   StandbyTime_10ms    = 6,
+   StandbyTime_20ms    = 7
+};
 
-   enum Filter
-   {
-      Filter_Off = 0,
-      Filter_2   = 1,
-      Filter_4   = 2,
-      Filter_8   = 3,
-      Filter_16  = 4
-   };
+enum Filter {
+   Filter_Off = 0,
+   Filter_2   = 1,
+   Filter_4   = 2,
+   Filter_8   = 3,
+   Filter_16  = 4
+};
 
-   enum SpiEnable
-   {
-      SpiEnable_False = 0,
-      SpiEnable_True = 1
-   };
+enum SpiEnable{
+   SpiEnable_False = 0,
+   SpiEnable_True = 1
+};
 
-   enum ChipModel
-   {
-      ChipModel_UNKNOWN = 0,
-      ChipModel_BMP280 = 0x58,
-      ChipModel_BME280 = 0x60
-   };
+enum ChipModel {
+    ChipModel_UNKNOWN = 0,
+    ChipModel_BMP280 = 0x58,
+    ChipModel_BME280 = 0x60
+};
 
-/*****************************************************************/
-/* STRUCTURES                                                  */
-/*****************************************************************/
+struct Settings {
+   Settings(
+      OSR _tosr       = OSR_X1,
+      OSR _hosr       = OSR_X1,
+      OSR _posr       = OSR_X1,
+      Mode _mode      = Mode_Forced,
+      StandbyTime _st = StandbyTime_1000ms,
+      Filter _filter  = Filter_Off,
+      SpiEnable _se   = SpiEnable_False
+     ): tempOSR(_tosr),
+        humOSR(_hosr),
+        presOSR(_posr),
+        mode(_mode),
+        standbyTime(_st),
+        filter(_filter),
+        spiEnable(_se) {}
 
-   struct Settings
-   {
-      Settings(
-         OSR _tosr       = OSR_X1,
-         OSR _hosr       = OSR_X1,
-         OSR _posr       = OSR_X1,
-         Mode _mode      = Mode_Forced,
-         StandbyTime _st = StandbyTime_1000ms,
-         Filter _filter  = Filter_Off,
-         SpiEnable _se   = SpiEnable_False
-      ): tempOSR(_tosr),
-         humOSR(_hosr),
-         presOSR(_posr),
-         mode(_mode),
-         standbyTime(_st),
-         filter(_filter),
-         spiEnable(_se) {}
-
-      OSR tempOSR;
-      OSR humOSR;
-      OSR presOSR;
-      Mode mode;
-      StandbyTime standbyTime;
-      Filter filter;
-      SpiEnable spiEnable;
-   };
+   OSR tempOSR;
+   OSR humOSR;
+   OSR presOSR;
+   Mode mode;
+   StandbyTime standbyTime;
+   Filter filter;
+   SpiEnable spiEnable;
+};
 
 /*****************************************************************/
 /* INIT FUNCTIONS                                                */
@@ -174,7 +160,7 @@ public:
    /// Read the pressure from the BME280 and return a float with the
    /// specified unit.
    float pres(
-      PresUnit unit = PresUnit_hPa);
+      PresUnit unit = PresUnit_Pa);
 
    /////////////////////////////////////////////////////////////////
    /// Read the humidity from the BME280 and return a percentage
@@ -188,12 +174,23 @@ public:
       float&    temperature,
       float&    humidity,
       TempUnit  tempUnit    = TempUnit_Celsius,
-      PresUnit  presUnit    = PresUnit_hPa);
+      PresUnit  presUnit    = PresUnit_Pa);
 
 
 /*****************************************************************/
 /* ACCESSOR FUNCTIONS                                            */
 /*****************************************************************/
+
+   /////////////////////////////////////////////////////////////////
+   void setSettings(
+      const Settings& settings);
+
+   /////////////////////////////////////////////////////////////////
+   const Settings& getSettings() const;
+
+   ////////////////////////////////////////////////////////////////
+   /// Method used to return CHIP_ID.
+   uint8_t chipID();
 
    ////////////////////////////////////////////////////////////////
    /// Method used to return ChipModel.
@@ -205,27 +202,20 @@ protected:
 /* CONSTRUCTOR INIT FUNCTIONS                                    */
 /*****************************************************************/
 
-   ///////////////////////////////////////////////////////////////
+   //////////////////////////////////////////////////////////////////
    /// Write configuration to BME280, return true if successful.
-   /// Must be called from any child classes.
    virtual bool Initialize();
 
-   ///////////////////////////////////////////////////////////////
-   /// Force a unfiltered measurement to populate the filter 
-   /// buffer.
-   void InitializeFilter();
-
 
 /*****************************************************************/
-/* ACCESSOR FUNCTIONS                                            */
+/* ACCESS FUNCTIONS                                              */
 /*****************************************************************/
 
-   /////////////////////////////////////////////////////////////////
-   virtual void setSettings(
-      const Settings& settings);
-
-   /////////////////////////////////////////////////////////////////
-   virtual const Settings& getSettings() const;
+//uint8_t&  getMode();
+//uint8_t*  getDig();
+//uint8_t&  getControlHumidity();
+//uint8_t&  getControlMeasure();
+//uint8_t&  getConfig();
 
 
 private:
@@ -253,17 +243,17 @@ private:
    static const uint8_t DIG_LENGTH              = 32;
    static const uint8_t SENSOR_DATA_LENGTH      = 8;
 
-
 /*****************************************************************/
 /* VARIABLES                                                     */
 /*****************************************************************/
    Settings m_settings;
 
    uint8_t m_dig[32];
+   uint8_t m_chip_id;
    ChipModel m_chip_model;
 
-   bool m_initialized;
 
+   bool m_initialized;
 
 /*****************************************************************/
 /* ABSTRACT FUNCTIONS                                            */
@@ -281,6 +271,7 @@ private:
       uint8_t addr,
       uint8_t data[],
       uint8_t length)=0;
+
 
 
 /*****************************************************************/
@@ -315,7 +306,6 @@ private:
    bool ReadData(
       int32_t data[8]);
 
-
    /////////////////////////////////////////////////////////////////
    /// Calculate the temperature from the BME280 raw data and
    /// BME280 trim, return a float.
@@ -337,7 +327,9 @@ private:
    float CalculatePressure(
       int32_t raw,
       int32_t t_fine,
-      PresUnit unit = PresUnit_hPa);
+      PresUnit unit = PresUnit_Pa);
+
+
 
 };
 

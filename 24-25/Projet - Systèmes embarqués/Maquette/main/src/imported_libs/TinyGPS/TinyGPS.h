@@ -146,6 +146,65 @@ private:
 #if !defined(ARDUINO) 
 // Arduino 0012 workaround
 #undef int
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #undef char
 #undef long
 #undef byte

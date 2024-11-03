@@ -66,23 +66,10 @@ class BME280SpiSw: public BME280{
    BME280SpiSw(
       const Settings& settings);
 
-
-/*****************************************************************/
-/* ACCESSOR FUNCTIONS                                            */
-/*****************************************************************/
-
-   /////////////////////////////////////////////////////////////////
-   virtual void setSettings(
-      const Settings& settings);
-
-   /////////////////////////////////////////////////////////////////
-   const Settings& getSettings() const;
-
 protected:
 
    ////////////////////////////////////////////////////////////////
-   /// Method used at start up to initialize the class. Starts the
-   /// software SPI interface.
+   /// Method used at start up to initialize the class. Starts the I2C interface.
    virtual bool Initialize();
 
 private:
@@ -90,7 +77,11 @@ private:
    static const uint8_t BME280_SPI_WRITE = 0x7F;
    static const uint8_t BME280_SPI_READ = 0x80;
 
-   Settings m_settings;
+   // TODO: Move to settings object.
+   uint8_t csPin;
+   int8_t mosiPin;
+   int8_t misoPin;
+   int8_t sckPin;
 
    ////////////////////////////////////////////////////////////////
    /// Does a sw spi transfer.
