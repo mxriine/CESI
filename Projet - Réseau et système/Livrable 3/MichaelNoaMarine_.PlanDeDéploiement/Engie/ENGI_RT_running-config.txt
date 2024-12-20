@@ -1,0 +1,230 @@
+!
+version 12.4
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+service password-encryption
+!
+hostname REngie
+!
+!
+!
+enable secret 5 $1$mERr$I3ZjT7LRGWGI4ZSdYHJuE/
+!
+!
+!
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+username engie password 7 08244249461C
+!
+!
+!
+!
+!
+!
+!
+!
+ip domain-name engie.com
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ ip address 192.168.2.226 255.255.255.224
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface GigabitEthernet0/0/0
+ ip address 45.80.255.33 255.255.255.0
+ ip nat outside
+!
+interface FastEthernet1/0
+ switchport mode trunk
+ switchport nonegotiate
+ switchport port-security
+ switchport port-security maximum 100
+ switchport port-security mac-address sticky 
+ switchport port-security violation protect 
+ switchport port-security mac-address sticky 0001.4233.2118
+ switchport port-security mac-address sticky 0001.43B8.6810
+ switchport port-security mac-address sticky 0001.64D9.5259
+ switchport port-security mac-address sticky 0001.964E.591C
+ switchport port-security mac-address sticky 0001.C7CA.6A22
+ switchport port-security mac-address sticky 0005.5E02.EC8E
+ switchport port-security mac-address sticky 000A.F344.C353
+ switchport port-security mac-address sticky 0010.11E9.E817
+ switchport port-security mac-address sticky 0030.A3B4.6EB2
+ switchport port-security mac-address sticky 0050.0F26.25C9
+ switchport port-security mac-address sticky 0090.212E.C7CA
+ switchport port-security mac-address sticky 0090.2189.CB9E
+ switchport port-security mac-address sticky 0090.21EC.818A
+ switchport port-security mac-address sticky 00D0.58A6.B6D9
+ switchport port-security mac-address sticky 00D0.BCAB.5310
+ switchport port-security mac-address sticky 00D0.BCE2.4890
+ switchport port-security mac-address sticky 00D0.FF2D.668D
+ switchport port-security mac-address sticky 00D0.FF37.DA11
+ switchport port-security mac-address sticky 00E0.A307.6008
+ switchport port-security mac-address sticky 00E0.F735.DEE2
+ switchport port-security mac-address sticky 00E0.F78B.A0AA
+ switchport port-security mac-address sticky 00E0.F7AE.D69A
+!
+interface FastEthernet1/1
+ switchport mode trunk
+ switchport nonegotiate
+ switchport port-security
+ switchport port-security maximum 100
+ switchport port-security mac-address sticky 
+ switchport port-security violation protect 
+ switchport port-security mac-address sticky 0001.6477.27B1
+ switchport port-security mac-address sticky 0001.966A.7BDA
+ switchport port-security mac-address sticky 0001.97E8.90A5
+ switchport port-security mac-address sticky 0004.9ACC.8060
+ switchport port-security mac-address sticky 000A.411B.4218
+ switchport port-security mac-address sticky 0010.1124.56B3
+ switchport port-security mac-address sticky 0010.1174.34AE
+ switchport port-security mac-address sticky 0040.0B72.1952
+ switchport port-security mac-address sticky 0040.0BC8.C73B
+ switchport port-security mac-address sticky 0060.47C1.0206
+ switchport port-security mac-address sticky 0060.5C22.2006
+ switchport port-security mac-address sticky 00D0.BC03.0EB5
+ switchport port-security mac-address sticky 00D0.D38D.CA0B
+ switchport port-security mac-address sticky 00E0.F706.41B1
+!
+interface FastEthernet1/2
+ switchport mode access
+ switchport nonegotiate
+ shutdown
+!
+interface FastEthernet1/3
+ switchport mode access
+ switchport nonegotiate
+ shutdown
+!
+interface FastEthernet1/4
+ switchport mode access
+ switchport nonegotiate
+ shutdown
+!
+interface FastEthernet1/5
+ switchport mode access
+ switchport nonegotiate
+ shutdown
+!
+interface FastEthernet1/6
+ switchport mode access
+ switchport nonegotiate
+ shutdown
+!
+interface FastEthernet1/7
+ switchport mode access
+ switchport nonegotiate
+ shutdown
+!
+interface FastEthernet1/8
+ switchport mode access
+ switchport nonegotiate
+ shutdown
+!
+interface FastEthernet1/9
+ switchport mode access
+ switchport nonegotiate
+ shutdown
+!
+interface FastEthernet1/10
+ switchport mode access
+ switchport nonegotiate
+ shutdown
+!
+interface FastEthernet1/11
+ switchport mode access
+ switchport nonegotiate
+ shutdown
+!
+interface FastEthernet1/12
+ switchport mode access
+ switchport nonegotiate
+ shutdown
+!
+interface FastEthernet1/13
+ switchport mode access
+ switchport nonegotiate
+ shutdown
+!
+interface FastEthernet1/14
+ switchport mode access
+ switchport nonegotiate
+ shutdown
+!
+interface FastEthernet1/15
+ switchport mode access
+ switchport nonegotiate
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan10
+ mac-address 000a.4121.1601
+ ip address 192.168.2.126 255.255.255.128
+ ip helper-address 192.168.2.225
+ ip nat inside
+!
+interface Vlan11
+ mac-address 000a.4121.1602
+ ip address 192.168.2.190 255.255.255.192
+ ip helper-address 192.168.2.225
+ ip nat inside
+!
+interface Vlan12
+ mac-address 000a.4121.1603
+ ip address 192.168.2.222 255.255.255.224
+ ip helper-address 192.168.2.225
+ ip nat inside
+!
+router rip
+!
+ip nat inside source list 1 interface GigabitEthernet0/0/0 overload
+ip classless
+ip route 0.0.0.0 0.0.0.0 GigabitEthernet0/0/0 
+!
+ip flow-export version 9
+!
+!
+access-list 1 permit 192.168.2.0 0.0.0.255
+!
+no cdp run
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login local
+ transport input ssh
+!
+!
+!
+end
+

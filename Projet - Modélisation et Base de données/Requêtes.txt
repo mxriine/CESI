@@ -1,0 +1,145 @@
+Requêtes : 
+
+1/ Listez l'ensemble des agences
+
+```sql
+SELECT * FROM agence;
+```
+
+2/ Listez l'ensemble du personnel technique de l'agence de Bordeaux
+
+```sql
+SELECT agent.ID_agent, agent.Nom_agent, agent.Prenom_agent, poste.Type_poste,
+ ville.Nom_ville, ville.Code_postal FROM poste 
+  INNER JOIN agent ON poste.ID_poste = agent.ID_poste 
+	INNER JOIN  agence ON agent.ID_agence = agence.ID_agence
+  INNER JOIN ville ON agence.ID_Ville = ville.ID_Ville 
+  WHERE Nom_ville ='Bordeaux' AND Type_poste ='Technicien';
+```
+
+3/ Donnez le nombre total de capteurs déployés.
+
+```sql
+SELECT COUNT(ID_capteur) AS Nombre_de_capteur_deployé FROM projet_sql.capteur
+```
+
+4/ Listez les rapports publiés entre 2018 et 2022
+
+```sql
+SELECT * FROM rapport
+	INNER JOIN rapport_agent ON rapport.ID_rapport = rapport_agent.ID_rapport
+	WHERE YEAR(rapport_agent.Date_rapport) >= '2018' AND
+	YEAR(rapport_agent.Date_rapport) < '2023'
+ORDER BY Date_rapport ASC;
+```
+
+5/ Calculer le total d'émission des gaz à effet de serre par région en 2020
+
+```sql
+SELECT SUM(rapport_gaz.Emissions_ppm) AS Somme_Emmissions_GES_2020,
+region.Nom_region FROM gaz
+	INNER JOIN rapport_gaz ON gaz.ID_gaz = rapport_gaz.ID_gaz
+	INNER JOIN rapport ON rapport_gaz.ID_rapport = rapport.ID_rapport
+  INNER JOIN rapport_agent ON rapport.ID_rapport = rapport_agent.ID_rapport
+	INNER JOIN agent ON rapport_agent.ID_agent = agent.ID_agent
+	INNER JOIN agence ON agent.ID_agence = agence.ID_agence
+	INNER JOIN ville ON agence.ID_ville = ville.ID_ville
+	INNER JOIN region ON ville.ID_region = region.ID_region
+	WHERE gaz.Type_gaz = 'GES' AND year(rapport_agent.Date_rapport) = '2020'
+GROUP BY region.Nom_region
+```
+
+6/ Afficher le secteur d'activité le plus polluant en Ile de France
+
+```sql
+SELECT region.Nom_region, SUM(rapport_gaz.emissions_ppm), secteur.Type_secteur
+from rapport_gaz
+	INNER JOIN gaz ON rapport_gaz.ID_gaz = gaz.ID_gaz
+	INNER JOIN rapport ON rapport_gaz.ID_rapport = rapport.ID_rapport
+	INNER JOIN secteur ON rapport.ID_secteur = secteur.ID_secteur
+	INNER JOIN rapport_agent ON rapport.ID_rapport = rapport_agent.ID_rapport
+	INNER JOIN agent ON rapport_agent.ID_agent = agent.ID_agent
+	INNER JOIN agence ON agent.ID_agence = agence.ID_agence
+	INNER JOIN ville ON agence.ID_ville = ville.ID_ville
+	INNER JOIN region ON ville.ID_region = region.ID_region
+	WHERE region.Nom_region = 'Ile-de-France'
+GROUP BY secteur.Type_secteur
+ORDER BY SUM(rapport_gaz.emissions_ppm) DESC
+```
+
+7/ Classez les rapports concernant des émissions de NH3 par ordre chronologique.
+
+```sql
+SELECT rapport.ID_rapport, gaz.ID_gaz, gaz.Nom_gaz, rapport_gaz.Emissions_ppm,
+rapport_agent.Date_rapport, rapport.Date_donnees FROM gaz
+		INNER JOIN rapport_gaz ON gaz.ID_gaz = rapport_gaz.ID_gaz
+		INNER JOIN rapport ON rapport_gaz.ID_rapport = rapport.ID_rapport
+    INNER JOIN rapport_agent ON rapport.ID_rapport = rapport_agent.ID_rapport
+		WHERE gaz.Nom_gaz = 'NH3'
+ORDER BY rapport_agent.Date_rapport ASC
+```
+
+8/ Donnez les noms des agents techniques maintenant des capteurs concernant les polluants acidificateurs.
+
+```sql
+SELECT agent.ID_agent, agent.Nom_agent, agent.Prenom_agent,
+rapport_gaz.ID_capteur, gaz.ID_gaz, gaz.Nom_gaz, gaz.Type_gaz FROM agent
+	INNER JOIN poste ON agent.ID_poste = poste.ID_poste
+	INNER JOIN capteur_agent ON agent.ID_agent = capteur_agent.ID_agent
+	INNER JOIN capteur ON capteur_agent.ID_capteur = capteur.ID_capteur
+	INNER JOIN rapport_gaz ON capteur.ID_capteur = rapport_gaz.ID_capteur
+	INNER JOIN gaz ON rapport_gaz.ID_gaz = gaz.ID_gaz
+	WHERE poste.Type_poste= 'Technicien' AND gaz.Type_gaz = 'GRA'
+```
+
+9/ Pour chaque gaz, donnez la somme de ses émissions (en tonnes) dans la région Ile-de-France en 2020.
+
+```sql
+SELECT gaz.Nom_gaz, SUM(rapport_gaz.Emissions_ppm)*10^(-6) , region.Nom_region, rapport_agent.Date_rapport FROM rapport_gaz
+	INNER JOIN gaz ON rapport_gaz.ID_gaz = gaz.ID_gaz
+	INNER JOIN rapport ON rapport_gaz.ID_rapport = rapport.ID_rapport
+  INNER JOIN rapport_agent ON rapport.ID_rapport = rapport_agent.ID_rapport
+	INNER JOIN agent ON rapport_agent.ID_agent = agent.ID_agent
+	INNER JOIN agence ON agent.ID_agence = agence.ID_agence
+	INNER JOIN ville ON agence.ID_ville = ville.ID_ville
+	INNER JOIN region ON ville.ID_region = region.ID_region
+	WHERE region.Nom_region = 'Ile-de-France' AND YEAR(rapport_agent.Date_rapport) = '2020'
+GROUP BY gaz.Nom_gaz, rapport_agent.Date_rapport
+```
+
+10/ Donnez le taux de productivité des agents administratifs de l'agence de
+Toulouse (en fonction du nombre de rapports écrits et de leur ancienneté dans le poste)
+
+```sql
+SELECT agent.ID_agent, agent.Nom_agent, agent.Prenom_agent, agent.Date_poste, agent.Rapport_agent
+ poste.Type_poste, SUM(rapport_agent.ID_agent)/((YEAR(Now()) - YEAR(agent.Date_poste))*251) AS Taux_de_Productivité FROM agent
+	INNER JOIN rapport_agent ON agent.ID_agent = rapport_agent.ID_agent
+	INNER JOIN poste ON agent.ID_poste = poste.ID_poste
+	INNER JOIN agence ON agent.ID_agence = agence.ID_agence
+	INNER JOIN ville ON agence.ID_ville = ville.ID_ville
+	WHERE poste.Type_poste = 'Administrateur' AND ville.Nom_ville = 'Toulouse'
+```
+
+11/ Pour un gaz donné, listez les rapports qui contiennent des données qui le concernent (on
+doit pouvoir donner le nom du gaz en paramètre)
+
+```sql
+SELECT rapport.ID_rapport, rapport.Date_donnees, gaz.ID_gaz, gaz.Nom_gaz,
+gaz.Type_gaz, rapport_gaz.Emissions_ppm, rapport_gaz.ID_capteur,
+rapport.ID_secteur FROM rapport_gaz
+	INNER JOIN rapport ON rapport_gaz.ID_rapport = rapport.ID_rapport
+	INNER JOIN gaz ON rapport_gaz.ID_gaz = gaz.ID_gaz
+	WHERE gaz.Nom_gaz = 'CO2'
+```
+
+12/ Listez les régions dans lesquelles il y a moins de capteurs que d'agences.
+
+```sql
+SELECT region.Id_region, region.Nom_region, COUNT(DISTINCT agence.ID_agence), COUNT(DISTINCT capteur_agent.ID_capteur) FROM region
+	INNER JOIN ville ON region.ID_region = ville.ID_region
+	INNER JOIN agence ON ville.ID_ville = agence.ID_ville
+	INNER JOIN agent ON agence.ID_agence = agent.ID_agence
+	INNER JOIN capteur_agent ON agent.ID_agent = capteur_agent.ID_agent
+	GROUP BY region.Id_region
+  HAVING COUNT(DISTINCT agence.ID_agence) > COUNT(DISTINCT capteur_agent.ID_capteur)
+```

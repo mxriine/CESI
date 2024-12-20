@@ -1,6 +1,0 @@
-ID_secteur;Type_secteur
-1;Industriel
-2;Agriculture
-3;Transport
-4;Residentiel
-5;Tertiaire

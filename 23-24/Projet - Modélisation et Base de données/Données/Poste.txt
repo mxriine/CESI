@@ -1,4 +1,0 @@
-ID_poste;Nom_poste
-1;Chef
-2;Administrateur
-3;Technicien
